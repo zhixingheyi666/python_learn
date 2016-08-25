@@ -1,0 +1,300 @@
+﻿
+
+>>> help(serial.Serial)
+Help on class Serial in module serial.serialwin32:
+
+class Serial(serial.serialutil.SerialBase)
+ |  Serial port implementation for Win32 based on ctypes.
+ |
+ |  Method resolution order:
+ |      Serial
+ |      serial.serialutil.SerialBase
+ |      io.RawIOBase
+ |      _io._RawIOBase
+ |      io.IOBase
+ |      _io._IOBase
+ |      builtins.object
+ |
+ |  Methods defined here:
+ |
+ |  __init__(self, *args, **kwargs)
+ |
+ |  cancel_read(self)
+ |      Cancel a blocking read operation, may be called from other thread
+ |
+ |  cancel_write(self)
+ |      Cancel a blocking write operation, may be called from other thread
+ |
+ |  close(self)
+ |      Close port
+ |
+ |  flush(self)
+ |      Flush of file like objects. In this case, wait until all data
+ |      is written.
+ |
+ |  open(self)
+ |      Open port with current settings. This may throw a SerialException
+ |      if the port cannot be opened.
+ |
+ |  read(self, size=1)
+ |      Read size bytes from the serial port. If a timeout is set it may
+ |      return less characters as requested. With no timeout it will block
+ |      until the requested number of bytes is read.
+ |
+ |  reset_input_buffer(self)
+ |      Clear input buffer, discarding all that is in the buffer.
+ |
+ |  reset_output_buffer(self)
+ |      Clear output buffer, aborting the current output and discarding all
+ |      that is in the buffer.
+ |
+ |  set_buffer_size(self, rx_size=4096, tx_size=None)
+ |      Recommend a buffer size to the driver (device driver can ignore this
+ |      value). Must be called before the port is opended.
+ |
+ |  set_output_flow_control(self, enable=True)
+ |      Manually control flow - when software flow control is enabled.
+ |      This will do the same as if XON (true) or XOFF (false) are received
+ |      from the other device and control the transmission accordingly.
+ |      WARNING: this function is not portable to different platforms!
+ |
+ |  write(self, data)
+ |      Output the given byte string over the serial port.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors defined here:
+ |
+ |  cd
+ |      Read terminal status line: Carrier Detect
+ |
+ |  cts
+ |      Read terminal status line: Clear To Send
+ |
+ |  dsr
+ |      Read terminal status line: Data Set Ready
+ |
+ |  in_waiting
+ |      Return the number of bytes currently in the input buffer.
+ |
+ |  out_waiting
+ |      Return how many bytes the in the outgoing buffer
+ |
+ |  ri
+ |      Read terminal status line: Ring Indicator
+ |
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes defined here:
+ |
+ |  BAUDRATES = (50, 75, 110, 134, 150, 200, 300, 600, 1200, 1800, 2400, 4...
+ |
+ |  __abstractmethods__ = frozenset([])
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from serial.serialutil.SerialBase:
+ |
+ |  __enter__(self)
+ |
+ |  __exit__(self, *args, **kwargs)
+ |
+ |  __repr__(self)
+ |      String representation of the current port settings and its state.
+ |
+ |  applySettingsDict(self, d)
+ |
+ |  apply_settings(self, d)
+ |      Apply stored settings from a dictionary returned from
+ |      get_settings(). It's allowed to delete keys from the dictionary. These
+ |      values will simply left unchanged.
+ |
+ |  flushInput(self)
+ |
+ |  flushOutput(self)
+ |
+ |  getCD(self)
+ |
+ |  getCTS(self)
+ |
+ |  getDSR(self)
+ |
+ |  getRI(self)
+ |
+ |  getSettingsDict(self)
+ |
+ |  get_settings(self)
+ |      Get current port settings as a dictionary. For use with
+ |      apply_settings().
+ |
+ |  inWaiting(self)
+ |
+ |  iread_until(self, *args, **kwargs)
+ |      Read lines, implemented as generator. It will raise StopIteration on
+ |      timeout (empty read).
+ |
+ |  isOpen(self)
+ |
+ |  read_all(self)
+ |      Read all bytes currently available in the buffer of the OS.
+ |
+ |  read_until(self, terminator=b'\n', size=None)
+ |      Read until a termination sequence is found ('
+ |      ' by default), the size
+ |              is exceeded or until timeout occurs.
+ |
+ |  readable(self)
+ |
+ |  readinto(self, b)
+ |
+ |  seekable(self)
+ |
+ |  sendBreak(self, duration=0.25)
+ |
+ |  send_break(self, duration=0.25)
+ |      Send break condition. Timed, returns to idle state after given
+ |      duration.
+ |
+ |  setDTR(self, value=1)
+ |
+ |  setPort(self, port)
+ |
+ |  setRTS(self, value=1)
+ |
+ |  writable(self)
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from serial.serialutil.SerialBase:
+ |
+ |  baudrate
+ |      Get the current baud rate setting.
+ |
+ |  break_condition
+ |
+ |  bytesize
+ |      Get the current byte size setting.
+ |
+ |  dsrdtr
+ |      Get the current DSR/DTR flow control setting.
+ |
+ |  dtr
+ |
+ |  interCharTimeout
+ |
+ |  inter_byte_timeout
+ |      Get the current inter-character timeout setting.
+ |
+ |  parity
+ |      Get the current parity setting.
+ |
+ |  port
+ |      Get the current port setting. The value that was passed on init or using
+ |      setPort() is passed back.
+ |
+ |  rs485_mode
+ |      Enable RS485 mode and apply new settings, set to None to disable.
+ |      See serial.rs485.RS485Settings for more info about the value.
+ |
+ |  rts
+ |
+ |  rtscts
+ |      Get the current RTS/CTS flow control setting.
+ |
+ |  stopbits
+ |      Get the current stop bits setting.
+ |
+ |  timeout
+ |      Get the current timeout setting.
+ |
+ |  writeTimeout
+ |
+ |  write_timeout
+ |      Get the current timeout setting.
+ |
+ |  xonxoff
+ |      Get the current XON/XOFF setting.
+ |
+ |  ----------------------------------------------------------------------
+ |  Data and other attributes inherited from serial.serialutil.SerialBase:
+ |
+ |  BYTESIZES = (5, 6, 7, 8)
+ |
+ |  PARITIES = ('N', 'E', 'O', 'M', 'S')
+ |
+ |  STOPBITS = (1, 1.5, 2)
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from _io._RawIOBase:
+ |
+ |  readall(...)
+ |      Read until EOF, using multiple read() call.
+ |
+ |  ----------------------------------------------------------------------
+ |  Methods inherited from _io._IOBase:
+ |
+ |  __del__(...)
+ |
+ |  __iter__(self, /)
+ |      Implement iter(self).
+ |
+ |  __new__(*args, **kwargs) from builtins.type
+ |      Create and return a new object.  See help(type) for accurate signature.
+ |
+ |  __next__(self, /)
+ |      Implement next(self).
+ |
+ |  fileno(...)
+ |      Returns underlying file descriptor if one exists.
+ |
+ |      An IOError is raised if the IO object does not use a file descriptor.
+ |
+ |  isatty(...)
+ |      Return whether this is an 'interactive' stream.
+ |
+ |      Return False if it can't be determined.
+ |
+ |  readline(...)
+ |      Read and return a line from the stream.
+ |
+ |      If limit is specified, at most limit bytes will be read.
+ |
+ |      The line terminator is always b'\n' for binary files; for text
+ |      files, the newlines argument to open can be used to select the line
+ |      terminator(s) recognized.
+ |
+ |  readlines(...)
+ |      Return a list of lines from the stream.
+ |
+ |      hint can be specified to control the number of lines read: no more
+ |      lines will be read if the total size (in bytes/characters) of all
+ |      lines so far exceeds hint.
+ |
+ |  seek(...)
+ |      Change stream position.
+ |
+ |      Change the stream position to the given byte offset. The offset is
+ |      interpreted relative to the position indicated by whence.  Values
+ |      for whence are:
+ |
+ |      * 0 -- start of stream (the default); offset should be zero or positive
+ |      * 1 -- current stream position; offset may be negative
+ |      * 2 -- end of stream; offset is usually negative
+ |
+ |      Return the new absolute position.
+ |
+ |  tell(...)
+ |      Return current stream position.
+ |
+ |  truncate(...)
+ |      Truncate file to size bytes.
+ |
+ |      File pointer is left unchanged.  Size defaults to the current IO
+ |      position as reported by tell().  Returns the new size.
+ |
+ |  writelines(...)
+ |
+ |  ----------------------------------------------------------------------
+ |  Data descriptors inherited from _io._IOBase:
+ |
+ |  __dict__
+ |
+ |  closed
+
+>>>

@@ -1,0 +1,328 @@
+
+<!DOCTYPE HTML>
+<!--[if IE 6]><html class="ie6 lte9 lte8 lte7" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="ie8 lte9 lte8" lang="zh-cn"><![endif]-->
+<!--[if IE 9]><html class="ie9 lte9" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="ie7 lte9 lte8 lte7" lang="zh-cn"><![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8) | !(IE 9)  ]><!-->
+<html lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>zhixingheyi666_天涯社区</title>
+
+
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="Thu, 01 Nov 2012 10:00:00 GMT">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+
+<link href="http://static.tianyaui.com/global/ty/TY.css" rel="stylesheet" type="text/css" />
+<link href="http://static.tianyaui.com/global/my/web/static/css/main_141c4e2.css" rel="stylesheet" type="text/css" />
+<link href="http://static.tianyaui.com/global/my/web/static/css/t_b5b9fa8.css" rel="stylesheet" type="text/css" />
+<link rel="shortcut icon" href="http://static.tianyaui.com/favicon.ico" type="image/vnd.microsoft.icon" />
+<script type="text/javascript" charset="utf-8" src="http://static.tianyaui.com/global/ty/TY.js"></script>
+<!--[if lt IE 7]>
+  <script src="http://static.tianyaui.com/global/ty/util/image/DD_belatedPNG_0.0.8a.js"></script>
+<![endif]-->
+<link href="http://static.tianyaui.com/global/my/web/static/css/home_af9b727.css" rel="stylesheet" type="text/css" />
+<link href="http://static.tianyaui.com/global/my/web/static/css/suiji_f416b48.css" rel="stylesheet" type="text/css" />
+<link href="http://static.tianyaui.com/global/my/web/static/css/flexslider_7938f3f.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="huebox" class="skin-c0 hue-blue" _head="0" style="background-image:url(http://static.tianyaui.com/global/my/web/static/skin/0.jpg)">
+<script type="text/javascript" charset="utf-8">
+	TY.loader("TY.ui.nav", function () {
+		TY.ui.nav.init({showBottomNav:false});
+	});
+</script>
+
+	<script>
+		var noTopBtn = true;
+        var oHomeInfo = {
+            userId: 77385606,
+            userName: 'zhixingheyi666',
+            gender: '',
+            who: 'TA',//他，她，我
+            regTime:'2012-12-22 09:08:06'
+        };
+        var rewardKey = {"sign":"97c64fc5b70a1651984a19af03686b18","time":"1471176765649","merNum":"77385606","getName":"zhixingheyi666","merId":"个人主页"};
+    </script>
+	<div id="doc">
+	    <div id="home_wrapper" class="clearfix">
+	    	<div class="left-area">
+	    		
+	    		
+	    		
+
+
+
+
+
+
+
+
+
+
+<div class="module-userinfo">
+	<div class="portrait">
+		<div class="headpic">
+			<img width="130" height="130" alt="zhixingheyi666" src="http://tx.tianyaui.com/logo/77385606" />
+		</div>
+		<h2><a href="http://www.tianya.cn/77385606" target="_blank">zhixingheyi666</a>
+   		<a class="pngfix" title="在线" href="javascript:void(0);">
+   		</a>
+   	  
+		<a class="black-btn addtoblack" href="javascript:void(0);" _data="77385606">拉黑</a>
+	
+	</h2>
+	<div class="medal">
+	
+		
+		
+   		
+   		
+   		
+   		
+   		
+   	</div>
+	</div>
+	
+	<div class="profile">
+	 	
+   		<p></p>
+   		
+	</div>
+	<div class="relations">
+		<div class="relate-oper">
+	
+		<a class="oper-btn t-setfocus" _data="77385606" href="javascript:void(0);">+ 关注</a><a class="oper-btn q_addFriend" uid="77385606" uname="zhixingheyi666" href="javascript:void(0);"><i></i>加好友</a><a class="oper-btn shang-btn" href="javascript:void(0);"><i></i>送礼物</a>
+	
+		</div>
+		<div class="relate-link">
+			<div class="link-box"><p><a href="/77385606/follow">32</a></p><p>关注</p></div><div class="link-box"><p><a href="/77385606/fans">4</a></p><p>粉丝</p></div>
+		</div>
+	</div>
+	<div class="userinfo">
+		
+		<p><span>积&#12288;&#12288;分</span>5274</p>
+		
+    	<p><span>登录次数</span>1174</p>
+    	
+		<p><span>最新登录</span>2016-08-14 20:08:00</p>
+		<p><span>注册日期</span>2012-12-22 09:08:06</p>
+	</div>
+	<div class="sendmessage">
+		<div class="message-to"><span>给zhixingheyi666发短消息：<span></div>
+		<textarea placeholder="对zhixingheyi666说：" class="textarea" id="sendMsg_content"></textarea>
+		<div class="toolbar cf">
+			<span title="表情" class="emotion"></span>
+			<span title="图片" class="photo"></span>
+			
+			<span class="history" title="历史"></span>
+			
+			<span title="红包" class="hongbao"></span>
+			<a href="javascript:void(0);" class="sendmsg-btn">发送</a>
+		</div>
+	</div>
+	<div class="timeline">
+		<a class="timeline-open pngfix" href="javascript:void(0);">开启时间隧道</a>
+	</div>
+	
+</div>
+	    		<div class="module-userinfo user-shop">
+	<div class="mod-hd">
+		<strong class="title">TA的店铺</strong>
+		<div class="mod-bd">
+    	<ul>
+    	</ul>
+    	</div>
+	</div>
+</div>
+
+	    		
+<div class="module-userinfo user-attention">
+	<div class="mod-hd">
+		<strong class="title">TA关注的人</strong>
+		<a class="more" href="javascript:void(0);">换一组</a>
+		<div class="mod-bd">
+    	<ul></ul>
+    </div>
+	</div>
+</div>
+
+	    		
+	    	</div>
+	    	<div class="main-area">	    		 
+	    		
+	    		
+
+
+
+
+
+
+
+ 
+<div class="home-module module-userbbs">
+	<div class="mod-hd">
+		<strong class="title">TA的帖子</strong>
+		<span class="subtitle"><a href="http://www.tianya.cn/77385606/bbs?t=post" >主帖0</a>　<a href="http://www.tianya.cn/77385606/bbs?t=reply" >回帖48</a></span>
+		<a class="more" href="http://www.tianya.cn/77385606/bbs">更多</a>
+	</div>
+	<div class="mod-bd">
+		<table class="posts">
+			<tr>
+				<th class="p-title">帖子名</th>
+				<th class="p-block">版块</th>
+				<th class="p-time">时间</th>
+			</tr>
+			
+			<tr>
+				<td class="p-title"><a href="http://bbs.tianya.cn/post-worldlook-500329-1.shtml" target="_blank" title="点击：4207501&#10;回复：34506">[回复][大国战略]烽烟四起，中美对决</a></td>
+			
+				<td><a href="http://bbs.tianya.cn/list-worldlook-1.shtml" target="_blank">国际观察</a></td>
+				 
+				<td>2016-08-03 22:16</td>
+			</tr>
+			
+			<tr>
+				<td class="p-title"><a href="http://bbs.tianya.cn/post-worldlook-1699248-1.shtml" target="_blank" title="点击：55358&#10;回复：657">[回复]喜鹊：赵薇戴立忍台独门带给13亿人的启示(转载)</a></td>
+			
+				<td><a href="http://bbs.tianya.cn/list-worldlook-1.shtml" target="_blank">国际观察</a></td>
+				 
+				<td>2016-07-16 15:04</td>
+			</tr>
+			
+			<tr>
+				<td class="p-title"><a href="http://bbs.tianya.cn/post-worldlook-1701493-1.shtml" target="_blank" title="点击：1292211&#10;回复：10568">[回复]喜鹊：赵薇戴立忍台独门再续：赵薇不仅仅是在撒谎(喜鹊最新猛料）(转载)</a></td>
+			
+				<td><a href="http://bbs.tianya.cn/list-worldlook-1.shtml" target="_blank">国际观察</a></td>
+				 
+				<td>2016-07-16 15:03</td>
+			</tr>
+			
+			<tr>
+				<td class="p-title"><a href="http://bbs.tianya.cn/post-worldlook-1186558-1.shtml" target="_blank" title="点击：75903&#10;回复：862">[回复]预测阿根廷2比1夺冠，输了我自切 JJ,欢迎明天鞭尸</a></td>
+			
+				<td><a href="http://bbs.tianya.cn/list-worldlook-1.shtml" target="_blank">国际观察</a></td>
+				 
+				<td>2014-07-13 18:18</td>
+			</tr>
+			
+			<tr>
+				<td class="p-title"><a href="http://bbs.tianya.cn/post-worldlook-912654-1.shtml" target="_blank" title="点击：70750&#10;回复：511">[回复]说说日本鬼子皇宫里的32圣人像  全是中国人</a></td>
+			
+				<td><a href="http://bbs.tianya.cn/list-worldlook-1.shtml" target="_blank">国际观察</a></td>
+				 
+				<td>2014-06-22 22:46</td>
+			</tr>
+			
+		</table>
+	</div>
+	<div class="mod-ft"></div>
+<script>
+var postDatas=[{"categoryName":"闲闲书话","time":"2014-06-20 21:08:52.0","title":"[回复]从李敖谈孔子晚年读《易》说起(转载)","replyCount":"2","clickCount":"852","categoryId":"books","articleId":"77683"},{"categoryName":"天涯杂谈","time":"2014-06-20 20:36:12.0","title":"[回复]如何用太极拳打人","replyCount":"14500","clickCount":"638722","categoryId":"free","articleId":"1864678"},{"categoryName":"中医养生","time":"2014-04-12 12:11:00.0","title":"[回复]正本清源——开帖谈谈养生观念","replyCount":"1551","clickCount":"113185","categoryId":"805","articleId":"79833"}]
+</script>
+</div>
+ 
+	    		<div class="home-module module-usergoods">
+	<div class="mod-hd">
+		<strong class="title">TA的商品</strong>
+		<a class="more" href="" target="_blank">全部商品</a>
+	</div>
+	<div class="mod-bd">
+         <ul class="goods-list">
+         </ul>
+	</div>
+	<div class="mod-ft"></div>
+</div>
+
+	    		
+
+
+
+
+	    		
+	    		
+	    		
+
+
+
+
+
+
+
+ 
+	    		
+
+	    		<div class="home-module module-usergame">
+	<div class="mod-hd">
+		<strong class="title">最近玩过的游戏</strong>
+		<a class="more" href="http://game.tianya.cn/" target="_blank">更多</a>
+	</div>
+	<div class="mod-bd">
+		<ul class="gamelist cf"></ul>
+	</div>
+	<div class="mod-ft"></div>
+</div>
+
+	    		
+
+
+
+
+
+
+
+	    		
+	    		<div class="home-module module-usersuiji">
+	<div class="mod-hd">
+		<strong class="title">TA的随记</strong>
+		<a class="more" href="javascript:void(0);">更多</a>
+	</div>
+	<div class="mod-bd">
+		<div id="suiji_others_container"></div>
+	</div>
+	<div class="mod-ft"></div>
+</div>
+	    		
+	    	</div>
+	    </div>
+	</div>
+<div id="foot">
+<P><A href="http://help.tianya.cn/about/about.html" rel="nofollow"
+	target=_blank>关于天涯</A> | <A
+	href="http://help.tianya.cn/about/service.html" rel="nofollow"
+	target=_blank>广告服务</A> | <A href="http://service.tianya.cn/"
+	rel="nofollow" target=_blank>天涯客服</A> | <A
+	href="http://help.tianya.cn/about/ystl.html" rel="nofollow"
+	target=_blank>隐私和版权</A> | <A
+	href="http://help.tianya.cn/about/contact.html" rel="nofollow"
+	target=_blank>联系我们</A> | <A href="http://join.tianya.cn" rel="nofollow"
+	target=_blank>加入天涯</A> | <A href="http://www.tianya.cn/mobile/"
+	rel="nofollow" target=_blank>手机版</A> | <A
+	href="http://service.tianya.cn/jbts.html" rel="nofollow" target=_blank>举报投诉</A>
+</P>
+<P class="copyright">&copy; 1999 - 2016 天涯社区</P>
+</div>
+</div>
+<script type="text/javascript" charset="utf-8"
+	src="http://static.tianyaui.com/global/my/web/static/js/main_b080d33.js"></script>
+<script type="text/javascript" charset="utf-8"
+	src="http://static.tianyaui.com/global/my/web/static/js/myty/t_c2200ba.js"></script>
+
+<script>
+	var isTwitterDeletePower = '0';
+</script>
+<script type="text/javascript" charset="utf-8" src="http://static.tianyaui.com/global/my/web/static/js/home_d9220f9.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.tianyaui.com/global/my/web/static/js/suiji/time-line_5bac93d.js"></script>
+<script type="text/javascript" charset="utf-8" src="http://static.tianyaui.com/global/my/web/static/js/flexslider_5e9a246.js"></script>
+</body>
+<script type="text/javascript" charset="GBK" src="http://static.tianyaui.com/global/ty/stat/stat_20080313.js"></script>
+<script type="text/javascript">
+	(function() {
+		var bd = document.createElement('script'); bd.type = 'text/javascript'; bd.async = true;
+		bd.src = 'http://hm.baidu.com/h.js?bc5755e0609123f78d0e816bf7dee255';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(bd, s);
+	})();
+</script>
+</html>

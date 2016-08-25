@@ -1,0 +1,87 @@
+﻿Microsoft Windows [版本 6.1.7601]
+版权所有 (c) 2009 Microsoft Corporation。保留所有权利。
+
+C:\Users\lenovo>pip install web.py -i http://pypi.douban.com/simple
+Collecting web.py
+  The repository located at pypi.douban.com is not a trusted or secure host and is being ignored. I
+you may silence this warning and allow it anyways with '--trusted-host pypi.douban.com'.
+  Could not find a version that satisfies the requirement web.py (from versions: )
+No matching distribution found for web.py
+You are using pip version 7.1.2, however version 8.1.2 is available.
+You should consider upgrading via the 'python -m pip install --upgrade pip' command.
+
+C:\Users\lenovo>python -m pip install --upgrade pip
+Collecting pip
+  Downloading pip-8.1.2-py2.py3-none-any.whl (1.2MB)
+    100% |████████████████████████████████| 1.2MB 273kB/s
+Installing collected packages: pip
+  Found existing installation: pip 7.1.2
+    Uninstalling pip-7.1.2:
+      Successfully uninstalled pip-7.1.2
+Successfully installed pip-8.1.2
+
+C:\Users\lenovo>pip install web.py -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+Collecting web.py
+  Downloading http://pypi.doubanio.com/packages/8b/95/66412912c8093e9167a58248fd646f95ff3d41f2e5be5
+    100% |████████████████████████████████| 92kB 1.8MB/s
+    Complete output from command python setup.py egg_info:
+    Traceback (most recent call last):
+      File "<string>", line 1, in <module>
+      File "C:\Users\lenovo\AppData\Local\Temp\pip-build-mogm0g7x\web.py\setup.py", line 6, in <mod
+        from web import __version__
+      File "C:\Users\lenovo\AppData\Local\Temp\pip-build-mogm0g7x\web.py\web\__init__.py", line 14,
+        import utils, db, net, wsgi, http, webapi, httpserver, debugerror
+    ImportError: No module named 'utils'
+
+    ----------------------------------------
+Command "python setup.py egg_info" failed with error code 1 in C:\Users\lenovo\AppData\Local\Temp\p
+
+C:\Users\lenovo>pip install Pillow -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+Collecting Pillow
+  Downloading http://pypi.doubanio.com/packages/dc/9d/c409895c0b68e76d549e230cf33e51c4254af3b72b8b0
+    100% |████████████████████████████████| 1.5MB 5.1MB/s
+Installing collected packages: Pillow
+Successfully installed Pillow-3.3.0
+
+C:\Users\lenovo>pip install Pillow -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+'python -m pip install --upgrade pip
+C:\Users\lenovo>pip install numpy
+Collecting numpy
+  Downloading https://pypi.doubanio.com/packages/51/01/c26bb6934649bc9bee68d50dd4a1b1f33818a594a48768953affdc84418e/numpy-1.11.1-cp35-none-win_amd64.whl (7.6MB)
+    100% |████████████████████████████████| 7.6MB 2.6MB/s
+Installing collected packages: numpy
+Successfully installed numpy-1.11.1
+
+C:\Users\lenovo>pip install serial
+Collecting serial
+  Could not find a version that satisfies the requirement serial (from versions: )
+No matching distribution found for serial
+
+C:\Users\lenovo>pip install pySerial
+Collecting pySerial
+  Downloading https://pypi.doubanio.com/packages/49/db/5704dfc92d9a35f43d10744b0e661eeb1cbddc3bf8bd704592d653d23d86/pyserial-3.1.1-py2.py3-none-any.whl (200kB)
+    100% |████████████████████████████████| 204kB 4.9MB/s
+Installing collected packages: pySerial
+Successfully installed pySerial-3.1.1
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+C:\Users\lenovo>pip install web.py -i http://pypi.douban.com/simple
+Collecting web.py
+  The repository located at pypi.douban.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS it is recommended to use HTTPS instead, otherwise
+you may silence this warning and allow it anyways with '--trusted-host pypi.douban.com'.
+  Could not find a version that satisfies the requirement web.py (from versions: )
+No matching distribution found for web.py
+You are using pip version 7.1.2, however vers
+C:\Users\lenovo>pip install web.py -i http://pypi.douban.com/simple
+Collecting web.py
+  The repository located at pypi.douban.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS it is recommended to use HTTPS instead, otherwise
+you may silence this warning and allow it anyways with '--trusted-host pypi.douban.com'.
+  Could not find a version that satisfies the requirement web.py (from versions: )
+No matching distribution found for web.py
+You are using pip version 7.1.2, however version 8.1.2 is available.ion 8.1.2 is available.
+ consider upgrading via the 'python -m pip install --upgrade pip' command.
