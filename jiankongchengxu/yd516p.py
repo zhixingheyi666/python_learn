@@ -42,15 +42,19 @@
                                     '''
 
 from enum import Enum, unique
-
+import Aibus
 @unique
 class Dfn( Enum ):
     Unknow = 32767
 
-class Yd516p(): #Aibus ):
-    def __init__( self, addr, name = 'UNSET' ):
+class Yd516p( Aibus.Aibus ):
+    def __init__( self, addr, port, name = 'UNSET', baud = 9600  ):
         self.addr = addr
+        #print( 'Ttest!1' , type( port ) , port)
         self.name = name
+        self.baudrate = baud
+        self.rtimeout = 0.150           ##根据仪表协议要求的最大等待时间
+        super( Yd516p, self ).__init__( port, baud, self.rtimeout )
         self.init = 0
         self.tmprt = Dfn.Unknow.value
         self.__PV = Dfn.Unknow.value
@@ -77,6 +81,7 @@ class Yd516p(): #Aibus ):
         if self.init == 0:
             #先generator一个“正在初始化某某仪表”的事件，给GUI
             for arg in self.Args:
+                #print( 'Ttest!!', arg, ' ', self.Args[arg] )
                 mk = self.read( self.Args[arg] )
                 #if mk = **错误：
                 #generator一个“**仪表初始化错误”的事件，给GUI
@@ -85,20 +90,21 @@ class Yd516p(): #Aibus ):
             
     def read( self, argt ):
         print( 'Ttest!1' )
-        vlist = send( self.addr, argt[0] )
+        vlist = self.get( self.addr, argt[0] )
         print( 'Ttest!1' )
         if vlist[-1] == 1:
             argt[1]['cvalue'] = vlist[0]
             argt[1]['vtime'] = vlist[1]
             self.__Rftime = vlist[1]
-            self.__PV = vlist[ 2 ]
-            self.__SV = vlist[ 3 ]
-            self.__MV = vlist[ 4 ]
-            self.__Statu_A = vlist[ 5 ]
+            self.__PV = vlist[2]
+            self.__SV = vlist[3]
+            self.__MV = vlist[4]
+            self.__Statu_A = vlist[5]
             return [ vlist[0], vlist[1] ] 
         #elif vlist[-1] == **:
         #    return 错误**
-
+        elif vlist[-1] == -1:               ##temp:临时段，错误处理
+            print( 'Time:', vlist[1], '  Read  ',argt[0],' failure!!' )
     def __getattr__( self, arg ):
                                 ##
         '''                         每个实例应当有个仪表初始化标志变量，在未初始化之前，
@@ -118,7 +124,7 @@ class Yd516p(): #Aibus ):
         elif arg == 'Statu_A':
             return self.getStatu_A()
         elif arg == 'Rftime':
-            return self.getPV()
+            return self.getRftime()
         elif arg in self.Args:
             return   [ self.Args[arg][1]['cvalue'], self.Args[arg][1]['vtime'] ]
         else:
@@ -152,5 +158,4 @@ class Yd516p(): #Aibus ):
         pass
 
     def getRftime( self, now = 0 ):
-        pass
-
+        return self.__Rftime
