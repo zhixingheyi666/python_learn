@@ -16,13 +16,19 @@ import serial, time, queue
 ##监听端口的函数
 dataq = queue.Queue()
 
-def intercept( , iport = 'COM3', timeout = 0 ):
+def intercept( dataq, iport = 'COM3', timeout = 0 ):
     com = serial.Serial( port = iport )
+    data = b''
+    t0 = time.clock()
     while( True ):
-        date = iport.readall()
-        if data != b'':
-            len(data) ? 8,10
-            squeue.put( data )
-
-        pass
+        l = com.read( 1000 )
+        t1 = time.clock()
+        if l !=  b'':
+            tt0 = t1 - t0 
+            if tt0 > 0.03 and len( data ) >= 18:
+                dataq = ( ( data, t1 ) )
+                data = l
+            else:
+                data += l
+            t0 = t1
 

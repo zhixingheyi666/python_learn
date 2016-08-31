@@ -30,7 +30,6 @@ while( i < 2 ):
     '''
 while( 1 ):
     input('Press Anykey')
-    ss = ser.write( b'12345dd678902655464567xe6' )
     j = 0
     while( j < 40 ):
         ss = ser.write( bys )
