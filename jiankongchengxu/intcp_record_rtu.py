@@ -42,7 +42,7 @@ def intercept( dataq, ctrlq, iport = 'COM3', timeout = 0 ):
                     实际设备的要求的通信间隔时间更长，如宇电516P的150毫秒，tt0也可以相应变大。
                     6(字节) * ( 1 + 8 + 1 ) / 9600 * = 0.0063 秒
             '''
-            if tt0 > 0.0063：## or len( data ) >= 10:
+            if tt0 > 0.0063:## or len( data ) >= 10:
                 dataq.put( ( data, t1 ) )
                 data = l
             else:
