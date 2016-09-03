@@ -61,8 +61,8 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
                     rev = struct.unpack( sstr, lst[0] )
                     rev_str = list( map( lambda x: '{0:0>2x}'.format( x ), rev) ) 
                     rstr = '\t'  
-                    for i in rev_str:
-                        rstr = rstr + ' ' + i  
+                    for j in rev_str:
+                        rstr = rstr + ' ' + j  
                     print( rstr,'----', lst[1] ) 
                     df = open( dfname, 'a' )
                     df.write( rstr + '\n' )
