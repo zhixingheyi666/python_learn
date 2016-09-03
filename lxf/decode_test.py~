@@ -1,5 +1,8 @@
 # -- coding: utf-8 --
 import queue, threading
+import os, struct
+import pickle
+import time
 
 '''
 本函数可以接受srcq（Queue类型），或者srcf（文件绝对路径）两种参数
@@ -27,13 +30,56 @@ import queue, threading
 def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
     s_que = queue.Queue()
     sflg = ctrlq.empty
+    if os.path.isfile( srcf ):
+        f = open( srcf, 'rb' )
+        cmt = pickle.load( f )
+    dfname = 'D:\\python_learn\\jiankongchengxu\\intcp000457.txt'
     while( sflg() ):
         flg = sflg()
+        time.sleep( 0.15 )
         if isinstance( srcq, queue.Queue ) :
             if flg:
                 while(  not srcq.empty() ):
                     d = srcq.get( block = 0 )
                     s_que.put( d )
+            else:
+                i = 0
+                while( i < 4 ):
+                    try:
+                        d = srcq.get( block = 0 )
+                        s_que.put( d )
+                        i += 1
+                    except queue.Empty:
+                        if flg:
+                            break
+                        time.sleep( 1 )
+        elif os.path.isfile( srcf ):
+            try:
+                for i in range( 6 ):
+                    lst = pickle.load( f ) 
+                    llen = len( lst[0] )
+                    sstr = 'B' * llen
+                    rev = struct.unpack( sstr, lst[0] )
+                    rev_str = list( map( lambda x: '{0:0>2x}'.format( x ), rev) ) 
+                    rstr = '\t'  
+                    for i in rev_str:
+                        rstr = rstr + ' ' + i  
+                    print( rstr,'----', lst[1] ) 
+                    df = open( dfname, 'a' )
+                    df.write( rstr + '\n' )
+                    df.close()
+                    #print( l, '+++', type( l ) )
+                    #print( l[0] )
+                    #s_que.put( l )
+                    #time.sleep( 0.3 )
+            except EOFError:
+                print( '已经解析到文件末尾！' )
+                break
+#if __name__ == '__main__':
+ctrlq = queue.Queue()
+i_dcd( ctrlq,srcf='d:\\python_learn\\jiankongchengxu\\intcp231840.ire' )
+fname = 'D:\\python_learn\\jiankongchengxu\\intcp000457.ire'
+input( 'Press to End!' )
 
 
 
