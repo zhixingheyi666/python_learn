@@ -3,18 +3,22 @@
 from multiprocessing import Queue, Process
 import os, time, random
 
-def write( q ):
+#def write( q ):
+def write( mq ):
     print( 'Process to write: %s', os.getpid() )
     for value in [ 'A', 'B', 'C' ]:
         print( 'Put %s to queue...' % value )
-        q.put( value )
-#        time.sleep( random.random() )
+        #q.put( value )
+        mq.put( value )
+        time.sleep( random.random() )
 
 
-def read( q ):
+#def read( q ):
+def read( mrq ):
     print( 'Process to read: %s' % os.getpid() )
     while True:
-        value = q.get( True )
+        value = mrq.get( True )
+        #value = q.get( True )
         print( 'Get %s from queue.' % value )
 
 if __name__ == '__main__':
