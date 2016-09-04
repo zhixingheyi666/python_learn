@@ -29,13 +29,14 @@ import time
 '''
 def skhead( s_byte, zkaddr ):
     for n in range( 29 ):
+        #print( len( s_byte ) )
+        if n > len( s_byte ) -18:
+            return ( 0, n )
         if s_byte[n] in range( 128, 257 ):
             if s_byte[n] == s_byte[ n + 1 ]:
                 return ( 1, n )
-            elif s_byte[n] == zkaddr and s_byte[ n + 1 ] == 3:
-                return ( 2, n )
-            if n > len( s_byte ) -18 - 1:
-                return ( 0, n )
+        elif s_byte[n] == zkaddr and s_byte[ n + 1 ] == 3:
+            return ( 2, n )
 
 def dcd516( s_byte, dbfq ):
     addr = s_byte[0] - 128
@@ -49,24 +50,24 @@ def dcd516( s_byte, dbfq ):
             ##CRC校验
             if s_byte[6] == addr + 82 and s_byte[7] == arg:
                 dcdr = []
-                dcdr.append[ '设备：<%02d号温控仪>' % addr]
-                dcdr.append[ '<读> 请求::   ' ]
-                #dcdr.append[ '目标地址：' ]
-                #dcdr.append[ addr ]
-                dcdr.append[ '目标参数：' ]
-                dcdr.append[ arg ]
+                dcdr.append( '设备：<%02d号温控仪>' % addr)
+                dcdr.append( '<读> 请求::   ' )
+                #dcdr.append( '目标地址：' )
+                #dcdr.append( addr )
+                dcdr.append( '目标参数：' )
+                dcdr.append( arg )
                 dbfq.put( dcdr )
                 #s_byte = s_byte[ 8: ]
                 ##继续解码后面设备响应的字节
                 dcdrev = struct.unpack( 'BBBBbBBBBB', s_byte[ 8:18 ] ) 
                 dcdlst = []
                 dcdtt = []
-                dcdtt.append[ dcdrev[6] + dcdrev[7] * 256 ]
-                dcdtt.append[ dcdrev[0] + dcdrev[1] * 256 ]
-                dcdtt.append[ dcdrev[2] + dcdrev[3] * 256 ]
+                dcdtt.append( dcdrev[6] + dcdrev[7] * 256 )
+                dcdtt.append( dcdrev[0] + dcdrev[1] * 256 )
+                dcdtt.append( dcdrev[2] + dcdrev[3] * 256 )
                 crc = dcdrev[8] + dcdrev[9] *256
-                mk_crc = dcdtt[1] + dcdtt[2] + dcdrev[5] * 256 + dcdrev[4] + dcdtt[0] + addr
-                if crc != mk_crc % 65536:
+                rmk_crc = dcdtt[1] + dcdtt[2] + dcdrev[5] * 256 + dcdrev[4] + dcdtt[0] + addr
+                if crc != rmk_crc % 65536:
                     return  ( 1, 8 ) 
                 for dcdi in range( 3 ):
                     if dcdtt[ dcdi ] >= 32768:
@@ -89,7 +90,8 @@ def dcd516( s_byte, dbfq ):
                 dcdlst.append( dcdMt )
                 dcdlst.append( ['仪表状态：'] )
                 dcdAt = dcdrev[5]
-                dcdAtt = '{ 0:06b }'.format( dcdAt )
+                #print( dcdAt )
+                dcdAtt = '{0:07b}'.format( dcdAt ) 
                 dcdAlm = '' 
                 for i in range( len( dcdAtt ) ):
                     if i % 2:
@@ -106,34 +108,36 @@ def dcd516( s_byte, dbfq ):
         arg = s_byte[3] 
         argVt = s_byte[4] + s_byte[5] * 256
         w_crc = s_byte[6] + s_byte[7] * 256
-        mk_crc = arg * 256 + 67 + argVt + addr
-        if w_crc != mk_rcr % 256:
+        wmk_crc = arg * 256 + 67 + argVt + addr
+        if w_crc != wmk_crc % 65536:
+            #print( hex(wmk_crc) )
+            #print( hex(w_crc) )
             return ( 0, 0 )
         dcdw = []
-        dcdw.append[ '设备：<%02d号温控仪>' % addr]
-        dcdw.append[ '<写> 指令::   ' ]
-        #dcdw.append[ '目标地址：' ]
-        #dcdw.append[ addr ]
-        dcdw.append[ '目标参数：' ]
-        dcdw.append[ arg ]
-        dcdw.append[ '写入值：' ]
+        dcdw.append( '设备：<%02d号温控仪>' % addr)
+        dcdw.append( '<写> 指令::   ' )
+        #dcdw.append( '目标地址：' )
+        #dcdw.append( addr )
+        dcdw.append( '目标参数：' )
+        dcdw.append( arg )
+        dcdw.append( '写入值：' )
         if argVt >= 32768:
             argVt -= 65536
         ##默认一位小数，dpt = 1
         argV = argVt * 10 ** -dpt
-        dcdw.append[ argV ]
+        dcdw.append( argV )
         dbfq.put( dcdw )
         #s_byte = s_byte[ 8: ]
         ##继续解码后面设备响应的字节
         dcdwev = struct.unpack( 'BBBBbBBBBB', s_byte[ 8:18 ] ) 
         dcdwlst = []
         dcdwt = []
-        dcdwt.append[ dcdwev[6] + dcdwev[7] * 256 ]
-        dcdwt.append[ dcdwev[0] + dcdwev[1] * 256 ]
-        dcdwt.append[ dcdwev[2] + dcdwev[3] * 256 ]
+        dcdwt.append( dcdwev[6] + dcdwev[7] * 256 )
+        dcdwt.append( dcdwev[0] + dcdwev[1] * 256 )
+        dcdwt.append( dcdwev[2] + dcdwev[3] * 256 )
         crc = dcdwev[8] + dcdwev[9] *256
-        mk_crc = dcdwt[1] + dcdwt[2] + dcdwev[5] * 256 + dcdwev[4] + dcdwt[0] + addr
-        if crc != mk_crc % 65536:
+        wsmk_crc = dcdwt[1] + dcdwt[2] + dcdwev[5] * 256 + dcdwev[4] + dcdwt[0] + addr
+        if crc != wsmk_crc % 65536:
             return  ( 1, 8 ) 
         for dcdi in range( 3 ):
             if dcdwt[ dcdi ] >= 32768:
@@ -156,7 +160,7 @@ def dcd516( s_byte, dbfq ):
         dcdwlst.append( dcdMt )
         dcdwlst.append( ['仪表状态：'] )
         dcdAt = dcdwev[5]
-        dcdAtt = '{ 0:06b }'.format( dcdAt )
+        dcdAtt = '{0:07b}'.format( dcdAt )
         dcdAlm = '' 
         for i in range( len( dcdAtt ) ):
             if i % 2:
@@ -172,8 +176,56 @@ def dcd516( s_byte, dbfq ):
 def zk( s_byte, dbfq ):
     zkj_addr = s_byte[0]
     if s_byte[2] == 0:
-
-    pass
+        zkcrc = s_byte[6] + s_byte[7] * 256
+        mk_crc = 0xFFFF
+        for zki in s_byte[ :6 ]:
+            mk_crc ^= zki
+            for i in range( 8 ):
+                if ( mk_crc & 1 ) == 1:
+                    mk_crc >>= 1
+                    mk_crc ^= 0xA001
+                else:
+                    mk_crc >>= 1
+        if zkcrc != mk_crc:
+            return ( 0, 0 )
+        dcdzkr = []
+        dcdzkr.append( '设备：<%02d真空计>' % zkj_addr )
+        dcdzkr.append( '<读> 请求::   ' )
+        dcdzkr.append( '寄存器地址：' )
+        dcdzkr.append( 0 )
+        dbfq.put( dcdzkr )
+        #s_byte = s_byte[ 8: ]
+        ##继续解码后面设备响应的字节
+        return( 1, 8 )
+    elif s_byte[2] == 4:
+        zkwcrc = s_byte[5] + s_byte[6] * 256
+        mk_wcrc = 0xFFFF
+        for zki in s_byte[ :5 ]:
+            mk_wcrc ^= zki
+            for i in range( 8 ):
+                if ( mk_wcrc & 1 ) == 1:
+                    mk_wcrc >>= 1
+                    mk_wcrc ^= 0xA001
+                else:
+                    mk_wcrc >>= 1
+        if zkcrc != mk_wcrc:
+            return ( 0, 0 )
+        dcdzkrev = struct.unpack( 'BbBb', s_byte[ 3: 5 ] ) 
+        for i in [ 1, 3 ]:
+            if dcdzkrev[i] > 128:
+                dcdzkrev[i] -= 256
+            while( dcdzkrev[ i - 1 ] >= 10 ):
+                dcdzkrev[ i - 1 ] /= 10
+        dcdzkg = []
+        dcdzkg.append( '设备：<%02d真空计>响应' % zkj_addr )
+        dcdzkg.append( '真空度1：' )
+        dcdzkg.append( '%.2fE%d' % ( dcdzkrev[0], dcdzkrev[1] ) )
+        dcdzkg.append( '真空度2：' )
+        dcdzkg.append( '%.2fE%d' % ( dcdzkrev[2], dcdzkrev[3] ) )
+        dbfq.put( dcdzkg )
+        return( 1, 7 )
+    else:
+        return( 0, 0 )
 
 
 
@@ -190,86 +242,107 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
     if os.path.isfile( srcf ):
         f = open( srcf, 'rb' )
         cmt = pickle.load( f )
-    #dfname = 'D:\\python_learn\\jiankongchengxu\\intcp000457.txt'
+    dfname = 'D:\\python_learn\\jiankongchengxu\\dcd_intcp000457.txt'
+    dcdend = 0
     while( sflg() ): ## or s_byte ! = b''
-        flg = sflg()
-        if isinstance( srcq, queue.Queue ) :
-            if flg:
-                while(  not srcq.empty() ):
-                    d = srcq.get( block = 0 )
-                    #s_que.put( d )
-                    s_byte += d[0]
-            else:
-                i = 0
-                while( i < 4 ):
-                    try:
+        while( sflg() ): ## or s_byte ! = b''
+            flg = sflg()
+            if isinstance( srcq, queue.Queue ) :
+                if flg:
+                    while(  not srcq.empty() ):
                         d = srcq.get( block = 0 )
-                        s_byte += d[0]
                         #s_que.put( d )
-                        i += 1
-                    except queue.Empty:
-                        if sflg():
-                            break
-                        time.sleep( 1 )
-        elif os.path.isfile( srcf ):
-            try:
-                for i in range( 6 ):
-                    lst = pickle.load( f ) 
-                    s_byte += lst[0]
-                    #llen = len( lst[0] )
-                    #sstr = 'B' * llen
-                    #rev = struct.unpack( sstr, lst[0] )
-                    #rev_str = list( map( lambda x: '{0:0>2x}'.format( x ), rev) ) 
-                    #rstr = '\t'  
-                    #for j in rev_str:
-                    #    rstr = rstr + ' ' + j  
-                    #print( rstr,'----', lst[1] ) 
-                    #df = open( dfname, 'a' )
-                    #df.write( rstr + '\n' )
-                    #df.close()
-                    #time.sleep( 0.3 )
-            except EOFError:
-                print( '已经解析到文件末尾！' )
+                        s_byte += d[0]
+                else:
+                    i = 0
+                    while( i < 4 ):
+                        try:
+                            d = srcq.get( block = 0 )
+                            s_byte += d[0]
+                            #s_que.put( d )
+                            i += 1
+                        except queue.Empty:
+                            if sflg():
+                                break
+                            time.sleep( 1 )
+            elif os.path.isfile( srcf ):
+                try:
+                    for i in range( 6 ):
+                        lst = pickle.load( f ) 
+                        s_byte += lst[0]
+                        #llen = len( lst[0] )
+                        #sstr = 'B' * llen
+                        #rev = struct.unpack( sstr, lst[0] )
+                        #rev_str = list( map( lambda x: '{0:0>2x}'.format( x ), rev) ) 
+                        #rstr = '\t'  
+                        #for j in rev_str:
+                        #    rstr = rstr + ' ' + j  
+                        #print( rstr,'----', lst[1] ) 
+                        #df = open( dfname, 'a' )
+                        #df.write( rstr + '\n' )
+                        #df.close()
+                        #time.sleep( 0.3 )
+                    break
+                except EOFError:
+                    print( '已经解析到文件末尾！' )
+                    dcdend = 1
+                    break
+        #head = skhead( s_byte, zkaddr ) 
+        ##有一种情况，本来有一组消息被解析校验正确，可是在这个消息中间又
+        ##找到新的消息头（比如516p的两个重复的地址），这种情况概率很小，可以不考虑
+        while( True ):
+            if len( s_byte ) < 18:
                 break
-    head = skhead( s_byte, zkaddr ) 
-    ##有一种情况，本来有一组消息被解析校验正确，可是在这个消息中间又
-    ##找到新的消息头（比如516p的两个重复的地址），这种情况概率很小，可以不考虑
-    while( True ):
-        if head[1] != 0:
-            dbfq.put( s_byte[ :head[1] ] )
-            if head[0] == 0:
+            head = skhead( s_byte, zkaddr ) 
+            if head[1] != 0:
+                dbfq.put( s_byte[ :head[1] ] )
+                if head[0] == 0:
+                    s_byte = s_byte[ head[1]: ]
+                    break
                 s_byte = s_byte[ head[1]: ]
+            #516解析成功，砍掉解析成功部分，继续查找后面
+            #解析失败，砍掉这个head，继续查找后面
+            if head[0] == 1:
+                ddflag = dcd516( s_byte, dbfq )
+                if ddflag[0]:
+                    s_byte = s_byte[ ddflag[1]: ]
+                else:
+                    dbfq.put( s_byte[ :18] )
+                    print( s_byte[ :18] )
+                    s_byte = s_byte[ 1: ]
+            #真空计解析成功，砍掉解析成功部分，继续查找后面
+            #解析失败，砍掉这个head，继续查找后面
+            elif head[0] == 2: 
+                dzflag = zk( s_byte, dbfq )
+                if dzflag[0]:
+                    s_byte = s_byte[ dzflag[1]: ]
+                else:
+                    dbfq.put( s_byte[ :18] )
+                    print( s_byte[ :18] )
+                    s_byte = s_byte[ 1: ]
+        while( 1 ):
+            try:
+                lll = dbfq.get( block = 0 )
+                #for illl in lll:
+                #if isinstance( lll, bytes ):
+                    #print( lll )
+                print( lll )
+                df = open( dfname, 'a' )
+                df.write( str( lll ) + '\n' )
+                df.close()
+            except queue.Empty:
                 break
-            s_byte = s_byte[ head[1]: ]
-        #516解析成功，砍掉解析成功部分，继续查找后面
-        #解析失败，砍掉这个head，继续查找后面
-        if head[0] == 1:
-            ddflag = dcd516( s_byte, dbfq )
-            if ddflag[0]:
-                s_byte = s_byte[ ddflag[1]: ]
-            else:
-                dbfq.put( s_byte[ :18] )
-                print( s_byte[ :18] )
-                s_byte = s_byte[ 1: ]
-        #真空计解析成功，砍掉解析成功部分，继续查找后面
-        #解析失败，砍掉这个head，继续查找后面
-        elif head[0] == 2: 
-            dzflag = zk( s_byte, dbfq )
-            if dzflag[0]:
-                s_byte = s_byte[ dzflag[1]: ]
-            else:
-                dbfq.put( s_byte[ :18] )
-                print( s_byte[ :18] )
-                s_byte = s_byte[ 1: ]
+        if dcdend == 1:
+            break
 
 
 
 
-#if __name__ == '__main__':
-#ctrlq = queue.Queue()
-#i_dcd( ctrlq,srcf='d:\\python_learn\\jiankongchengxu\\intcp231840.ire' )
-#fname = 'D:\\python_learn\\jiankongchengxu\\intcp000457.ire'
-#input( 'Press to End!' )
+if __name__ == '__main__':
+    ctrlq = queue.Queue()
+    i_dcd( ctrlq,srcf='d:\\python_learn\\jiankongchengxu\\intcp231840.ire' )
+    fname = 'D:\\python_learn\\jiankongchengxu\\intcp000457.ire'
+    input( 'Press to End!' )
 
 
 
