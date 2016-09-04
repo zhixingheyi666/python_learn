@@ -38,6 +38,42 @@ def skhead( s_byte ):
                 return ( 0, n )
 
 def dcd516( s_byte, dbfq ):
+    addr = s_byte[0] - 128
+
+    if s_byte[2] == 82:
+        arg = s_byte[3] 
+        if s_byte[4] == 0 and s_byte[5] == 0:
+            ##CRC校验
+            if s_byte[6] == addr + 82 and s_byte[7] == arg:
+                dcdr = []
+                dcdr.append[ '<读> 请求::   ' ]
+                dcdr.append[ '目标地址：' ]
+                dcdr.append[ addr ]
+                dcdr.append[ '目标参数：' ]
+                dcdr.append[ arg ]
+                dbfq.put( dcdr )
+                s_byte = s_byte[ 8: ]
+                ##继续解码后面设备响应的字节
+                dcdrev = struct.unpack( 'BBBBbBBBBB', s_byte[ :10 ] ) 
+                dcdlst = []
+                dcdlst.append( [ '设备 <%2d> 响应::   ' % addr ] )
+                dcdlst.append( [ '参数 <%2X> 返回值：' % arg ] )
+                dcdlst.append( dcdrev[6] + dcdrev[7] * 256 )
+                #dcdlst.append( time.time() )
+                dcdlst.append( [ '测量值PV：' ] )
+                dcdlst.append( dcdrev[0] + dcdrev[1] * 256 )
+                dcdlst.append( ['给定值SV：'] )
+                dcdlst.append( dcdrev[2] + dcdrev[3] * 256 )
+                dcdlst.append( dcdrev[4] )
+                dcdlst.append( dcdrev[5] )
+                for i in [ 0, 2, 3 ]:
+                    if dcdlst[i] >= 32768:
+                        dcdlst[i] -= 65536
+                crc = dcdrev[8] + dcdrev[9] *256
+                mk_crc = dcdlst[2] + dcdlst[3] + dcdlst[5] * 256 + dcdlst[4] + dcdlst[0] + addr
+                if crc == mk_crc % 65536:
+                return dcdlst
+ 
     pass
 
 
