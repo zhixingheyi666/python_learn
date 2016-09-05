@@ -49,19 +49,18 @@ def dcd516( s_byte, dbfq ):
         if s_byte[4] == 0 and s_byte[5] == 0:
             ##CRC校验
             if s_byte[6] == addr + 82 and s_byte[7] == arg:
-                #设备识别码，指令识别码，所有解码的信息的前两个位置
-                #设备识别：0，温控仪，1，真空计。
-                #指令识别：00，读请求，01，读响应，10，写请求，11，写响应
-                #设备地址，参数代号
-                dcdr = [ 0, 0, addr, arg]
-                #dcdr.append( '设备：<%02d号温控仪>' % addr)
-                #dcdr.append( '<读> 请求::   ' )
+                dcdr = []
+                dcdr.append( '设备：<%02d号温控仪>' % addr)
+                dcdr.append( '<读> 请求::   ' )
                 #dcdr.append( '目标地址：' )
-                #dcdr.append( '目标参数：' )
+                #dcdr.append( addr )
+                dcdr.append( '目标参数：' )
+                dcdr.append( arg )
                 dbfq.put( dcdr )
                 #s_byte = s_byte[ 8: ]
                 ##继续解码后面设备响应的字节
                 dcdrev = struct.unpack( 'BBBBbBBBBB', s_byte[ 8:18 ] ) 
+                dcdlst = []
                 dcdtt = []
                 dcdtt.append( dcdrev[6] + dcdrev[7] * 256 )
                 dcdtt.append( dcdrev[0] + dcdrev[1] * 256 )
@@ -75,23 +74,21 @@ def dcd516( s_byte, dbfq ):
                         dcdtt[ dcdi ] -= 65536
                     ##默认一位小数，dpt = 1
                     dcdtt[ dcdi ] = dcdtt[ dcdi ] * 10 ** -dpt
-                dcdlst = [ 0, 1, addr ,arg ]
-                #dcdlst.append( [ '设备 <%2d号温控仪> 响应::   ' % addr ] )
-                #dcdlst.append( [ '参数 <%02XH> 返回值：' % arg ] )
-                #dcdlst.append( time.time() )
-                #dcdlst.append( [ '实时温度：' ] )
-                #dcdlst.append( ['给定温度：'] )
-                #dcdlst.append( ['输出值MV：'] )
-                #dcdlst.append( ['仪表状态：'] )
-                #参数返回值，实时温度，给定温度，输出值，仪表状态
+                dcdlst.append( [ '设备 <%2d号温控仪> 响应::   ' % addr ] )
+                dcdlst.append( [ '参数 <%02XH> 返回值：' % arg ] )
                 dcdArg = dcdtt[0]
                 dcdlst.append( dcdArg )
+                #dcdlst.append( time.time() )
+                dcdlst.append( [ '实时温度：' ] )
                 dcdPV = dcdtt[1]
                 dcdlst.append( dcdPV )
+                dcdlst.append( ['给定温度：'] )
                 dcdSV = dcdtt[2]
                 dcdlst.append( dcdSV )
+                dcdlst.append( ['输出值MV：'] )
                 dcdMt = dcdrev[4]
                 dcdlst.append( dcdMt )
+                dcdlst.append( ['仪表状态：'] )
                 dcdAt = dcdrev[5]
                 #print( dcdAt )
                 dcdAtt = '{0:07b}'.format( dcdAt ) 
@@ -116,14 +113,14 @@ def dcd516( s_byte, dbfq ):
             #print( hex(wmk_crc) )
             #print( hex(w_crc) )
             return ( 0, 0 )
-        dcdw = [ 0, 2, addr, arg ]
-        #dcdw.append( '设备：<%02d号温控仪>' % addr)
-        #dcdw.append( '<写> 指令::   ' )
+        dcdw = []
+        dcdw.append( '设备：<%02d号温控仪>' % addr)
+        dcdw.append( '<写> 指令::   ' )
         #dcdw.append( '目标地址：' )
-        #dcdw.append( '目标参数：' )
-        #dcdw.append( '写入值：' )
         #dcdw.append( addr )
-        #dcdw.append( arg )
+        dcdw.append( '目标参数：' )
+        dcdw.append( arg )
+        dcdw.append( '写入值：' )
         if argVt >= 32768:
             argVt -= 65536
         ##默认一位小数，dpt = 1
@@ -133,6 +130,7 @@ def dcd516( s_byte, dbfq ):
         #s_byte = s_byte[ 8: ]
         ##继续解码后面设备响应的字节
         dcdwev = struct.unpack( 'BBBBbBBBBB', s_byte[ 8:18 ] ) 
+        dcdwlst = []
         dcdwt = []
         dcdwt.append( dcdwev[6] + dcdwev[7] * 256 )
         dcdwt.append( dcdwev[0] + dcdwev[1] * 256 )
@@ -146,22 +144,21 @@ def dcd516( s_byte, dbfq ):
                 dcdwt[ dcdi ] -= 65536
             ##默认一位小数，dpt = 1
             dcdwt[ dcdi ] = dcdwt[ dcdi ] * 10 ** -dpt
-        #dcdwlst.append( [ '设备 <%2d号温控仪> 响应::   ' % addr ] )
-        #dcdwlst.append( [ '参数 <%02XH> 写入值：' % arg ] )
-        #dcdwlst.append( time.time() )
-        #dcdwlst.append( [ '实时温度：' ] )
-        #dcdwlst.append( ['给定温度：'] )
-        #dcdwlst.append( ['输出值MV：'] )
-        #dcdwlst.append( ['仪表状态：'] )
-        dcdwlst = [ 0, 3, addr, arg ]
+        dcdwlst.append( [ '设备 <%2d号温控仪> 响应::   ' % addr ] )
+        dcdwlst.append( [ '参数 <%02XH> 写入值：' % arg ] )
         dcdArg = dcdwt[0]
         dcdwlst.append( dcdArg )
+        #dcdwlst.append( time.time() )
+        dcdwlst.append( [ '实时温度：' ] )
         dcdPV = dcdwt[1]
         dcdwlst.append( dcdPV )
+        dcdwlst.append( ['给定温度：'] )
         dcdSV = dcdwt[2]
         dcdwlst.append( dcdSV )
+        dcdwlst.append( ['输出值MV：'] )
         dcdMt = dcdwev[4]
         dcdwlst.append( dcdMt )
+        dcdwlst.append( ['仪表状态：'] )
         dcdAt = dcdwev[5]
         dcdAtt = '{0:07b}'.format( dcdAt )
         dcdAlm = '' 
@@ -191,14 +188,14 @@ def zk( s_byte, dbfq ):
                     mk_crc >>= 1
         if zkcrc != mk_crc:
             return ( 0, 0 )
-        #dcdzkr.append( '设备：<%02d真空计>' % zkj_addr )
-        #dcdzkr.append( '<读> 请求::   ' )
-        #dcdzkr.append( '寄存器地址：' )
-        #设备代号，指令识别码，设备地址，目标寄存器地址，目标寄存器数量
-        dcdzkr = [ 1, 0, zkj_addr, 0 ]
-        zknum = s_byte[4] * 256 + s_byte[5]
-        dcdzkr.append( zknum )
+        dcdzkr = []
+        dcdzkr.append( '设备：<%02d真空计>' % zkj_addr )
+        dcdzkr.append( '<读> 请求::   ' )
+        dcdzkr.append( '寄存器地址：' )
+        dcdzkr.append( 0 )
         dbfq.put( dcdzkr )
+        #s_byte = s_byte[ 8: ]
+        ##继续解码后面设备响应的字节
         return( 1, 8 )
     elif s_byte[2] == 4:
         zkwcrc = s_byte[5] + s_byte[6] * 256
@@ -215,20 +212,16 @@ def zk( s_byte, dbfq ):
             return ( 0, 0 )
         dcdzkrev = struct.unpack( 'BbBb', s_byte[ 3: 5 ] ) 
         for i in [ 1, 3 ]:
-            #计算系数B
             if dcdzkrev[i] > 128:
                 dcdzkrev[i] -= 256
-            #给A加小数点
             while( dcdzkrev[ i - 1 ] >= 10 ):
                 dcdzkrev[ i - 1 ] /= 10
-        #dcdzkg.append( '设备：<%02d真空计>响应' % zkj_addr )
-        #dcdzkg.append( '真空度1：' )
-        #dcdzkg.append( '%.2fE%d' % ( dcdzkrev[0], dcdzkrev[1] ) )
-        #dcdzkg.append( '真空度2：' )
-        #dcdzkg.append( '%.2fE%d' % ( dcdzkrev[2], dcdzkrev[3] ) )
-        dcdzkg = [ 1, 1, zkj_addr, s_byte[2] ]
-        dcdzkg.append( ( dcdzkrev[0], dcdzkrev[1] ) )
-        dcdzkg.append( ( dcdzkrev[2], dcdzkrev[3] ) )
+        dcdzkg = []
+        dcdzkg.append( '设备：<%02d真空计>响应' % zkj_addr )
+        dcdzkg.append( '真空度1：' )
+        dcdzkg.append( '%.2fE%d' % ( dcdzkrev[0], dcdzkrev[1] ) )
+        dcdzkg.append( '真空度2：' )
+        dcdzkg.append( '%.2fE%d' % ( dcdzkrev[2], dcdzkrev[3] ) )
         dbfq.put( dcdzkg )
         return( 1, 7 )
     else:
@@ -249,13 +242,13 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
     if os.path.isfile( srcf ):
         f = open( srcf, 'rb' )
         cmt = pickle.load( f )
-    dfname = 'D:\\python_learn\\data\\dcd_intcp' + time.strftime( '%S' ) + '.txt'
+    dfname = 'D:\\python_learn\\jiankongchengxu\\dcd_intcp000457.txt'
     dcdend = 0
     while( sflg() ): ## or s_byte ! = b''
         while( sflg() ): ## or s_byte ! = b''
             flg = sflg()
             if isinstance( srcq, queue.Queue ) :
-                if not flg:
+                if flg:
                     while(  not srcq.empty() ):
                         d = srcq.get( block = 0 )
                         #s_que.put( d )
@@ -272,7 +265,6 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
                             if sflg():
                                 break
                             time.sleep( 1 )
-                    break
             elif os.path.isfile( srcf ):
                 try:
                     for i in range( 6 ):
