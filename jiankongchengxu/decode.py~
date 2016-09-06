@@ -28,8 +28,9 @@ import time
         2.生成解码队列，供数据统计展示模块调用
 '''
 def skhead( s_byte, zkaddr ):
-    for n in range( 29 ):
+    for n in range( 110 ):
         #print( len( s_byte ) )
+        #print( n )
         if n > len( s_byte ) -18:
             return ( 0, n )
         if s_byte[n] in range( 128, 257 ):
@@ -37,6 +38,8 @@ def skhead( s_byte, zkaddr ):
                 return ( 1, n )
         elif s_byte[n] == zkaddr and s_byte[ n + 1 ] == 3:
             return ( 2, n )
+        elif n > 30:
+            return( 0, 30 )
 
 def dcd516( s_byte, dbfq ):
     addr = s_byte[0] - 128
@@ -236,21 +239,32 @@ def zk( s_byte, dbfq ):
 
 
 
-def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
+def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 1.0 ):
     #s_que = queue.Queue()
+    #如果需要临时重设刷新时间间隔
+    if input( 'Press anyelse to go on Or \'s\' to Reset args!' ) == 's':
+        tdelay = float( input( '刷新时间间隔：' ) )
+        dcdhz = int( input( '刷行频率：' ) )
+    dcdt00 = time.time()
+    dcdt0 = dcdt00
+    #rightnow,即刻刷新标志位
+    rightnow = 0
+    #等待logo标志位
+    waitlogo = 0
     #s_byte，待解析字节码
     s_byte= b''
+    #print流控制变量
+    bmark = ''
     #sflg，终止线程标志函数
     sflg = ctrlq.empty
     #zkaddr，真空计地址
-    zkaddr = 20
+    #zkaddr = 20
     #dbfq，解析结果暂存队列
     dbfq = queue.Queue()
     if os.path.isfile( srcf ):
         f = open( srcf, 'rb' )
         cmt = pickle.load( f )
     #dfname = 'D:\\python_learn\\data\\dcd_intcp' + time.strftime( '%S' ) + '.txt'
-    dfname = 'c:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
     dcdend = 0
     while( sflg() ): ## or s_byte ! = b''
         while( sflg() ): ## or s_byte ! = b''
@@ -305,6 +319,7 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
             head = skhead( s_byte, zkaddr ) 
             if head[1] != 0:
                 dbfq.put( s_byte[ :head[1] ] )
+                #print( s_byte[ :head[1] ] )
                 if head[0] == 0:
                     s_byte = s_byte[ head[1]: ]
                     break
@@ -336,63 +351,91 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
                 #if isinstance( lll, bytes ):
                     #print( lll )
                 mmaddr = 65535
-                if lll[0] == 0:
-                    if lll[1] == 0:
-                        print( '\n\n\n' )
-                        print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
-                                % lll[2])
-                        print( '\n' )
-                        print( '[读.请求]' )
-                        print( '            目标参数：    %02XH' % lll[3] )
-                        mmaddr = lll[2]
-                    elif lll[1] == 1:
-                        print( '\n' )
-                        print( '[读.响应]' )
-                        print( '            实时温度：   %4.2f                设备状态：  %s'\
-                                % ( lll[5], lll[8]) )
-                        print( '\n' )
-                        print( '            SV:   0.01          MV：  34.4           ArV:    66.7'\
-                                % ( lll[6], lll[7], lll[4] ))
-                        print( '\n' )
-                        print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
-                    if lll[1] == 2:
-                        print( '\n\n\n' )
-                        print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
-                                % lll[2])
-                        print( '\n' )
-                        print( '[写.请求]' )
-                        print( '            目标参数：    %02XH                  写入值：      %4.2f'\
-                                % ( lll[3], lll[4] ) )
-                        mmaddr = lll[2]
-                    elif lll[1] == 3:
-                        print( '[写.响应]' )
-                        print( '            实时温度：   %4.2f                设备状态：  %s'\
-                                % ( lll[5], lll[8]) )
-                        print( '\n' )
-                        print( '            SV:   0.01          MV：  34.4           ArV:    66.7'\
-                                % ( lll[6], lll[7], lll[4] ))
-                        print( '\n' )
-                        print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
-                elif lll[0] == 1:
-                    if lll[1] == 0:
-                        print( '\n\n\n' )
-                        print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.真空计╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
-                                % lll[2])
-                        print( '\n' )
-                        print( '[读.请求]' )
-                        print( '            目标参数：     %02XH                  数据量：      %d  '\
-                                % ( lll[3], lll[4] ))
-                    elif lll[1] == 1:
-                        print( '[读.响应]' )
-                        print( '             真空度A：   %.4fE%d                 真空度B：  %.4fE%d'\
-                                %( lll[4][0], lll[4][1], lll[5][0], lll[5][1] ))
-                        print( '\n' )
-                        print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                dcdt1 = time.time()
+                if not rightnow:
+                    #60秒后，输出logo,保持10秒，然后转换成 即刻刷新模式
+                    if dcdt1 -dcdt00 > 60:
+                        rightnow = 1
+                        print( 'logo 文件！' )
+                        dcdt3 = dcdt1
+                        waitlogo = 1
+                if  waitlogo:
+                    if dcdt1 - dcdt3 > 10:
+                        waitlogo = 0
+                if not waitlogo and ( rightnow or dcdt1 - dcdt0 > tdelay ):
+                    if lll[0] == 0:
+                        if lll[1] == 0:
+                            print( '\n\n\n' )
+                            print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
+                                    % lll[2])
+                            #print( '\n' )
+                            print( '[读.请求]' )
+                            print( '            目标参数：    %02xH' % lll[3] )
+                            mmaddr = lll[2]
+                        elif lll[1] == 1:
+                            #print( '\n' )
+                            print( '[读.响应]' )
+                            if lll[5] > 200:
+                                print( '            实时温度：<探头未安装>            设备状态：  %s'\
+                                    % lll[8] )
+                            else:
+                                print( '            实时温度：   %4.2f                设备状态：  %s'\
+                                        % ( lll[5], lll[8]) )
+                            #print( '\n' )
+                            print( '            SV:   %4.2f         MV：  %4.2f           ArV:    %4.2f'\
+                                    % ( lll[6], lll[7], lll[4] ))
+                            #print( '\n' )
+                            #print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                            print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                        if lll[1] == 2:
+                            print( '\n\n\n' )
+                            print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
+                                    % lll[2])
+                            #print( '\n' )
+                            print( '[写.请求]' )
+                            print( '            目标参数：    %02xH                  写入值：      %4.2f'\
+                                    % ( lll[3], lll[4] ) )
+                            mmaddr = lll[2]
+                        elif lll[1] == 3:
+                            print( '[写.响应]' )
+                            if lll[5] > 200:
+                                print( '            实时温度：<探头未安装>            设备状态：  %s'\
+                                    % lll[8] )
+                            else:
+                                print( '            实时温度：   %4.2f                设备状态：  %s'\
+                                        % ( lll[5], lll[8]) )
+                            #print( '\n' )
+                            print( '            SV:   %4.2f         MV：  %4.2f           ArV:    %4.2f'\
+                                    % ( lll[6], lll[7], lll[4] ))
+                            #print( '\n' )
+                            #print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                            print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                    elif lll[0] == 1:
+                        if lll[1] == 0:
+                            print( '\n\n\n' )
+                            print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.真空计╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
+                                    % lll[2])
+                            #print( '\n' )
+                            print( '[读.请求]' )
+                            print( '            目标参数：     %02xH                  数据量：      %d  '\
+                                    % ( lll[3], lll[4] ))
+                        elif lll[1] == 1:
+                            print( '[读.响应]' )
+                            print( '             真空度A：   %.4fE%d                 真空度B：  %.4fE%d'\
+                                    %( lll[4][0], lll[4][1], lll[5][0], lll[5][1] ))
+                            #print( '\n' )
+                            print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                    dcdt0 = dcdt1 
                 df = open( dfname, 'a' )
                 df.write( str( lll ) + '\n' )
                 df.close()
+                if srcf != 0:
+                    time.sleep( 0.1 )
             except queue.Empty:
                 break
+        if bmark != 'c':
+            bmark = input( 'Press to Go on!' )
+
         if dcdend == 1:
             break
 
@@ -401,9 +444,11 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
 
 if __name__ == '__main__':
     ctrlq = queue.Queue()
-    #fname = 'c:\\python_learn\\data\\intcp_im205730.ire'
-    fname = 'D:\\python_learn\\data\\intcp000457.ire'
-    i_dcd( ctrlq,srcf = fname )
+    #fname = 'D:\\python_learn\\data\\intcp000457.ire'
+    #i_dcd( dfname, ctrlq, srcf = fname, zkaddr = 7 )
+    dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
+    fname = 'D:\\python_learn\\data\\intcp231840.ire'
+    i_dcd( dfname, ctrlq, srcf = fname, zkaddr = 20, tdelay = 1.2 )
     input( 'Press to End!' )
 
 

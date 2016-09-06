@@ -33,7 +33,7 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
     if os.path.isfile( srcf ):
         f = open( srcf, 'rb' )
         cmt = pickle.load( f )
-    dfname = 'D:\\python_learn\\jiankongchengxu\\intcp231840.txt'
+    dfname = 'D:\\python_learn\\jiankongchengxu\\intcp000457.txt'
     while( sflg() ):
         flg = sflg()
         time.sleep( 0.5 )
@@ -78,7 +78,7 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
 #if __name__ == '__main__':
 ctrlq = queue.Queue()
 i_dcd( ctrlq,srcf='d:\\python_learn\\jiankongchengxu\\intcp231840.ire' )
-#fname = 'D:\\python_learn\\jiankongchengxu\\intcp000457.ire'
+fname = 'D:\\python_learn\\jiankongchengxu\\intcp000457.ire'
 input( 'Press to End!' )
 
 

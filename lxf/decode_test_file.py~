@@ -242,7 +242,7 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
     if os.path.isfile( srcf ):
         f = open( srcf, 'rb' )
         cmt = pickle.load( f )
-    dfname = 'D:\\python_learn\\jiankongchengxu\\dcd_intcp231840.txt'
+    dfname = 'D:\\python_learn\\jiankongchengxu\\dcd_intcp000457.txt'
     dcdend = 0
     while( sflg() ): ## or s_byte ! = b''
         while( sflg() ): ## or s_byte ! = b''
