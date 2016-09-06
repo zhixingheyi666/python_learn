@@ -335,7 +335,59 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
                 #for illl in lll:
                 #if isinstance( lll, bytes ):
                     #print( lll )
-                print( lll )
+                mmaddr = 65535
+                if lll[0] == 0:
+                    if lll[1] == 0:
+                        print( '\n\n\n' )
+                        print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
+                                % lll[2])
+                        print( '\n' )
+                        print( '[读.请求]' )
+                        print( '            目标参数：    %02XH' % lll[3] )
+                        mmaddr = lll[2]
+                    elif lll[1] == 1:
+                        print( '\n' )
+                        print( '[读.响应]' )
+                        print( '            实时温度：   %4.2f                设备状态：  %s'\
+                                % ( lll[5], lll[8]) )
+                        print( '\n' )
+                        print( '            SV:   0.01          MV：  34.4           ArV:    66.7'\
+                                % ( lll[6], lll[7], lll[4] ))
+                        print( '\n' )
+                        print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                    if lll[1] == 2:
+                        print( '\n\n\n' )
+                        print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
+                                % lll[2])
+                        print( '\n' )
+                        print( '[写.请求]' )
+                        print( '            目标参数：    %02XH                  写入值：      %4.2f'\
+                                % ( lll[3], lll[4] ) )
+                        mmaddr = lll[2]
+                    elif lll[1] == 3:
+                        print( '[写.响应]' )
+                        print( '            实时温度：   %4.2f                设备状态：  %s'\
+                                % ( lll[5], lll[8]) )
+                        print( '\n' )
+                        print( '            SV:   0.01          MV：  34.4           ArV:    66.7'\
+                                % ( lll[6], lll[7], lll[4] ))
+                        print( '\n' )
+                        print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                elif lll[0] == 1:
+                    if lll[1] == 0:
+                        print( '\n\n\n' )
+                        print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.真空计╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
+                                % lll[2])
+                        print( '\n' )
+                        print( '[读.请求]' )
+                        print( '            目标参数：     %02XH                  数据量：      %d  '\
+                                % ( lll[3], lll[4] ))
+                    elif lll[1] == 1:
+                        print( '[读.响应]' )
+                        print( '             真空度A：   %.4fE%d                 真空度B：  %.4fE%d'\
+                                %( lll[4][0], lll[4][1], lll[5][0], lll[5][1] ))
+                        print( '\n' )
+                        print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
                 df = open( dfname, 'a' )
                 df.write( str( lll ) + '\n' )
                 df.close()
@@ -349,8 +401,8 @@ def i_dcd( ctrlq, srcq = 0, srcf = 0 ):
 
 if __name__ == '__main__':
     ctrlq = queue.Queue()
-    fname = 'c:\\python_learn\\jiankongchengxu\\intcp_im205730.ire'
-    #fname = 'D:\\python_learn\\jiankongchengxu\\intcp000457.ire'
+    #fname = 'c:\\python_learn\\data\\intcp_im205730.ire'
+    fname = 'D:\\python_learn\\data\\intcp000457.ire'
     i_dcd( ctrlq,srcf = fname )
     input( 'Press to End!' )
 
