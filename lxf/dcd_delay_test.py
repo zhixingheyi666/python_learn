@@ -492,7 +492,7 @@ if __name__ == '__main__':
     #i_dcd( dfname, ctrlq, srcf = fname, zkaddr = 7 )
     dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
     fname = 'D:\\python_learn\\data\\intcp231840.ire'
-    i_dcd( dfname, ctrlq, srcf = fname, zkaddr = 20, tdelay = 0.6 )
+    i_dcd( dfname, ctrlq, srcf = fname, zkaddr = 14, tdelay = 0.6 )
     input( 'Press to End!' )
 
 

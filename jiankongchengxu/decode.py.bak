@@ -239,7 +239,7 @@ def zk( s_byte, dbfq ):
 
 
 
-def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
+def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 1.0 ):
     #s_que = queue.Queue()
     #如果需要临时重设刷新时间间隔
     #if input( 'Press anyelse to go on Or \'s\' to Reset args!' ) == 's':
@@ -259,9 +259,6 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
     sflg = ctrlq.empty
     #zkaddr，真空计地址
     #zkaddr = 20
-    #延时穿透标志位
-    drsp = 0
-    dct = 0
     #dbfq，解析结果暂存队列
     dbfq = queue.Queue()
     if os.path.isfile( srcf ):
@@ -365,16 +362,13 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                         waitlogo = 1
                         flogo = open( 'D:\\python_learn\\logo\\005.txt', 'r' )
                         print( flogo.read() )
-                        print( '\n' )
-                        print( '\n' )
                         time.sleep( 1.5 )
                         flogo = open( 'D:\\python_learn\\logo\\05.txt', 'r' )
                         print( flogo.read() )
                 if  waitlogo:
                     if dcdt1 - dcdt3 > 10:
                         waitlogo = 0
-                #if not waitlogo and ( rightnow or dcdt1 - dcdt0 > tdelay ):
-                if not waitlogo and ( drsp or dct or rightnow or dcdt1 - dcdt0 > tdelay ):
+                if not waitlogo and ( rightnow or dcdt1 - dcdt0 > tdelay ):
                     ##逻辑控制要求：
                     '''
                                 在主机发送请求时被置1，然后利用他就可以穿透上面的
@@ -384,23 +378,9 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                                 每当延时条件满足，我们首先判断是不是请求指令
                             如果不是，就不输出。同时在下个循环穿透延时，直到找到
                             主机发送的请求指令。
-                        #判断是否为上一语句的响应，drsp应该包含设备代码，地址
-                        #判断新元素指令代码是否为响应，且设备代码和地址是否与drsp吻合，
-                        #清空drsp信息
-                        @@
-                        或者简单一点，每次穿透判断待输出信息是否为响应
-                            如果不是，就不输出。
-                        如果不是穿透，就判断是不是请求，不是请求
-                            不输出。下次穿透，直到找到请求，输出。
                     '''
-                    #正常穿透标志,dct用于正常延时后，消息不是请求消息，立即穿透，直到找到请求消息
-                    if not drsp:
-                        dct = 1
-                    #如果因为drsp穿透延时，期待响应，所以要判断消息是否为响应
                     if lll[0] == 0:
-                        if lll[1] == 0 and not drsp:
-                            dct = 0
-                            drsp = 2
+                        if lll[1] == 0:
                             print( '\n\n\n' )
                             print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
                                     % lll[2])
@@ -408,7 +388,7 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                             print( '[读.请求]' )
                             print( '            目标参数：    %02xH' % lll[3] )
                             mmaddr = lll[2]
-                        elif lll[1] == 1 and drsp:
+                        elif lll[1] == 1:
                             #print( '\n' )
                             print( '[读.响应]' )
                             if lll[5] > 200:
@@ -423,9 +403,7 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                             #print( '\n' )
                             #print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
                             print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
-                        if lll[1] == 2 and not drsp:
-                            dct = 0
-                            drsp = 2
+                        if lll[1] == 2:
                             print( '\n\n\n' )
                             print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
                                     % lll[2])
@@ -434,7 +412,7 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                             print( '            目标参数：    %02xH                  写入值：      %4.2f'\
                                     % ( lll[3], lll[4] ) )
                             mmaddr = lll[2]
-                        elif lll[1] == 3 and drsp:
+                        elif lll[1] == 3:
                             print( '[写.响应]' )
                             if lll[5] > 200:
                                 print( '            实时温度：<探头未安装>            设备状态：  %s'\
@@ -449,9 +427,7 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                             #print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
                             print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
                     elif lll[0] == 1:
-                        if lll[1] == 0 and not drsp:
-                            dct = 0
-                            drsp = 2
+                        if lll[1] == 0:
                             print( '\n\n\n' )
                             print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.真空计╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
                                     % lll[2])
@@ -459,17 +435,13 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                             print( '[读.请求]' )
                             print( '            目标参数：     %02xH                  数据量：      %d  '\
                                     % ( lll[3], lll[4] ))
-                        elif lll[1] == 1 and drsp:
+                        elif lll[1] == 1:
                             print( '[读.响应]' )
                             print( '             真空度A：   %.4fE%d                 真空度B：  %.4fE%d'\
                                     %( lll[4][0], lll[4][1], lll[5][0], lll[5][1] ))
                             #print( '\n' )
                             print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
                     dcdt0 = dcdt1 
-                    #drsp 只有一个生存周期，如果因为drsp穿透，一次执行流完成
-                    #我们就立即封闭他
-                    if drsp:
-                        drsp -= 1
                 df = open( dfname, 'a' )
                 df.write( str( lll ) + '\n' )
                 df.close()
@@ -492,7 +464,7 @@ if __name__ == '__main__':
     #i_dcd( dfname, ctrlq, srcf = fname, zkaddr = 7 )
     dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
     fname = 'D:\\python_learn\\data\\intcp231840.ire'
-    i_dcd( dfname, ctrlq, srcf = fname, zkaddr = 20, tdelay = 0.6 )
+    i_dcd( dfname, ctrlq, srcf = fname, zkaddr = 20, tdelay = 1.2 )
     input( 'Press to End!' )
 
 
