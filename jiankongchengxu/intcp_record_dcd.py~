@@ -36,7 +36,8 @@ def intercept( dataq, ctrlq, iport = 'COM3', timeout = 0 ):
             t0 = t1
 def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
     #dfname = 'c:\\python_learn\\data\\dcd_intcp' + time.strftime( '%S' ) + '.txt'
-    fname = 'c:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
+    #fname = 'c:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
+    fname = 'd:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
     f = open( fname, 'wb' )
     pickle.dump( doc.encode( 'utf-8' ), f )
     f.close()
@@ -64,8 +65,9 @@ def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
         if i % 10 == 0:
             f.close()
             #f =  open( fname, 'ab' )
-        ##以下代码仅作为本次验证使用，实际操作的时候，可以直接在端口线程为分析
-        ##进程再单独建立一个队列。本进程仅作为原始数据备份。
+            ##以下代码仅作为本次验证使用，实际操作的时候，可以直接在端口线程为分析
+            ##进程再单独建立一个队列。本进程仅作为原始数据备份。
+            '''
             f =  open( fname, 'rb' )
             f.seek( ftell )
             for x in range( 10 ):
@@ -90,6 +92,7 @@ def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
                 #print( pickle.load( f ) )
             ftell = f.tell()
             f.close()
+            '''
             f =  open( fname, 'ab' )
     f.close()
 
@@ -115,7 +118,8 @@ def main():
     interp = threading.Thread( target = intercept, args = ( dataq, ctrlq )  )
     rcd = threading.Thread( target = record, args = ( dataq, srcq, ctrlq, '序列化测试！' )  )
     istop = threading.Thread( target = stop, args = ( ctrlq, )  )
-    idecode = threading.Thread( target = dcd.i_dcd, args = ( ctrlq, srcq )  )
+    dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
+    idecode = threading.Thread( target = dcd.i_dcd, args = ( dfname, ctrlq, srcq )  )
     interp.start()
     rcd.start()
     idecode.start()

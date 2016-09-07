@@ -36,7 +36,8 @@ def intercept( dataq, ctrlq, iport = 'COM3', timeout = 0 ):
             t0 = t1
 def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
     #dfname = 'c:\\python_learn\\data\\dcd_intcp' + time.strftime( '%S' ) + '.txt'
-    fname = 'c:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
+    #fname = 'c:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
+    fname = 'd:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
     f = open( fname, 'wb' )
     pickle.dump( doc.encode( 'utf-8' ), f )
     f.close()
@@ -117,7 +118,8 @@ def main():
     interp = threading.Thread( target = intercept, args = ( dataq, ctrlq )  )
     rcd = threading.Thread( target = record, args = ( dataq, srcq, ctrlq, '序列化测试！' )  )
     istop = threading.Thread( target = stop, args = ( ctrlq, )  )
-    idecode = threading.Thread( target = dcd.i_dcd, args = ( ctrlq, srcq )  )
+    dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
+    idecode = threading.Thread( target = dcd.i_dcd, args = ( dfname, ctrlq, srcq )  )
     interp.start()
     rcd.start()
     idecode.start()

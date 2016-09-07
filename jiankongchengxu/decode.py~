@@ -242,9 +242,9 @@ def zk( s_byte, dbfq ):
 def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 1.0 ):
     #s_que = queue.Queue()
     #如果需要临时重设刷新时间间隔
-    if input( 'Press anyelse to go on Or \'s\' to Reset args!' ) == 's':
-        tdelay = float( input( '刷新时间间隔：' ) )
-        dcdhz = int( input( '刷行频率：' ) )
+    #if input( 'Press anyelse to go on Or \'s\' to Reset args!' ) == 's':
+    #    tdelay = float( input( '刷新时间间隔：' ) )
+    #    dcdhz = int( input( '刷行频率：' ) )
     dcdt00 = time.time()
     dcdt0 = dcdt00
     #rightnow,即刻刷新标志位
@@ -269,6 +269,8 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 1.0 ):
     while( sflg() ): ## or s_byte ! = b''
         while( sflg() ): ## or s_byte ! = b''
             flg = sflg()
+            #print( 'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS' )
+            #print( type( srcq ) )
             if isinstance( srcq, queue.Queue ) :
                 if not flg:
                     while(  not srcq.empty() ):
@@ -359,6 +361,11 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 1.0 ):
                         print( 'logo 文件！' )
                         dcdt3 = dcdt1
                         waitlogo = 1
+                        flogo = open( 'D:\\python_learn\\logo\\005.txt', 'r' )
+                        print( flogo.read() )
+                        time.sleep( 1.5 )
+                        flogo = open( 'D:\\python_learn\\logo\\05.txt', 'r' )
+                        print( flogo.read() )
                 if  waitlogo:
                     if dcdt1 - dcdt3 > 10:
                         waitlogo = 0
@@ -433,8 +440,8 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 1.0 ):
                     time.sleep( 0.1 )
             except queue.Empty:
                 break
-        if bmark != 'c':
-            bmark = input( 'Press to Go on!' )
+        #if bmark != 'c':
+        #    bmark = input( 'Press to Go on!' )
 
         if dcdend == 1:
             break
