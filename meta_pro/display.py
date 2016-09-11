@@ -13,7 +13,7 @@ class disPlay():
         self.doutq = doutq
         self.root = Tk()
         self.root.title( '通信数据破解程序——王文波' )
-        self.root.bind( "refr", self.refresh )
+        #self.root.bind( "refr", self.refresh )
         self.dcdout = Text( self.root,
                             bg = 'black',
                             fg = 'green',
@@ -41,7 +41,7 @@ class disPlay():
     def refresh( self ):
         while( True ):
             try:
-                self.dcdout.insert( "insert", self.doutq.get() )
+                self.dcdout.insert( "insert", self.doutq.get( block = 0 ) )
                 self.root.update()
             except Exception:
                 return

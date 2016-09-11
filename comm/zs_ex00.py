@@ -82,7 +82,7 @@ def main():
  
 def HEXDProc(txt1):
     if HexD.get():
-        s = txt1.get('1.0','end')
+        s = txt0.get('1.0','end')
         s = ''.join('%02X' %i for i in [ord(c) for c in s])
         txt1.delete('1.0','end')
         txt1.insert("insert",s)

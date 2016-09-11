@@ -7,47 +7,81 @@ import decode_tt as dcd
 #import decode as dcd
 import intcp_record_dcd1_tt as intcpt 
 import display as dsP
+from tkinter import *
 
 
-def main():
-    dataq = queue.Queue()
-    ctrlq = queue.Queue()
-    srcq = queue.Queue()
-    doutq = queue.Queue()
-    isOpen = threading.Event()
-    dsptask = dsP.disPlay( doutq )
-    dsp = threading.Thread( target = dsptask.root.mainloop() )
-    #dsp = threading.Thread( target = dsP.dsp, args = ( doutq, )  )
-    interp = threading.Thread( target = intcpt.intercept, args = ( dataq, ctrlq )  )
-    #interp = threading.Thread( target = intercept, args = ( dataq, ctrlq )  )
-    rcd = threading.Thread( target = intcpt.record, args = ( dataq, srcq, ctrlq, '序列化测试！' )  )
-    #rcd = threading.Thread( target = record, args = ( dataq, srcq, ctrlq, '序列化测试！' )  )
-    istop = threading.Thread( target = intcpt.stop, args = ( ctrlq, )  )
-    #istop = threading.Thread( target = stop, args = ( ctrlq, )  )
-    dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
-    idecode = threading.Thread( target = dcd.i_dcd, args = ( dfname, ctrlq, srcq )  )
-    dsp.start()
-    interp.start()
-    rcd.start()
-    idecode.start()
-    istop.start()
-    interp.join()
-    rcd.join()
-    idecode.join()
-    istop.join()
-    dsp.join()
-    print( 'Success!' )
+fps = 0.05
+#fps，GUI界面刷新周期，这里暂定0.05，也就是说频率为每秒20次
+def refresh( event ):
+    while( True ):
+        print( 'MMMMMMMMMMMMMM' )
+        try:
+            dcdout.insert( "insert", doutq.get( block = 0 ) )
+            root.update()
+            '''
+            s = txt1.get('1.0','end')
+            s = ''.join('%02X' %i for i in [ord(c) for c in s])
+            txt1.delete('1.0','end')
+            txt1.insert("insert",s)
+            '''       
+        except Exception:
+            return
+'''
+def mkevn():
+    while( True ):
+        if input( 'd' ) == 'd':
+            root.event_generate( "<<Refr>>" )
+        time.sleep(1)
+'''
 
+def mk_evn():
+    i = 0
+    while( ctrlq.empty() and i < 300 ):
+        if not doutq.empty():
+            root.event_generate( "<<Refr>>" )
+        time.sleep( fps )
+        i += 1
+
+
+dataq = queue.Queue()
+ctrlq = queue.Queue()
+srcq = queue.Queue()
+doutq = queue.Queue()
+isOpen = threading.Event()
+root = Tk()
+root.title( '通信数据破解程序——王文波' )
+#self.root.bind( "refr", self.refresh )
+dcdout = Text( root,
+                    #bg = 'black',
+                    bg = 'white',
+                    fg = 'green',
+                    width = 115,
+                    height = 40,
+                    border = 5,
+                    )
+dcdout.grid( row = 0,
+                    column = 0,
+                    #padx = 20,
+                    #pady = 20,
+                    )
+dataout = Text( root,
+                    bg = 'black',
+                    fg = 'green',
+                    width = 70,
+                    height = 40,
+                    border = 5,
+                    )
+dataout.grid( row = 0,
+                    column = 1,
+                    #padx = 20,
+                    #pady = 20,
+                    )
+root.bind( "<<Refr>>", refresh )
+#dsp = threading.Thread( target = dsptask.root.mainloop() )
+#dsp = threading.Thread( target = dsP.dsp, args = ( doutq,)  )
 def main_tt():
-    #下面代码块将测试在本文件中以解析文件的方式运行decode模块
-    dataq = queue.Queue()
-    ctrlq = queue.Queue()
-    srcq = queue.Queue()
-    doutq = queue.Queue()
-    isOpen = threading.Event()
-    dsptask = dsP.disPlay( doutq )
-    dsp = threading.Thread( target = dsptask.root.mainloop() )
-    #dsp = threading.Thread( target = dsP.dsp, args = ( doutq,)  )
+    isOpen.clear()
+    mke = threading.Thread( target = mk_evn, )
     istop = threading.Thread( target = intcpt.stop, args = ( ctrlq, )  )
     fname = 'D:\\python_learn\\data\\intcp_im011515.ire'
     dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
@@ -61,15 +95,14 @@ def main_tt():
                                             0.6,
                                             )
                                 )
-    dsp.start()
     idecode.start()
+    mke.start()
     istop.start()
+    root.mainloop()
     idecode.join()
-    dsp.join()
+    mke.join()
     istop.join()
 
 if __name__ == '__main__':
-    #main_tt()，用作验证性测试
     main_tt()
-    #main()
 
