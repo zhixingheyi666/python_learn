@@ -239,7 +239,9 @@ def zk( s_byte, dbfq ):
 
 
 
-def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
+def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, dsptask = 0, doutq = 0, zkaddr = 20, tdelay = 0.5 ):
+    #doutq,传入队列参数，生成的用来显示的数据将被写入此队列
+    #dsptask,传入GUI界面实例
     #s_que = queue.Queue()
     #如果需要临时重设刷新时间间隔
     #if input( 'Press anyelse to go on Or \'s\' to Reset args!' ) == 's':
@@ -311,7 +313,7 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                         #time.sleep( 0.3 )
                     break
                 except EOFError:
-                    print( '已经解析到文件末尾！' )
+                    doutq.put( '已经解析到文件末尾！' )
                     dcdend = 1
                     break
         #head = skhead( s_byte, zkaddr ) 
@@ -323,7 +325,7 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
             head = skhead( s_byte, zkaddr ) 
             if head[1] != 0:
                 dbfq.put( s_byte[ :head[1] ] )
-                #print( s_byte[ :head[1] ] )
+                #doutq.put( s_byte[ :head[1] ] )
                 if head[0] == 0:
                     s_byte = s_byte[ head[1]: ]
                     break
@@ -336,7 +338,7 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                     s_byte = s_byte[ ddflag[1]: ]
                 else:
                     dbfq.put( s_byte[ :18] )
-                    print( s_byte[ :18] )
+                    #doutq.put( s_byte[ :18] )
                     s_byte = s_byte[ 1: ]
             #真空计解析成功，砍掉解析成功部分，继续查找后面
             #解析失败，砍掉这个head，继续查找后面
@@ -346,9 +348,10 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                     s_byte = s_byte[ dzflag[1]: ]
                 else:
                     dbfq.put( s_byte[ :18] )
-                    print( s_byte[ :18] )
+                    doutq.put( s_byte[ :18] )
                     s_byte = s_byte[ 1: ]
-        while( 1 ):
+        #下面程序段，原本print输出到控制台的，更改为输出到队列以供GUI线程显示之用
+        while( 1 and isinstance( doutq, queue.Queue ) ):
             try:
                 lll = dbfq.get( block = 0 )
                 #for illl in lll:
@@ -360,16 +363,16 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                     #60秒后，输出logo,保持10秒，然后转换成 即刻刷新模式
                     if dcdt1 -dcdt00 > 60:
                         rightnow = 1
-                        print( 'logo 文件！' )
+                        doutq.put( 'logo 文件！' )
                         dcdt3 = dcdt1
                         waitlogo = 1
                         flogo = open( 'D:\\python_learn\\logo\\005.txt', 'r' )
-                        print( flogo.read() )
-                        print( '\n' )
-                        print( '\n' )
+                        doutq.put( flogo.read() )
+                        doutq.put( '\n' )
+                        doutq.put( '\n' )
                         time.sleep( 1.5 )
                         flogo = open( 'D:\\python_learn\\logo\\05.txt', 'r' )
-                        print( flogo.read() )
+                        doutq.put( flogo.read() )
                 if  waitlogo:
                     if dcdt1 - dcdt3 > 10:
                         waitlogo = 0
@@ -401,70 +404,70 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                         if lll[1] == 0 and not drsp:
                             dct = 0
                             drsp = 2
-                            print( '\n\n\n' )
-                            print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
+                            doutq.put( '\n\n\n' )
+                            doutq.put('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
                                     % lll[2])
-                            #print( '\n' )
-                            print( '[读.请求]' )
-                            print( '            目标参数：    %02xH' % lll[3] )
+                            #doutq.put( '\n' )
+                            doutq.put( '[读.请求]' )
+                            doutq.put( '            目标参数：    %02xH' % lll[3] )
                             mmaddr = lll[2]
                         elif lll[1] == 1 and drsp:
-                            #print( '\n' )
-                            print( '[读.响应]' )
+                            #doutq.put( '\n' )
+                            doutq.put( '[读.响应]' )
                             if lll[5] > 200:
-                                print( '            实时温度：<探头未安装>            设备状态：  %s'\
+                                doutq.put( '            实时温度：<探头未安装>            设备状态：  %s'\
                                     % lll[8] )
                             else:
-                                print( '            实时温度：   %4.2f                设备状态：  %s'\
+                                doutq.put( '            实时温度：   %4.2f                设备状态：  %s'\
                                         % ( lll[5], lll[8]) )
-                            #print( '\n' )
-                            print( '            SV:   %4.2f         MV：  %4.2f           ArV:    %4.2f'\
+                            #doutq.put( '\n' )
+                            doutq.put( '            SV:   %4.2f         MV：  %4.2f           ArV:    %4.2f'\
                                     % ( lll[6], lll[7], lll[4] ))
-                            #print( '\n' )
-                            #print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
-                            print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                            #doutq.put( '\n' )
+                            #doutq.put( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                            doutq.put( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
                         if lll[1] == 2 and not drsp:
                             dct = 0
                             drsp = 2
-                            print( '\n\n\n' )
-                            print('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
+                            doutq.put( '\n\n\n' )
+                            doutq.put('‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.温控仪╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
                                     % lll[2])
-                            #print( '\n' )
-                            print( '[写.请求]' )
-                            print( '            目标参数：    %02xH                  写入值：      %4.2f'\
+                            #doutq.put( '\n' )
+                            doutq.put( '[写.请求]' )
+                            doutq.put( '            目标参数：    %02xH                  写入值：      %4.2f'\
                                     % ( lll[3], lll[4] ) )
                             mmaddr = lll[2]
                         elif lll[1] == 3 and drsp:
-                            print( '[写.响应]' )
+                            doutq.put( '[写.响应]' )
                             if lll[5] > 200:
-                                print( '            实时温度：<探头未安装>            设备状态：  %s'\
+                                doutq.put( '            实时温度：<探头未安装>            设备状态：  %s'\
                                     % lll[8] )
                             else:
-                                print( '            实时温度：   %4.2f                设备状态：  %s'\
+                                doutq.put( '            实时温度：   %4.2f                设备状态：  %s'\
                                         % ( lll[5], lll[8]) )
-                            #print( '\n' )
-                            print( '            SV:   %4.2f         MV：  %4.2f           ArV:    %4.2f'\
+                            #doutq.put( '\n' )
+                            doutq.put( '            SV:   %4.2f         MV：  %4.2f           ArV:    %4.2f'\
                                     % ( lll[6], lll[7], lll[4] ))
-                            #print( '\n' )
-                            #print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
-                            print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                            #doutq.put( '\n' )
+                            #doutq.put( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                            doutq.put( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
                     elif lll[0] == 1:
                         if lll[1] == 0 and not drsp:
                             dct = 0
                             drsp = 2
-                            print( '\n\n\n' )
-                            print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.真空计╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
+                            doutq.put( '\n\n\n' )
+                            doutq.put( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥╲╲%02d号.真空计╱╱‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥'\
                                     % lll[2])
-                            #print( '\n' )
-                            print( '[读.请求]' )
-                            print( '            目标参数：     %02xH                  数据量：      %d  '\
+                            #doutq.put( '\n' )
+                            doutq.put( '[读.请求]' )
+                            doutq.put( '            目标参数：     %02xH                  数据量：      %d  '\
                                     % ( lll[3], lll[4] ))
                         elif lll[1] == 1 and drsp:
-                            print( '[读.响应]' )
-                            print( '             真空度A：   %.4fE%d                 真空度B：  %.4fE%d'\
+                            doutq.put( '[读.响应]' )
+                            doutq.put( '             真空度A：   %.4fE%d                 真空度B：  %.4fE%d'\
                                     %( lll[4][0], lll[4][1], lll[5][0], lll[5][1] ))
-                            #print( '\n' )
-                            print( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
+                            #doutq.put( '\n' )
+                            doutq.put( '‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥‥' )
                     dcdt0 = dcdt1 
                     #drsp 只有一个生存周期，如果因为drsp穿透，一次执行流完成
                     #我们就立即封闭他
@@ -475,6 +478,8 @@ def i_dcd( dfname, ctrlq, srcq = 0, srcf = 0, zkaddr = 20, tdelay = 0.5 ):
                 df.close()
                 if srcf != 0:
                     time.sleep( 0.1 )
+                if dsptask != 0:
+                    dsptask.root.event_generate( "refr" )
             except queue.Empty:
                 break
         #if bmark != 'c':

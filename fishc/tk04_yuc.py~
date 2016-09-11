@@ -20,7 +20,7 @@ photof2 = PhotoImage( file = 'd:\\python_learn\\images\\frame2bg.gif' )
 photog1 = PhotoImage( file = 'd:\\python_learn\\images\\groupbg.gif' )
 
 frame1 = Frame( root )
-frame2 = Frame( root )
+frame2 = Frame( root, bg = 'black', fg = 'green' )
 frame3 = Frame( frame1  )
 
 frame1.pack( padx = 10, ipadx = 100)

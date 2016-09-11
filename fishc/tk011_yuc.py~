@@ -7,10 +7,13 @@ root = Tk()
 photobg = PhotoImage( file = 'd:\\python_learn\\images\\bg02.gif' )
 textlabel = Label( root, text = '请务必认真阅:\n读操作规程!', justify = LEFT,\
                     padx = 10, pady = 10,
-                    image = photobg,
+                    #image = photobg,
                     compound = CENTER,
                     font = ( '华文行楷', 20 ),
-                    fg = 'white')
+                    #fg = 'white'
+                    fg = 'green'
+                    bg = 'black'
+                    )
 textlabel.pack( side = LEFT )
 
 #photo = PhotoImage( file = 'd:\\python_learn\\images\\wb01.gif' )

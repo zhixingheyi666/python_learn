@@ -1,0 +1,76 @@
+# -- coding: utf-8 --
+
+import serial, time, queue
+import pickle, struct 
+import threading
+import decode_tt as dcd
+#import decode as dcd
+import intcp_record_dcd1_tt as intcpt 
+import display as dsP
+
+
+def main():
+    dataq = queue.Queue()
+    ctrlq = queue.Queue()
+    srcq = queue.Queue()
+    doutq = queue.Queue()
+    isOpen = threading.Event()
+    dsptask = dsP.disPlay( doutq )
+    dsp = threading.Thread( target = dsptask.root.mainloop() )
+    #dsp = threading.Thread( target = dsP.dsp, args = ( doutq, )  )
+    interp = threading.Thread( target = intcpt.intercept, args = ( dataq, ctrlq )  )
+    #interp = threading.Thread( target = intercept, args = ( dataq, ctrlq )  )
+    rcd = threading.Thread( target = intcpt.record, args = ( dataq, srcq, ctrlq, '序列化测试！' )  )
+    #rcd = threading.Thread( target = record, args = ( dataq, srcq, ctrlq, '序列化测试！' )  )
+    istop = threading.Thread( target = intcpt.stop, args = ( ctrlq, )  )
+    #istop = threading.Thread( target = stop, args = ( ctrlq, )  )
+    dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
+    idecode = threading.Thread( target = dcd.i_dcd, args = ( dfname, ctrlq, srcq )  )
+    dsp.start()
+    interp.start()
+    rcd.start()
+    idecode.start()
+    istop.start()
+    interp.join()
+    rcd.join()
+    idecode.join()
+    istop.join()
+    dsp.join()
+    print( 'Success!' )
+
+def main_tt():
+    #下面代码块将测试在本文件中以解析文件的方式运行decode模块
+    dataq = queue.Queue()
+    ctrlq = queue.Queue()
+    srcq = queue.Queue()
+    doutq = queue.Queue()
+    isOpen = threading.Event()
+    dsptask = dsP.disPlay( doutq )
+    dsp = threading.Thread( target = dsptask.root.mainloop() )
+    #dsp = threading.Thread( target = dsP.dsp, args = ( doutq,)  )
+    istop = threading.Thread( target = intcpt.stop, args = ( ctrlq, )  )
+    fname = 'D:\\python_learn\\data\\intcp_im011515.ire'
+    dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
+    idecode = threading.Thread( target = dcd.i_dcd,
+                                args = ( dfname,
+                                            ctrlq,
+                                            0,
+                                            fname,
+                                            dsptask,
+                                            doutq,
+                                            14,
+                                            0.6,
+                                            )
+                                )
+    dsp.start()
+    idecode.start()
+    istop.start()
+    idecode.join()
+    dsp.join()
+    istop.join()
+
+if __name__ == '__main__':
+    #main_tt()，用作验证性测试
+    main_tt()
+    #main()
+
