@@ -55,11 +55,11 @@ def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
     ftell = 0
     print( ctrlq.empty(),'  record' )
     while( ctrlq.empty() or not dataq.empty()  ):
-#        print( ctrlq.empty(),'  record' )
+        #print( ctrlq.empty(),'  record' )
         try:
             d = dataq.get( block = 0 )
         except Exception:
-#            print( 'Empty!' )
+            #print( 'Empty!' )
             continue
         pickle.dump( d, f )
         srcq.put( d )

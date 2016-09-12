@@ -11,8 +11,9 @@ from tkinter import *
 
 
 fps = 0.05
-cnt = 50
 #fps，GUI界面刷新周期，这里暂定0.05，也就是说频率为每秒20次
+cnt = 50
+#界面缓存
 def refresh( event ):
     global cnt
     while( True ):

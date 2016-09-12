@@ -6,17 +6,24 @@ import threading
 import decode_tt as dcd
 #import decode as dcd
 import intcp_record_dcd1_tt as intcpt 
-import display as dsP
 from tkinter import *
 
 
 fps = 0.05
 #fps，GUI界面刷新周期，这里暂定0.05，也就是说频率为每秒20次
-def refresh( event ):
+cnto = 50
+cnta = 50
+#界面缓存
+def refresho( event ):
+    global cnto
     while( True ):
-        print( 'MMMMMMMMMMMMMM' )
+        if cnto:
+            cnto -= 1
         try:
-            dcdout.insert( "insert", doutq.get( block = 0 ) )
+            if not cnto:
+                #print( 'MMMMMMMMMMMMMM' )
+                dcdout.delete( 1.0, 2.0 )
+            dcdout.insert( "insert", o_doutq.get( block = 0 ) )
             root.update()
             '''
             s = txt1.get('1.0','end')
@@ -25,28 +32,40 @@ def refresh( event ):
             txt1.insert("insert",s)
             '''       
         except Exception:
+            #print( 'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSss' )
             return
-'''
-def mkevn():
+
+def refresha( event ):
+    global cnta
     while( True ):
-        if input( 'd' ) == 'd':
-            root.event_generate( "<<Refr>>" )
-        time.sleep(1)
-'''
+        if cnta:
+            cnta -= 1
+        try:
+            if not cnta:
+                #print( 'MMMMMMMMMMMMMM' )
+                dataout.delete( 1.0, 2.0 )
+            dataout.insert( "insert", a_doutq.get( block = 0 ) )
+            root.update()
+        except Exception:
+            #print( 'SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSss' )
+            return
 
 def mk_evn():
-    i = 0
-    while( ctrlq.empty() and i < 300 ):
-        if not doutq.empty():
-            root.event_generate( "<<Refr>>" )
+    while( ctrlq.empty() ):
+        #print( 'MMMMMMMMMMMMMM' )
+        #print( o_doutq.empty() ) 
+        if not o_doutq.empty():
+            root.event_generate( "<<Refro>>" )
+        if not dataq.empty():
+            root.event_generate( "<<Refra>>" )
         time.sleep( fps )
-        i += 1
 
-
+a_doutq = queue.Queue()
+o_doutq = queue.Queue()
+#a_doutq,o_doutq用来存储向两个Text Widget输出的文本信息
 dataq = queue.Queue()
 ctrlq = queue.Queue()
 srcq = queue.Queue()
-doutq = queue.Queue()
 isOpen = threading.Event()
 root = Tk()
 root.title( '通信数据破解程序——王文波' )
@@ -76,12 +95,15 @@ dataout.grid( row = 0,
                     #padx = 20,
                     #pady = 20,
                     )
-root.bind( "<<Refr>>", refresh )
-#dsp = threading.Thread( target = dsptask.root.mainloop() )
-#dsp = threading.Thread( target = dsP.dsp, args = ( doutq,)  )
-def main_tt():
+root.bind( "<<Refro>>", refresho )
+root.bind( "<<Refra>>", refresha )
+
+def main():
     isOpen.clear()
     mke = threading.Thread( target = mk_evn, )
+    #前面是图形界面的事件生成函数，后面是后台串口监听和数据解析函数
+    #interp = threading.Thread( target = intcpt.intercept, args = ( dataq, ctrlq )  )
+    #rcd = threading.Thread( target = intcpt.record, args = ( dataq, srcq, ctrlq, '序列化测试！' )  )
     istop = threading.Thread( target = intcpt.stop, args = ( ctrlq, )  )
     fname = 'D:\\python_learn\\data\\intcp_im011515.ire'
     dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
@@ -90,19 +112,25 @@ def main_tt():
                                             ctrlq,
                                             0,
                                             fname,
-                                            doutq,
+                                            o_doutq,
                                             14,
                                             0.6,
                                             )
                                 )
     idecode.start()
     mke.start()
+    #rcd.start()
+    #interp.start()
     istop.start()
     root.mainloop()
+    #interp.join()
+    #rcd.join()
     idecode.join()
     mke.join()
     istop.join()
+    print( 'Success!' )
+
 
 if __name__ == '__main__':
-    main_tt()
+    main()
 
