@@ -1,0 +1,24 @@
+2017-02-01 15:24:58,453 INFO    : This is INFORMATION.
+2017-02-01 15:24:58,453 WARNING : This is WARNINF message.
+2017-02-01 15:24:58,454 ERROR   : This is error message.
+2017-02-01 15:24:58,454 CRITICAL: This is fatal message, it is same as logger.critical
+2017-02-01 15:24:58,454 CRITICAL: This is critical message
+2017-02-01 15:31:48,423 DEBUG   : This is DEBUG info.
+2017-02-01 15:31:48,424 INFO    : This is INFORMATION.
+2017-02-01 15:31:48,424 WARNING : This is WARNINF message.
+2017-02-01 15:31:48,424 ERROR   : This is error message.
+2017-02-01 15:31:48,425 CRITICAL: This is fatal message, it is same as logger.critical
+2017-02-01 15:31:48,425 CRITICAL: This is critical message
+2017-02-01 15:33:59,382 DEBUG   : This is DEBUG info.
+2017-02-01 15:33:59,383 INFO    : This is INFORMATION.
+2017-02-01 15:33:59,383 WARNING : This is WARNINF message.
+2017-02-01 15:33:59,384 ERROR   : This is error message.
+2017-02-01 15:33:59,384 CRITICAL: This is fatal message, it is same as logger.critical
+2017-02-01 15:33:59,385 CRITICAL: This is critical message
+2017-02-01 15:38:33,285 DEBUG   : This is Debug
+2017-02-01 15:42:32,527 DEBUG   : This is DEBUG info.
+2017-02-01 15:42:32,528 INFO    : This is INFORMATION.
+2017-02-01 15:42:32,528 WARNING : This is WARNINF message.
+2017-02-01 15:42:32,528 ERROR   : This is error message.
+2017-02-01 15:42:32,529 CRITICAL: This is fatal message, it is same as logger.critical
+2017-02-01 15:42:32,529 CRITICAL: This is critical message

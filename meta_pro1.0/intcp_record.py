@@ -1,0 +1,126 @@
+# -- coding: utf-8 --
+'''
+这是一个侦听宇电516P,温控仪与触摸屏通信的程序。
+    程序构架：
+        端口监听线程:
+            不间断监听COM口，记录任何线上数据
+        原始数据记录线程：
+            将监听来的数据附加必要信息，然后记录到文件
+        数据分析线程：
+            记录到文件的数据进行解析，输出分析结果到指定文件
+        GUI线程：
+            提供界面，方便小白操作
+'''
+import serial, time, queue
+import pickle, struct 
+import threading
+#import decode as dcd
+import decode as dcd
+
+##监听端口的函数
+def intercept( dataq, ctrlq, iport = 'COM3', timeout = 0 ):
+    com = serial.Serial( port = iport, timeout = 0 )
+    data = b''
+    t0 = time.clock()
+    print( ctrlq.empty(),'  intercept' )
+    while( ctrlq.empty() ):
+#        print( ctrlq.empty(),'  intercept' )
+        l = com.read( 1000 )
+        t1 = time.clock()
+        if l !=  b'':
+            tt0 = t1 - t0 
+            if tt0 > 0.01 or len( data ) >= 10:
+                dataq.put( ( data, t1 ) )
+                data = l
+            else:
+                data += l
+            t0 = t1
+
+#def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
+def record( dataq, srcq, ctrlq, a_doutq, doc = 'Unset!!'):
+    #dfname = 'c:\\python_learn\\data\\dcd_intcp' + time.strftime( '%S' ) + '.txt'
+    #fname = 'c:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
+    fname = 'd:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
+    bfname = 'd:\\python_learn\\data\\intcp_imnum' + time.strftime('%H%M%S') + '.txt'
+    f = open( fname, 'wb' )
+    pickle.dump( doc.encode( 'utf-8' ), f )
+    f.close()
+    ##写入文件头
+    '''
+    if doc != '':
+        f = open( fname, 'wb' )
+        f.write( doc.encode( 'utf-8' ) )    
+        f.close()
+    '''
+    f =  open( fname, 'ab' )
+    bf =  open( bfname, 'a' )
+    i = 0
+    ftell = 0
+    print( ctrlq.empty(),'  record\n' )
+    #a_doutq.put( ctrlq.empty(),'  record\n' )
+    while( ctrlq.empty() or not dataq.empty()  ):
+        #print( ctrlq.empty(),'  record' )
+        try:
+            d = dataq.get( block = 0 )
+        except Exception:
+            #print( 'Empty!' )
+            continue
+        pickle.dump( d, f )
+        srcq.put( d )
+        #直接解析到GUI
+        dlen = len( d[0] )
+        dstr = 'B' * dlen
+        drev = struct.unpack( dstr, d[0] )
+        drev_str = list( map( lambda x: '{0:0>2x}'.format( x ), drev) ) 
+        #drstr = '\t'  
+        drstr = ''  
+        for dj in drev_str:
+            drstr = drstr + ' ' + dj  
+        a_doutq.put( drstr + '\n' ) 
+        #a_doutq.put( '      >>\n' )        #+ str( lst[1] ) + '\n' ) 
+        bf.write( drstr + '\n' )
+        i += 1
+        if i % 10 == 0:
+            f.close()
+            bf.close()
+            bf =  open( bfname, 'a' )
+            f =  open( fname, 'ab' )
+    f.close()
+    bf.close()
+
+def stop( ctrlq ):
+    while( ctrlq.empty() ):
+        s = input( 'Press \'s\' to stop this programme:' )
+        print( ctrlq.empty() )
+        print( 'RUN' )
+        print( s )
+        if s == 's':
+            print( 'To stop' )
+            ctrlq.put( 1 )
+            print( ctrlq.empty() )
+        else:
+            time.sleep( 5 )
+
+
+
+def main():
+    dataq = queue.Queue()
+    ctrlq = queue.Queue()
+    srcq = queue.Queue()
+    interp = threading.Thread( target = intercept, args = ( dataq, ctrlq )  )
+    rcd = threading.Thread( target = record, args = ( dataq, srcq, ctrlq, '序列化测试！' )  )
+    istop = threading.Thread( target = stop, args = ( ctrlq, )  )
+    dfname = 'd:\\python_learn\\data\\dcd_intcp' + time.strftime( '%H%M%S' ) + '.txt'
+    idecode = threading.Thread( target = dcd.i_dcd, args = ( dfname, ctrlq, srcq )  )
+    interp.start()
+    rcd.start()
+    idecode.start()
+    istop.start()
+    interp.join()
+    rcd.join()
+    idecode.join()
+    istop.join()
+    print( 'Success!' )
+
+if __name__ == '__main__':
+    main()

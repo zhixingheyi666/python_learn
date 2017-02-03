@@ -35,7 +35,9 @@ def intercept( dataq, ctrlq, iport = 'COM3', timeout = 0 ):
             else:
                 data += l
             t0 = t1
-def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
+
+#def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
+def record( dataq, srcq, ctrlq, a_doutq, doc = 'Unset!!'):
     #dfname = 'c:\\python_learn\\data\\dcd_intcp' + time.strftime( '%S' ) + '.txt'
     #fname = 'c:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
     fname = 'd:\\python_learn\\data\\intcp_im' + time.strftime('%H%M%S') + '.ire'
@@ -51,9 +53,11 @@ def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
         f.close()
     '''
     f =  open( fname, 'ab' )
+    bf =  open( bfname, 'a' )
     i = 0
     ftell = 0
-    print( ctrlq.empty(),'  record' )
+    print( ctrlq.empty(),'  record\n' )
+    #a_doutq.put( ctrlq.empty(),'  record\n' )
     while( ctrlq.empty() or not dataq.empty()  ):
         #print( ctrlq.empty(),'  record' )
         try:
@@ -63,41 +67,26 @@ def record( dataq, srcq, ctrlq, doc = 'Unset!!'):
             continue
         pickle.dump( d, f )
         srcq.put( d )
+        #直接解析到GUI
+        dlen = len( d[0] )
+        dstr = 'B' * dlen
+        drev = struct.unpack( dstr, d[0] )
+        drev_str = list( map( lambda x: '{0:0>2x}'.format( x ), drev) ) 
+        #drstr = '\t'  
+        drstr = ''  
+        for dj in drev_str:
+            drstr = drstr + ' ' + dj  
+        a_doutq.put( drstr + '\n' ) 
+        #a_doutq.put( '      >>\n' )        #+ str( lst[1] ) + '\n' ) 
+        bf.write( drstr + '\n' )
         i += 1
         if i % 10 == 0:
             f.close()
-            #f =  open( fname, 'ab' )
-            ##以下代码仅作为本次验证使用，实际操作的时候，可以直接在端口线程为分析
-            ##进程再单独建立一个队列。本进程仅作为原始数据备份。
-            f =  open( fname, 'rb' )
-            bf =  open( bfname, 'a' )
-            f.seek( ftell )
-            for x in range( 10 ):
-                print( x )
-                lst = pickle.load( f ) 
-                try:
-                    llen = len( lst[0] )
-                except TypeError:
-                    print( '\tTypeError' )
-                    print( '\tlst:\t',lst)
-                    print( '\tlst[0]:\t',lst[0])
-                    continue
-                sstr = 'B' * llen
-                rev = struct.unpack( sstr, lst[0] )
-                rev_str = list( map( lambda x: '{0:0>2x}'.format( x ), rev) ) 
-                rstr = '\t'  
-                for j in rev_str:
-                    rstr = rstr + ' ' + j  
-                print( rstr,'----', lst[1] ) 
-                bf.write( rstr )
-                #print( rev,'----', lst[1] )
-                #print( len( tt[0] ) )
-                #print( pickle.load( f ) )
-            ftell = f.tell()
             bf.close()
-            f.close()
+            bf =  open( bfname, 'a' )
             f =  open( fname, 'ab' )
     f.close()
+    bf.close()
 
 def stop( ctrlq ):
     while( ctrlq.empty() ):
