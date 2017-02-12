@@ -1,0 +1,17 @@
+# -*- coding: utf-8 -*-
+
+import time
+
+
+print('Now at mprint.py     >>>>>>>>>>>>>>>>>>>>>>>>>')
+L = list( map( chr, range( ord('a'), ord('z') + 1) ) )
+print( L )
+print( 'L[-3 : -10: -1]:', L[-3 : -10: -1] )
+print( 'L[-3 : -10: -2]:', L[-3 : -10: -2] )
+#s = input( 'Please input M:' )
+#subprocess 调用本段，不支持交互式用input获取输入值，及时stdin设置为PIPE也无用
+#还是不明白stdin.PIPE有什么用，怎么用？
+s = 'a' 
+#time.sleep(62)
+if s != 'M':
+    print( 'stdin OK!' )

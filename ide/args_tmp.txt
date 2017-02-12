@@ -1,0 +1,9 @@
+print('Access success!')
+L = ['e','b','a']
+L.sort()
+print(L)
+L.pop()
+print(L)
+list(range(3,9))
+print('END')
+exit()

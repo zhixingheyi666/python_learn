@@ -1,0 +1,62 @@
+# -*- coding: utf-8 -*-
+
+import re
+from urllib import request
+import urllib
+
+from collections import deque
+
+Sq = deque()
+Vis = set()
+
+
+urlst = [ "https://www.yandex.com/",
+            "http://www.baidu.com",
+            "http://www.1688.com",
+            "https://www.zhihu.com/question/20271508",
+            "http://www.cnblogs.com/wupeiqi/articles/4731930.html",
+            "http://www.baidu.com/s?",
+            'http://news.dbanotes.net'
+            ]
+
+Sq.append( urlst[6] )
+cnt = 0
+while Sq:
+    url = Sq.popleft()
+    Vis = { url }
+
+    print( ' Already Sipdered:' + str( cnt ) + '    Spidering ---->   ' + url )
+    try:
+        Op = request.urlopen( url )
+        cnt += 1
+    
+        if 'html' not in  Op.getheader( 'Content-Type' ):
+            #sf:log >>>>add logging common
+            continue
+        try:
+            Dt_t = Op.read().decode( 'utf-8' )
+            Dt = Dt_t.encode( encoding = 'gbk', errors = 'backslashreplace' )
+        except Exception as e:
+            #sf: log
+            continue
+        Lkre = re.compile( 'href="(.+?)"' )
+        Lkt =  Lkre.findall( Dt_t )   
+        for x in Lkt:
+            if 'http' in x and x not in Vis:
+                Sq.append(x)
+                print( 'Adding into the Q---->  ' + x )
+
+    except Exception as e:
+        #sf: log    
+        continue
+                    
+
+
+
+queue = deque( [ 'Eric', 'John', 'Michael' ] )
+queue.append( 'Terry' )
+queue.append( 'Graham' )
+queue.popleft()
+queue.popleft()
+queue
+
