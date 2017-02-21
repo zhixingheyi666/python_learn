@@ -4,9 +4,6 @@
 #import pyodbc
 
 
-import mysql.connector
-import pyodbc
-
 #MYsql configure
 my_config = {
         'user':'root',

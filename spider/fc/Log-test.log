@@ -1,0 +1,693 @@
+2017-02-16 20:55:28,455 - SF: - INFO:
+ttn = 0 
+
+2017-02-16 22:42:18,596 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 15:44:39,298 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 15:48:56,753 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 15:48:56,770 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 15:48:56,773 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 15:50:24,304 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 15:50:24,317 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    print(next(g))
+StopIteration
+2017-02-18 15:50:24,318 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    print(next(g))
+StopIteration
+2017-02-18 16:01:38,097 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 16:01:38,110 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:01:38,111 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:02:15,007 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 16:02:15,019 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 58, in pd
+    next(g)
+StopIteration
+2017-02-18 16:02:15,020 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 58, in pd
+    next(g)
+StopIteration
+2017-02-18 16:04:35,691 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 16:04:35,704 - SF: - INFO:
+iii
+
+2017-02-18 16:04:35,704 - SF: - INFO:
+iii
+
+2017-02-18 16:04:35,704 - SF: - INFO:
+iii
+
+2017-02-18 16:04:35,704 - SF: - INFO:
+iii
+
+2017-02-18 16:04:35,704 - SF: - INFO:
+iii
+
+2017-02-18 16:04:35,704 - SF: - INFO:
+iii
+
+2017-02-18 16:04:35,704 - SF: - INFO:
+iii
+
+2017-02-18 16:04:35,704 - SF: - INFO:
+iii
+
+2017-02-18 16:04:35,705 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 58, in pd
+    next(g)
+StopIteration
+2017-02-18 16:04:35,705 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 58, in pd
+    next(g)
+StopIteration
+2017-02-18 16:04:51,301 - SF: - INFO:
+iii
+
+2017-02-18 16:04:51,302 - SF: - INFO:
+iii
+
+2017-02-18 16:04:51,302 - SF: - INFO:
+iii
+
+2017-02-18 16:04:51,302 - SF: - INFO:
+iii
+
+2017-02-18 16:04:51,302 - SF: - INFO:
+iii
+
+2017-02-18 16:04:51,302 - SF: - INFO:
+iii
+
+2017-02-18 16:04:51,302 - SF: - INFO:
+iii
+
+2017-02-18 16:04:51,302 - SF: - INFO:
+iii
+
+2017-02-18 16:04:51,303 - SF: - INFO:
+iii
+
+2017-02-18 16:04:51,303 - SF: - INFO:
+iii
+
+2017-02-18 16:05:17,590 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 16:05:17,603 - SF: - INFO:
+('again_sql_learn',)
+
+2017-02-18 16:05:17,603 - SF: - INFO:
+('performance_schema',)
+
+2017-02-18 16:05:17,603 - SF: - INFO:
+('sql-learn',)
+
+2017-02-18 16:05:17,603 - SF: - INFO:
+('tsg_import_study01',)
+
+2017-02-18 16:05:17,603 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:05:17,604 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:05:17,604 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:05:17,605 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:05:17,606 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:05:17,607 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:05:28,660 - SF: - INFO:
+(30843, 'https://insights.ubuntu.com/press-centre/', 0)
+
+2017-02-18 16:05:28,661 - SF: - INFO:
+(30841, 'http://www.canonical.com/careers', 0)
+
+2017-02-18 16:05:28,661 - SF: - INFO:
+(30839, 'https://ubuntuforums.org/', 0)
+
+2017-02-18 16:05:28,661 - SF: - INFO:
+(30837, 'https://shop.canonical.com/index.php?cPath=17', 0)
+
+2017-02-18 16:05:28,661 - SF: - INFO:
+(30835, 'https://wiki.ubuntu.com/XenialXerus/ReleaseNotes', 0)
+
+2017-02-18 16:05:28,661 - SF: - INFO:
+(30833, 'https://assets.ubuntu.com/v1/cc66da65-apple-touch-icon-precomposed.png', 0)
+
+2017-02-18 16:05:28,661 - SF: - INFO:
+(30831, 'https://assets.ubuntu.com/v1/5fe4d3c8-apple-touch-icon-114x114-precomposed.png', 0)
+
+2017-02-18 16:05:28,661 - SF: - INFO:
+(30829, 'https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png', 0)
+
+2017-02-18 16:05:28,661 - SF: - INFO:
+(30827, 'https://laravel-china.org/users/5928/votes', 0)
+
+2017-02-18 16:05:28,661 - SF: - INFO:
+(30825, 'https://laravel-china.org/users/5928/topics', 0)
+
+2017-02-18 16:06:00,667 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 16:06:00,682 - SF: - INFO:
+('again_sql_learn',)
+
+2017-02-18 16:06:00,682 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:00,683 - SF: - INFO:
+('performance_schema',)
+
+2017-02-18 16:06:00,683 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:00,683 - SF: - INFO:
+('sql-learn',)
+
+2017-02-18 16:06:00,683 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:00,683 - SF: - INFO:
+('tsg_import_study01',)
+
+2017-02-18 16:06:00,683 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:00,683 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:06:00,685 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:06:00,686 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:06:00,687 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:06:00,688 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:06:00,689 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:06:16,249 - SF: - INFO:
+(30843, 'https://insights.ubuntu.com/press-centre/', 0)
+
+2017-02-18 16:06:16,249 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+(30841, 'http://www.canonical.com/careers', 0)
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+(30839, 'https://ubuntuforums.org/', 0)
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+(30837, 'https://shop.canonical.com/index.php?cPath=17', 0)
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+(30835, 'https://wiki.ubuntu.com/XenialXerus/ReleaseNotes', 0)
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+(30833, 'https://assets.ubuntu.com/v1/cc66da65-apple-touch-icon-precomposed.png', 0)
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+(30831, 'https://assets.ubuntu.com/v1/5fe4d3c8-apple-touch-icon-114x114-precomposed.png', 0)
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+(30829, 'https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png', 0)
+
+2017-02-18 16:06:16,250 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:16,251 - SF: - INFO:
+(30827, 'https://laravel-china.org/users/5928/votes', 0)
+
+2017-02-18 16:06:16,251 - SF: - INFO:
+dfff
+
+2017-02-18 16:06:16,251 - SF: - INFO:
+(30825, 'https://laravel-china.org/users/5928/topics', 0)
+
+2017-02-18 16:06:16,251 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:31,685 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 16:07:31,698 - SF: - INFO:
+('again_sql_learn',)
+
+2017-02-18 16:07:31,698 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:31,698 - SF: - INFO:
+('performance_schema',)
+
+2017-02-18 16:07:31,698 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:31,699 - SF: - INFO:
+('sql-learn',)
+
+2017-02-18 16:07:31,699 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:31,699 - SF: - INFO:
+('tsg_import_study01',)
+
+2017-02-18 16:07:31,699 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:31,700 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:07:31,702 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:07:31,703 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:07:31,704 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:07:31,706 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:07:31,707 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:07:43,311 - SF: - INFO:
+(30843, 'https://insights.ubuntu.com/press-centre/', 0)
+
+2017-02-18 16:07:43,312 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:43,312 - SF: - INFO:
+(30841, 'http://www.canonical.com/careers', 0)
+
+2017-02-18 16:07:43,312 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:43,312 - SF: - INFO:
+(30839, 'https://ubuntuforums.org/', 0)
+
+2017-02-18 16:07:43,313 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:43,313 - SF: - INFO:
+(30837, 'https://shop.canonical.com/index.php?cPath=17', 0)
+
+2017-02-18 16:07:43,314 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:43,314 - SF: - INFO:
+(30835, 'https://wiki.ubuntu.com/XenialXerus/ReleaseNotes', 0)
+
+2017-02-18 16:07:43,315 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:43,315 - SF: - INFO:
+(30833, 'https://assets.ubuntu.com/v1/cc66da65-apple-touch-icon-precomposed.png', 0)
+
+2017-02-18 16:07:43,316 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:43,316 - SF: - INFO:
+(30831, 'https://assets.ubuntu.com/v1/5fe4d3c8-apple-touch-icon-114x114-precomposed.png', 0)
+
+2017-02-18 16:07:43,317 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:43,317 - SF: - INFO:
+(30829, 'https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png', 0)
+
+2017-02-18 16:07:43,318 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:43,318 - SF: - INFO:
+(30827, 'https://laravel-china.org/users/5928/votes', 0)
+
+2017-02-18 16:07:43,319 - SF: - INFO:
+dfff
+
+2017-02-18 16:07:43,320 - SF: - INFO:
+(30825, 'https://laravel-china.org/users/5928/topics', 0)
+
+2017-02-18 16:07:43,320 - SF: - INFO:
+dfff
+
+2017-02-18 16:09:11,114 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 16:09:11,126 - SF: - INFO:
+('again_sql_learn',)
+
+2017-02-18 16:09:11,126 - SF: - INFO:
+('performance_schema',)
+
+2017-02-18 16:09:11,127 - SF: - INFO:
+('sql-learn',)
+
+2017-02-18 16:09:11,127 - SF: - INFO:
+('tsg_import_study01',)
+
+2017-02-18 16:09:11,127 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:09:11,128 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:09:11,130 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:09:11,131 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:09:11,132 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:09:11,133 - SF: - ERROR:
+
+Traceback (most recent call last):
+  File "conn_SQL.py", line 57, in pd
+    next(g)
+StopIteration
+2017-02-18 16:09:28,192 - SF: - INFO:
+(30843, 'https://insights.ubuntu.com/press-centre/', 0)
+
+2017-02-18 16:09:28,193 - SF: - INFO:
+(30841, 'http://www.canonical.com/careers', 0)
+
+2017-02-18 16:09:28,193 - SF: - INFO:
+(30839, 'https://ubuntuforums.org/', 0)
+
+2017-02-18 16:09:28,193 - SF: - INFO:
+(30837, 'https://shop.canonical.com/index.php?cPath=17', 0)
+
+2017-02-18 16:09:28,193 - SF: - INFO:
+(30835, 'https://wiki.ubuntu.com/XenialXerus/ReleaseNotes', 0)
+
+2017-02-18 16:09:28,194 - SF: - INFO:
+(30833, 'https://assets.ubuntu.com/v1/cc66da65-apple-touch-icon-precomposed.png', 0)
+
+2017-02-18 16:09:28,194 - SF: - INFO:
+(30831, 'https://assets.ubuntu.com/v1/5fe4d3c8-apple-touch-icon-114x114-precomposed.png', 0)
+
+2017-02-18 16:09:28,195 - SF: - INFO:
+(30829, 'https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png', 0)
+
+2017-02-18 16:09:28,195 - SF: - INFO:
+(30827, 'https://laravel-china.org/users/5928/votes', 0)
+
+2017-02-18 16:09:28,195 - SF: - INFO:
+(30825, 'https://laravel-china.org/users/5928/topics', 0)
+
+2017-02-18 16:13:27,942 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 16:13:27,956 - SF: - INFO:
+('information_schema',)
+
+2017-02-18 16:13:27,956 - SF: - INFO:
+('again_sql_learn',)
+
+2017-02-18 16:13:27,956 - SF: - INFO:
+('mysql',)
+
+2017-02-18 16:13:27,957 - SF: - INFO:
+('performance_schema',)
+
+2017-02-18 16:13:27,957 - SF: - INFO:
+('spider',)
+
+2017-02-18 16:13:27,957 - SF: - INFO:
+('sql-learn',)
+
+2017-02-18 16:13:27,957 - SF: - INFO:
+('sys',)
+
+2017-02-18 16:13:27,958 - SF: - INFO:
+('tsg_import_study01',)
+
+2017-02-18 16:13:52,232 - SF: - INFO:
+(30844, 'https://github.com/ubuntudesign/www.ubuntu.com/issues/new', 0)
+
+2017-02-18 16:13:52,232 - SF: - INFO:
+(30843, 'https://insights.ubuntu.com/press-centre/', 0)
+
+2017-02-18 16:13:52,233 - SF: - INFO:
+(30842, 'https://insights.ubuntu.com/feed/', 0)
+
+2017-02-18 16:13:52,233 - SF: - INFO:
+(30841, 'http://www.canonical.com/careers', 0)
+
+2017-02-18 16:13:52,233 - SF: - INFO:
+(30840, 'https://wiki.ubuntu.com/IRC/ChannelList', 0)
+
+2017-02-18 16:13:52,233 - SF: - INFO:
+(30839, 'https://ubuntuforums.org/', 0)
+
+2017-02-18 16:13:52,234 - SF: - INFO:
+(30838, 'https://askubuntu.com/', 0)
+
+2017-02-18 16:13:52,234 - SF: - INFO:
+(30837, 'https://shop.canonical.com/index.php?cPath=17', 0)
+
+2017-02-18 16:13:52,235 - SF: - INFO:
+(30836, 'https://wiki.ubuntu.com/YakketyYak/ReleaseNotes', 0)
+
+2017-02-18 16:13:52,235 - SF: - INFO:
+(30835, 'https://wiki.ubuntu.com/XenialXerus/ReleaseNotes', 0)
+
+2017-02-18 16:13:55,239 - SF: - INFO:
+(30834, 'https://assets.ubuntu.com/v1/5ff660b1-global-responsive.css', 0)
+
+2017-02-18 16:13:55,239 - SF: - INFO:
+(30833, 'https://assets.ubuntu.com/v1/cc66da65-apple-touch-icon-precomposed.png', 0)
+
+2017-02-18 16:13:55,239 - SF: - INFO:
+(30832, 'https://assets.ubuntu.com/v1/09460d9a-apple-touch-icon-72x72-precomposed.png', 0)
+
+2017-02-18 16:13:55,239 - SF: - INFO:
+(30831, 'https://assets.ubuntu.com/v1/5fe4d3c8-apple-touch-icon-114x114-precomposed.png', 0)
+
+2017-02-18 16:13:55,240 - SF: - INFO:
+(30830, 'https://assets.ubuntu.com/v1/3361409d-apple-touch-icon-144x144-precomposed.png', 0)
+
+2017-02-18 16:13:55,240 - SF: - INFO:
+(30829, 'https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png', 0)
+
+2017-02-18 16:13:55,240 - SF: - INFO:
+(30828, 'https://assets.ubuntu.com/v1/cb22ba5d-favicon-16x16.png', 0)
+
+2017-02-18 16:13:55,241 - SF: - INFO:
+(30827, 'https://laravel-china.org/users/5928/votes', 0)
+
+2017-02-18 16:13:55,241 - SF: - INFO:
+(30826, 'https://laravel-china.org/users/5928/following', 0)
+
+2017-02-18 16:13:55,242 - SF: - INFO:
+(30825, 'https://laravel-china.org/users/5928/topics', 0)
+
+2017-02-18 16:19:53,806 - SF: - INFO:
+ttn = 0 
+
+2017-02-18 16:19:53,820 - SF: - INFO:
+('information_schema',)
+
+2017-02-18 16:19:53,820 - SF: - INFO:
+('again_sql_learn',)
+
+2017-02-18 16:19:53,820 - SF: - INFO:
+('mysql',)
+
+2017-02-18 16:19:53,820 - SF: - INFO:
+('performance_schema',)
+
+2017-02-18 16:19:53,821 - SF: - INFO:
+('spider',)
+
+2017-02-18 16:19:53,821 - SF: - INFO:
+('sql-learn',)
+
+2017-02-18 16:19:53,821 - SF: - INFO:
+('sys',)
+
+2017-02-18 16:19:53,821 - SF: - INFO:
+('tsg_import_study01',)
+
+2017-02-18 16:20:23,565 - SF: - INFO:
+(30844, 'https://github.com/ubuntudesign/www.ubuntu.com/issues/new', 0)
+
+2017-02-18 16:20:23,565 - SF: - INFO:
+(30843, 'https://insights.ubuntu.com/press-centre/', 0)
+
+2017-02-18 16:20:23,565 - SF: - INFO:
+(30842, 'https://insights.ubuntu.com/feed/', 0)
+
+2017-02-18 16:20:23,566 - SF: - INFO:
+(30841, 'http://www.canonical.com/careers', 0)
+
+2017-02-18 16:20:23,566 - SF: - INFO:
+(30840, 'https://wiki.ubuntu.com/IRC/ChannelList', 0)
+
+2017-02-18 16:20:23,566 - SF: - INFO:
+(30839, 'https://ubuntuforums.org/', 0)
+
+2017-02-18 16:20:23,567 - SF: - INFO:
+(30838, 'https://askubuntu.com/', 0)
+
+2017-02-18 16:20:23,567 - SF: - INFO:
+(30837, 'https://shop.canonical.com/index.php?cPath=17', 0)
+
+2017-02-18 16:20:23,567 - SF: - INFO:
+(30836, 'https://wiki.ubuntu.com/YakketyYak/ReleaseNotes', 0)
+
+2017-02-18 16:20:23,568 - SF: - INFO:
+(30835, 'https://wiki.ubuntu.com/XenialXerus/ReleaseNotes', 0)
+
+2017-02-18 22:22:48,531 - SF: - INFO:
+ttn = 0 
+

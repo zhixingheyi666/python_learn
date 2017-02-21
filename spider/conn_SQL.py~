@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+"""
+define interface to Mysql, make connection
+"""
+
+import pymysql
+from mysql import connector
+
+"""
+if the LOG_sf exist in the current package, just using "import LOG_eg", or codes below
+"""
+from fc.LOG_sf import logger
+try:
+    pass
+except:
+    pass 
+
+#from python_learn.LOG_eg import logger
+
+
+mconf = {
+        'user': 'root',
+        'password': 'sa',     
+        'database': 'spider'       
+        }
+try:
+    mconn = connector.connect( **mconf )
+    cursor = mconn.cursor()
+    
+    try:
+        cursor.execute( 'show databases' )
+        for r in cursor.fetchall():
+            logger.debug( r )
+    except:
+        logger.exception()
+        pass
+except:
+    logger.exception( 'Failure Information!' )
+    logger.info( 'CONN Failure!' )
+    pass
+    
+
+
+    

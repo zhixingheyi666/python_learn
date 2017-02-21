@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+stt = '€'
+try:
+    print( stt )
+except:
+    print( 'encoding error' )
+    pass
+
+
+
+
