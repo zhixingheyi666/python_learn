@@ -1,0 +1,70 @@
+﻿功到自然成
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+复习：近期看的关于编码的资料，和自己在终端做的测试
+
+1、研究特殊字符入库问题。解决python程序按行入库问题。静心研究下这方面问题
+	主要考虑mysql自身的特殊字符
+	编程语言python的特殊字符
+2、转义字符存储哪里去了？比如查找字符串中含有 ‘制表符’，‘回车符’
+@@@python对接mysql的字符转义问题
+·其实这是个普遍问题，就是某种程序语言对接某个数据库的问题
+	更广泛的说，就是两个不融合的体系的信息交换的问题
+
+cursor.execute('insert into test( ttext, mark ) values( \'\\\t\',\'p3.t\') ')
+cursor.execute('insert into test( ttext, mark ) values( \'\\\\t\',\'p4.t\') ')
+cursor.execute('insert into test( ttext, mark ) values( \'\\t\',\'p2.t\') ')
+cursor.execute('insert into test( ttext, mark ) values( \'\t\',\'p1.t\') ')
+cursor.execute('insert into test( ttext, mark ) values( \'\\\M\',\'p3.M\') ')
+SF::     (21, '\\t', 'p4.t', None) --->print  '\t'
+SF::     (22, '\\t', 's2.t', None) --->print  '\t'  
+SF::     (19, '\t', 'p3.t', None)  --->print  '制表符'
+SF::     (23, '\t', 'p2.t', None)  --->print  '制表符'
+SF::     (26, '\t', 'p1.t', None)  --->print  '制表符'
+SF::     (28, '\t', 's1.t', None)  --->print  '制表符'
+SF::     (27, '\\', 's2.0', None)  --->print  '\'
+SF::     (29, '\\M', 'p3.M', None) --->print  '\M'
+
+·\t作为制表符，在python程序中就进行了组装，传递给sql的是这里存在一个制表符	
+	而如果想传递一个\符号进去，不能简单使用\\转义，要使用\\\\来向SQL写入一个\
+	少于四个\都表现为被忽略
+	\\\t的行为可以这样解释：
+	1、python处理：（\\-->\,\t-->制表符）[传递结果]---->SQL(\制表符）[内部编码]
+	2、SQL处理：SQL处理接收到的字符串，会用\去转义制表符，仍然得到制表符
+  		于是SQL(\制表符）结果等价于SQL（制表符）
+	\\\M的行为可以这样解释：
+	1、python处理：（\\-->\,\M-->\M）[传递结果]---->SQL(\\M）[内部编码]
+	2、SQL处理：SQL处理接收到的字符串，会用\去转义\，得到\
+  		于是写入数据库\和M。重新读出时，\用\\表示，于是得到\\M
+		print 显示 \M
+		备注：这里显示了python是如何处理未知转义的，\M是不存在这样的
+		转义组合的，所有python就用\M自身表示\M这个转义组合
+		这样，如果打印\,你print的时候还得用一个\转义\自身
+		print('\\') ----> \
+		反而，如果打印\M,可以
+		直接print('\M')----> \M
+		而不必一定print('\\M')---->\M
+			
+·怎样保证字符串中的\原样写入SQL而不发生语义歧义和变动呢（如上组合了后面的字母t）？
+	原python语句中每个\,用\\\\替换,原理如下
+	1、python处理：（\\-->\,\\-->\）[传递结果]---->SQL(\\）
+	2、SQL处理：SQL处理接收到的字符串，会用\去转义\，仍然得到\
+如果不这样，特殊情况下会失义，例如，原文是字符\和单词text
+	读入python为：'\\text'
+	1、python处理：(\\--->\,text--->text)[传递结果]--->SQL(\text)
+	2、SQL处理：SQL处理接收到的字符串，会用\去转义紧跟其后的字母t，得到制表符
+		最后写入数据库的字符成了：制表符 和 ext
+	可以用原文：\\Must 做对照观察，
+print('\\text')---->\text
+cursor.execute('insert into test( ttext, mark ) values( \'\\text\', \'2.text\')')
+SF::     (30, '\text', '2.text', None)    print ----> 制表符ext
+print('\\Must')---->\Must	 
+cursor.execute('insert into test( ttext, mark ) values( \'\\Must\', \'2.Must\')')
+SF::     (31, 'Must', '2.Must', None)  print ----> Must
+为什么少写入了一个转义字符呢？因为如下
+·SQL会忽略不能识别的转义！！
+	insert into test( ttext, mark ) values( '\M', 's1.M' );
+	最后写入数据库的只有字符M
+··所以综上所述
+	如果向mysql数据库写入转义字符，把python字符串中的\\替换成\\\\可以保证无歧义
+	
+
