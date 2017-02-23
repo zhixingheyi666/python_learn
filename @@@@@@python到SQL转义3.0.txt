@@ -68,3 +68,4 @@ insert into test( ttext, mark ) values( '\M', 's1.M' );
 ··所以综上所述	
         如果向mysql数据库写入转义字符，把python字符串中的\\替换成\\\\可以保证无歧义
 ·这里有一篇文章相佐证，但不知文章中是何种语言，何种数据库（与上面替换有不同，但意思差不多，接下来验证下）
+http://blog.csdn.net/summer1126/article/details/51303734
