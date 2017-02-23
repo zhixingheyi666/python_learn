@@ -45,7 +45,7 @@ SF::     (29, '\\M', 'p3.M', None) --->print  '\M'
 		而不必一定print('\\M')---->\M
 			
 ·怎样保证字符串中的\原样写入SQL而不发生语义歧义和变动呢（如上组合了后面的字母t）？
-	原python语句中每个\,用\\\\替换,原理如下
+	原python语句中每个\,用\\\\替换（s.replace( '\\', '\\\\'）,原理如下
 	1、python处理：（\\-->\,\\-->\）[传递结果]---->SQL(\\）
 	2、SQL处理：SQL处理接收到的字符串，会用\去转义\，仍然得到\
 如果不这样，特殊情况下会失义，例如，原文是字符\和单词text
@@ -61,10 +61,10 @@ print('\\Must')---->\Must
 cursor.execute('insert into test( ttext, mark ) values( \'\\Must\', \'2.Must\')')
 SF::     (31, 'Must', '2.Must', None)  print ----> Must
 为什么少写入了一个转义字符呢？因为如下
-·SQL会忽略不能识别的转义！！
-	insert into test( ttext, mark ) values( '\M', 's1.M' );
+·SQL会忽略不能识别的转义！！或者是未定义的转义，都转义成这个字符本身。
+insert into test( ttext, mark ) values( '\M', 's1.M' );
+	SF::     (32, 'M', 's1.M', None)  print ----> M
 	最后写入数据库的只有字符M
-··所以综上所述
-	如果向mysql数据库写入转义字符，把python字符串中的\\替换成\\\\可以保证无歧义
-	
-
+··所以综上所述	
+        如果向mysql数据库写入转义字符，把python字符串中的\\替换成\\\\可以保证无歧义
+·这里有一篇文章相佐证，但不知文章中是何种语言，何种数据库（与上面替换有不同，但意思差不多，接下来验证下）
