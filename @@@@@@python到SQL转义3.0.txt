@@ -91,6 +91,31 @@ from test
 where ttext like '\\\\\\\\'
 
 (33, '\\\\', 's4.0', None)	print ----> \\
+
+如果查找一个\字符，要在regexp中用四个\字符。
+select * 
+from test 
+where ttext regexp '\\\\'
+
+(27, '\\', 's2.0', None)	print ----> \
+等等………… 
+包含一个\字符的行
+
+如果查找两个\字符，要在regexp中用八个\字符，六个报错。
+select * 
+from test 
+where ttext regexp '\\\\\\'
+
+Error Code: 1139. Got error 'trailing backslash (\)' from regexp
+select * 
+from test 
+where ttext like '\\\\\\\\'
+
+(33, '\\\\', 's4.0', None)	print ----> \\
+等等………… 
+包含两个\字符的行
+
+
 ·经测验，如果从python执行mysql的like语句，果然遵循上面第一篇博文的规律，同时也与我前面的分析是一致的，语句经过python处理，已经“消耗”掉一层转义的\字符，然后传入mysql字串的行为和上面直接在sql管理界面like查询的行为一致。
 cursor.execute("select * from test where ttext like '\\\\'") 4个\
 SF::     (27, '\\', 's2.0', None)
