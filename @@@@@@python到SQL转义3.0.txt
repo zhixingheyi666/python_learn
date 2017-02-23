@@ -67,6 +67,64 @@ insert into test( ttext, mark ) values( '\M', 's1.M' );
 	最后写入数据库的只有字符M
 ··所以综上所述	
         如果向mysql数据库写入转义字符，把python字符串中的\\替换成\\\\可以保证无歧义
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 ·这里有一篇文章相佐证，但不知文章中是何种语言，何种数据库（与上面替换有不同，但意思差不多，接下来验证下）
-http://blog.csdn.net/summer1126/article/details/51303734（如果与正则表达式对接，倒有可能对，测试一下看看）
+http://blog.csdn.net/summer1126/article/details/51303734（如果与正则表达式对接，倒有可能对，接下来是我的验证）
 http://blog.csdn.net/north_easter/article/details/7904865（与上面相呼应，需要实测一下）
+
+·经测验，mysql写入字符\和用like语句查找字符\的行为并不一致，查找时，遵循下面的规律:
+如果查找一个\字符，要在like中用四个\字符。
+select * 
+from test 
+where ttext like '\\\\'
+
+(27, '\\', 's2.0', None)	print ----> \
+如果查找两个\字符，要在like中用六至八个\字符。
+select * 
+from test 
+where ttext like '\\\\\\'
+
+(33, '\\\\', 's4.0', None)	print ----> \\
+select * 
+from test 
+where ttext like '\\\\\\\\'
+
+(33, '\\\\', 's4.0', None)	print ----> \\
+·经测验，如果从python执行mysql的like语句，果然遵循上面第一篇博文的规律，同时也与我前面的分析是一致的，语句经过python处理，已经“消耗”掉一层转义的\字符，然后传入mysql字串的行为和上面直接在sql管理界面like查询的行为一致。
+cursor.execute("select * from test where ttext like '\\\\'") 4个\
+SF::     (27, '\\', 's2.0', None)
+cursor.execute("select * from test where ttext like '\\\\\\\\'") 8个\
+SF::     (27, '\\', 's2.0', None) 
+
+
+cursor.execute("select * from test where ttext like '\\\\\\\\\\\\'") 12个\
+SF::     (33, '\\\\', 's4.0', None)
+cursor.execute("select * from test where ttext like '\\\\\\\\\\\\\\\\'") 16个\
+SF::     (33, '\\\\', 's4.0', None)
+稳定的表现为：\\---->\\\\\\\\  2个换成8个
+
+辅助测试：
+
+>>> s = '\\'
+>>> s = s.replace('\\','\\\\\\\\')
+>>> s
+'\\\\\\\\'
+>>> print(s)
+\\\\
+
+>>> cursor.execute("select * from test where ttext like '\\'")
+Traceback …………
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corre
+sponds to your MySQL server version for the right syntax to use near ''\'' at line 1
+>>> cursor.execute("select * from test where ttext like '\\\\\\'")
+Traceback …………
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corre
+sponds to your MySQL server version for the right syntax to use near ''\\\'' at line 1
+
+
+
+
+
