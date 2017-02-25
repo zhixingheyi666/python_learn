@@ -1405,3 +1405,102 @@ Building connection to Mysql...
 2017-02-23 22:46:41,186 - SF: - INFO:
 (27, '\\', 's2.0', None)
 
+2017-02-25 08:32:11,372 - SF: - INFO:
+ttn = 0 
+
+2017-02-25 08:32:52,323 - SF: - INFO:
+Building connection to Mysql...
+
+2017-02-25 08:33:03,424 - SF: - INFO:
+('information_schema',)
+
+2017-02-25 08:33:03,424 - SF: - INFO:
+('again_sql_learn',)
+
+2017-02-25 08:33:03,424 - SF: - INFO:
+('mysql',)
+
+2017-02-25 08:33:03,425 - SF: - INFO:
+('performance_schema',)
+
+2017-02-25 08:33:03,425 - SF: - INFO:
+('spider',)
+
+2017-02-25 08:33:03,425 - SF: - INFO:
+('sql-learn',)
+
+2017-02-25 08:33:03,425 - SF: - INFO:
+('sys',)
+
+2017-02-25 08:33:03,425 - SF: - INFO:
+('tsg_import_study01',)
+
+2017-02-25 09:46:30,645 - SF: - INFO:
+('originurl',)
+
+2017-02-25 09:46:30,645 - SF: - INFO:
+('temptt',)
+
+2017-02-25 09:46:30,645 - SF: - INFO:
+('test',)
+
+2017-02-25 09:46:30,645 - SF: - INFO:
+('tips',)
+
+2017-02-25 09:52:04,939 - SF: - INFO:
+('originurl',)
+
+2017-02-25 09:52:04,939 - SF: - INFO:
+('temptt',)
+
+2017-02-25 09:52:04,940 - SF: - INFO:
+('tempttt',)
+
+2017-02-25 09:52:04,940 - SF: - INFO:
+('test',)
+
+2017-02-25 09:52:04,940 - SF: - INFO:
+('tips',)
+
+2017-02-25 10:37:16,597 - SF: - INFO:
+(32, 'M', 's1.M', None)
+
+2017-02-25 10:37:16,597 - SF: - INFO:
+(33, '\\\\', 's4.0', None)
+
+2017-02-25 10:37:16,597 - SF: - INFO:
+(34, '\x0b just \\\\t my \n love \r best! \n\n\\\\t\\\\tOK', 'p.fei shi bie zhuan yi', None)
+
+2017-02-25 10:37:16,598 - SF: - INFO:
+(35, '\x0b just \\\\M my \n love \r best! \n\n\\\\M\\\\MOK', 'p.fei shi bie zhuan yi', None)
+
+2017-02-25 10:37:16,598 - SF: - INFO:
+(36, '\\', 's2.0', None)
+
+2017-02-25 10:37:16,598 - SF: - INFO:
+(37, '\\M', 's2.M', None)
+
+2017-02-25 10:37:16,599 - SF: - INFO:
+(38, '\\M', 's3.M', None)
+
+2017-02-25 10:37:41,453 - SF: - INFO:
+(32, 'M', 's1.M', None)
+
+2017-02-25 10:37:41,453 - SF: - INFO:
+(33, '\\\\', 's4.0', None)
+
+2017-02-25 10:37:41,454 - SF: - INFO:
+(34, '\x0b just \\\\t my \n love \r best! \n\n\\\\t\\\\tOK', 'p.fei shi bie zhuan yi', None)
+
+2017-02-25 10:37:41,454 - SF: - INFO:
+(35, '\x0b just \\\\M my \n love \r best! \n\n\\\\M\\\\MOK', 'p.fei shi bie zhuan yi', None)
+
+2017-02-25 10:37:41,454 - SF: - INFO:
+(36, '\\', 's2.0', None)
+
+2017-02-25 10:37:41,455 - SF: - INFO:
+(37, '\\M', 's2.M', None)
+
+2017-02-25 10:37:41,455 - SF: - INFO:
+(38, '\\M', 's3.M', None)
+
