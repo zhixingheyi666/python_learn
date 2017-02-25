@@ -1,0 +1,31 @@
+The lines below is for test!
+print r'\t\r'
+dan shuang yin hao hun yong ---> select 'hello', '"hello"', '""hello""', 'hel''lo', '\'hello';
+select "hello", "'hello'", "''hello''", "hel""lo";
+'dan yin hao zhong' de' dan' yin hao ''''
+'dan yin hao zhong" de" suang" yin hao """'
+"suang yin hao zhong' de' dan yin hao '''"
+"suang yin hao zhong" de" suang yin hao """"
+te shu zhuan yi ce shi ---> --\\--\t--\r--\f--\E--\e--\_--
+te shu zhuan yi ce shi ---> --\000--\'--\"--\--\Z--\0--\%--
+ce shi zi fu chuan jie wei NUL ---> --\0\0\0
+ce shi zi fu chuan jie wei NUL ---> --\0
+The lines below is for test!(下面是中文版)
+print r'\t\r'
+单双引号混用 ---> select 'hello', '"hello"', '""hello""', 'hel''lo', '\'hello';
+select "hello", "'hello'", "''hello''", "hel""lo";
+'单引号中' 的' 单' 引号 ''''
+'单引号中" 的" 双" 引号 """'
+"双引号中' 的' 单 引号 '''"
+"双引号中" 的" 双 引号 """"
+特殊转义测试 ---> --\\--\t--\r--\f--\E--\e--\_--
+特殊转义测试 ---> --\000--\'--\"--\--\Z--\0--\%--
+测试字符串结尾 NUL ---> --\0\0\0
+测试字符串结尾 NUL ---> --\0
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+1、文本文件中的单双引号问题。
+2、python中"""和'''连续引号使用的问题。
+3、有时我们并不想让转义字符生效，我们只想显示字符串原来的意思，这就要用r和R来定义原始字符串。如：
+print r'\t\r'
