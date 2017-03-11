@@ -1504,3 +1504,651 @@ Building connection to Mysql...
 2017-02-25 10:37:41,455 - SF: - INFO:
 (38, '\\M', 's3.M', None)
 
+2017-03-04 11:50:37,008 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 11:51:03,513 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 13:02:19,160 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 13:02:19,160 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 13:02:19,171 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 13:02:19,171 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 18:47:23,936 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 18:47:24,008 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 18:48:46,724 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 18:49:55,645 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 18:50:49,117 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 18:50:49,195 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 18:50:49,198 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 18:51:24,097 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 18:51:24,170 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 18:51:24,171 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 18:52:48,256 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 18:52:48,329 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 18:52:48,331 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 18:55:06,766 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 18:55:06,839 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 18:55:20,646 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 18:55:20,648 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    refidadd = fidAdd_sql('./codein/fortest/tt_test.py','sdhfljadsg234sdf')
+             ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 48, in fidAdd_sql
+    ''', fmate)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 653, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 598, in _batch_insert
+    "Not all parameters were used in the SQL statement")
+mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL statement
+2017-03-04 18:55:20,652 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 18:58:36,743 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 18:58:36,744 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    refidadd = fidAdd_sql('./codein/fortest/tt_test.py','sdhfljadsg234sdf')
+             ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 48, in fidAdd_sql
+    insert into fmate_code( namepath, hashid, fmtime, fctime ) values( %s, @lshs, %s, %s );
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 653, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 598, in _batch_insert
+    "Not all parameters were used in the SQL statement")
+mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL statement
+2017-03-04 18:58:36,747 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 18:58:58,341 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 18:58:58,342 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 48, in fidAdd_sql
+    insert into fmate_code( namepath, hashid, fmtime, fctime ) values( %s, @lshs, %s, %s );
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 653, in executemany
+    stmt = self._batch_insert(operation, seq_params)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 598, in _batch_insert
+    "Not all parameters were used in the SQL statement")
+mysql.connector.errors.ProgrammingError: Not all parameters were used in the SQL statement
+2017-03-04 18:58:58,344 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:03:32,440 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 19:03:32,511 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:03:32,512 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:03:32,516 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    from codein.fortest.fidAdd_dql import fidAdd_sql
+       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 49, in fidAdd_sql
+    ''', fmate)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'strhash' in 'field list'
+2017-03-04 19:03:32,521 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:04:38,480 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:04:38,481 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    from codein.fortest.fidAdd_dql import fidAdd_sql
+       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 49, in fidAdd_sql
+    insert into fmate_code( namepath, hashid, fmtime, fctime ) values( %s, @lshs, %s, %s );
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'strhash' in 'field list'
+2017-03-04 19:04:38,484 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:05:03,683 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 19:05:03,754 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:05:03,755 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:05:03,758 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    from codein.fortest.fidAdd_dql import fidAdd_sql
+       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 494, in cmd_query
+    'Use cmd_query_iter for statements with multiple queries.')
+mysql.connector.errors.InterfaceError: Use cmd_query_iter for statements with multiple queries.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 50, in fidAdd_sql
+    ''', fmate)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 556, in execute
+    "Use multi=True when executing multiple statements")
+mysql.connector.errors.InterfaceError: Use multi=True when executing multiple statements
+2017-03-04 19:05:03,763 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:06:01,695 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 19:06:01,763 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:06:01,764 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:06:01,765 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    from codein.fortest.fidAdd_dql import fidAdd_sql
+       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 51, in fidAdd_sql
+    return cursor.fetchall()
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 882, in fetchall
+    raise errors.InterfaceError("No result set to fetch from.")
+mysql.connector.errors.InterfaceError: No result set to fetch from.
+2017-03-04 19:06:01,768 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:07:07,481 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 19:07:07,550 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:07:07,551 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:07:07,552 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    from codein.fortest.fidAdd_dql import fidAdd_sql
+       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 51, in fidAdd_sql
+    return cursor.fetchall()
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 882, in fetchall
+    raise errors.InterfaceError("No result set to fetch from.")
+mysql.connector.errors.InterfaceError: No result set to fetch from.
+2017-03-04 19:07:07,555 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:08:15,716 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:18:50,477 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:22:12,968 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:22:12,969 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    from codein.fortest.fidAdd_dql import fidAdd_sql
+       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 51, in fidAdd_sql
+    cursor.execute('select @lshs')
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 882, in fetchall
+    raise errors.InterfaceError("No result set to fetch from.")
+mysql.connector.errors.InterfaceError: No result set to fetch from.
+2017-03-04 19:22:12,971 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:22:34,066 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 19:22:34,164 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:22:34,165 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:25:35,851 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 19:25:35,921 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:25:35,922 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:25:35,923 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    from codein.fortest.fidAdd_dql import fidAdd_sql
+       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 52, in fidAdd_sql
+    mconn.commit()
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 852, in commit
+    self._execute_query("COMMIT")
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 870, in _execute_query
+    self.handle_unread_result()
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 1059, in handle_unread_result
+    raise errors.InternalError("Unread result found")
+mysql.connector.errors.InternalError: Unread result found
+2017-03-04 19:25:35,927 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:26:09,268 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:26:09,269 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    from codein.fortest.fidAdd_dql import fidAdd_sql
+       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 50, in fidAdd_sql
+    ''', fmate, multi = True)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 522, in execute
+    self._connection.handle_unread_result()
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 1059, in handle_unread_result
+    raise errors.InternalError("Unread result found")
+mysql.connector.errors.InternalError: Unread result found
+2017-03-04 19:26:09,271 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:26:45,945 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 19:26:46,014 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:26:46,016 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:26:46,017 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    from codein.fortest.fidAdd_dql import fidAdd_sql
+       ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 52, in fidAdd_sql
+    mconn.commit()
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 852, in commit
+    self._execute_query("COMMIT")
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 870, in _execute_query
+    self.handle_unread_result()
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 1059, in handle_unread_result
+    raise errors.InternalError("Unread result found")
+mysql.connector.errors.InternalError: Unread result found
+2017-03-04 19:26:46,021 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 19:27:56,665 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 19:27:56,749 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 19:27:56,749 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:29:08,387 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 19:31:59,453 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 21:28:29,795 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 21:29:46,556 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 21:29:46,652 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 21:30:14,216 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 21:30:14,217 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    refidadd = fidAdd_sql('./codein/fortest/tt_test.py','sdhfljadsg234sdf')
+             ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 50, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+NameError: name 'lhs' is not defined
+2017-03-04 21:30:14,218 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 21:32:31,548 - SF: - INFO:
+ttn = 0 
+
+2017-03-04 21:32:31,618 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-04 21:32:35,813 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 21:36:42,869 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 21:45:09,538 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-04 21:45:09,578 - SF: - ERROR:
+error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 118, in _execute
+    code = compile_with_flags(line, 'eval')
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 106, in compile_with_flags
+    dont_inherit=True)
+  File "<stdin>", line 1
+    refidadd = fidAdd_sql('./codein/fortest/fidAdd_dql.py','sdhfljadsg234sdf')
+             ^
+SyntaxError: invalid syntax
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\python_learn\codein\fortest\fidAdd_dql.py", line 51, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'sdhfljadsg234sdf' for key 'strhash'
+2017-03-04 21:45:09,582 - SF: - INFO:
+Failed to write to Sql
+
+2017-03-04 21:45:18,742 - SF: - INFO:
+get fmtime,fctime,fcontent
+
+2017-03-05 06:36:45,319 - SF: - INFO:
+ttn = 0 
+
+2017-03-05 06:36:45,516 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-05 06:40:04,858 - SF: - INFO:
+ttn = 0 
+
+2017-03-05 06:40:04,928 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-05 08:39:20,599 - SF: - INFO:
+ttn = 0 
+
+2017-03-05 08:39:20,599 - SF: - INFO:
+ttn = 0 
+
+2017-03-05 08:39:40,955 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-05 08:39:40,955 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-05 08:40:18,873 - SF: - INFO:
+('information_schema',)
+
+2017-03-05 08:40:18,873 - SF: - INFO:
+('information_schema',)
+
+2017-03-05 08:40:18,873 - SF: - INFO:
+('again_sql_learn',)
+
+2017-03-05 08:40:18,873 - SF: - INFO:
+('again_sql_learn',)
+
+2017-03-05 08:40:18,874 - SF: - INFO:
+('fortest',)
+
+2017-03-05 08:40:18,874 - SF: - INFO:
+('fortest',)
+
+2017-03-05 08:40:18,874 - SF: - INFO:
+('mysql',)
+
+2017-03-05 08:40:18,874 - SF: - INFO:
+('mysql',)
+
+2017-03-05 08:40:18,874 - SF: - INFO:
+('performance_schema',)
+
+2017-03-05 08:40:18,874 - SF: - INFO:
+('performance_schema',)
+
+2017-03-05 08:40:18,875 - SF: - INFO:
+('spider',)
+
+2017-03-05 08:40:18,875 - SF: - INFO:
+('spider',)
+
+2017-03-05 08:40:18,875 - SF: - INFO:
+('sql-learn',)
+
+2017-03-05 08:40:18,875 - SF: - INFO:
+('sql-learn',)
+
+2017-03-05 08:40:18,875 - SF: - INFO:
+('sys',)
+
+2017-03-05 08:40:18,875 - SF: - INFO:
+('sys',)
+
+2017-03-05 08:40:18,876 - SF: - INFO:
+('tsg_import_study01',)
+
+2017-03-05 08:40:18,876 - SF: - INFO:
+('tsg_import_study01',)
+
+2017-03-05 08:53:23,961 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-05 08:53:23,961 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-05 08:54:20,281 - SF: - INFO:
+ttn = 0 
+
+2017-03-05 08:54:20,358 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-05 14:27:56,559 - SF: - INFO:
+ttn = 0 
+
+2017-03-05 14:27:56,628 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-10 05:58:02,596 - SF: - INFO:
+ttn = 0 
+
+2017-03-10 05:58:53,086 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-11 06:43:12,470 - SF: - INFO:
+ttn = 0 
+
+2017-03-11 06:44:24,515 - SF: - INFO:
+Building connection to Mysql...
+
