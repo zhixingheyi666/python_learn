@@ -1,0 +1,2 @@
+        if ftt:
+            ftt.close()

@@ -2152,3 +2152,180 @@ ttn = 0
 2017-03-11 06:44:24,515 - SF: - INFO:
 Building connection to Mysql...
 
+2017-03-11 16:32:08,260 - SF: - INFO:
+ttn = 0 
+
+2017-03-11 16:32:08,450 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-11 16:32:08,450 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-11 16:32:08,460 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-11 16:32:11,000 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-11 16:32:11,010 - SF: - INFO:
+Numbers of py and txt files get from disk: 192
+
+2017-03-11 16:32:11,280 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\fc\\__init__.py'
+
+2017-03-11 16:32:11,280 - SF: - INFO:
+Add ---> 'D:\\python_learn\\codein\\codetest.py'
+
+2017-03-11 16:32:11,470 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-11 16:32:11,470 - SF: - INFO:
+fnum_disk: 192
+
+2017-03-11 16:32:11,470 - SF: - INFO:
+FailCount: 0
+
+2017-03-11 16:32:11,480 - SF: - INFO:
+AddOkCount: 1
+
+2017-03-11 16:32:11,480 - SF: - INFO:
+McrOkCount: 1
+
+2017-03-11 16:32:11,740 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-11 16:32:11,740 - SF: - INFO:
+HSdel: 3
+
+2017-03-11 16:32:11,740 - SF: - INFO:
+DelCount: 4
+
+2017-03-12 12:03:42,300 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 12:03:42,370 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 12:03:42,380 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 12:03:42,410 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 12:03:42,500 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 12:03:42,510 - SF: - INFO:
+Numbers of py and txt files get from disk: 192
+
+2017-03-12 12:03:42,510 - SF: - INFO:
+fnum_sql: 192
+
+2017-03-12 12:03:42,510 - SF: - INFO:
+fnum_disk: 192
+
+2017-03-12 12:03:42,510 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 12:03:42,510 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 12:03:42,510 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 12:03:42,520 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 12:03:42,520 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 12:03:42,520 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 12:06:04,098 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 12:06:04,168 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 12:06:04,178 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 12:06:04,178 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 12:06:04,278 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 12:06:04,278 - SF: - INFO:
+Numbers of py and txt files get from disk: 192
+
+2017-03-12 12:06:04,428 - SF: - INFO:
+fnum_sql: 192
+
+2017-03-12 12:06:04,428 - SF: - INFO:
+fnum_disk: 192
+
+2017-03-12 12:06:04,428 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 12:06:04,428 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 12:06:04,428 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 12:06:04,438 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 12:06:04,438 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 12:06:04,438 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 13:30:03,193 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:37:34,882 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:37:34,952 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:37:34,952 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 14:37:34,962 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 14:37:35,042 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 14:37:35,042 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 14:37:35,192 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 14:37:35,192 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 14:37:35,192 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 14:37:35,192 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 14:37:35,192 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 14:37:35,202 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 14:37:35,202 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 14:37:35,202 - SF: - INFO:
+DelCount: 0
+

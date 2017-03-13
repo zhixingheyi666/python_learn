@@ -1,0 +1,4256 @@
+2017-03-11 17:56:22,011 - SF: - INFO:
+ttn = 0 
+
+2017-03-11 17:56:22,081 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-11 17:56:22,088 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-11 17:56:22,089 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-11 17:56:22,185 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-11 17:56:22,186 - SF: - INFO:
+Numbers of py and txt files get from disk: 192
+
+2017-03-11 17:56:22,362 - SF: - INFO:
+fnum_sql: 192
+
+2017-03-11 17:56:22,363 - SF: - INFO:
+fnum_disk: 192
+
+2017-03-11 17:56:22,363 - SF: - INFO:
+FailCount: 0
+
+2017-03-11 17:56:22,364 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-11 17:56:22,364 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-11 17:56:22,367 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-11 17:56:22,367 - SF: - INFO:
+HSdel: 0
+
+2017-03-11 17:56:22,368 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 06:23:42,945 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 06:23:43,115 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 06:23:43,125 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 06:23:43,125 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 06:23:45,915 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 06:23:45,915 - SF: - INFO:
+Numbers of py and txt files get from disk: 192
+
+2017-03-12 06:23:46,115 - SF: - INFO:
+fnum_sql: 192
+
+2017-03-12 06:23:46,115 - SF: - INFO:
+fnum_disk: 192
+
+2017-03-12 06:23:46,115 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 06:23:46,115 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 06:23:46,115 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 06:23:46,125 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 06:23:46,125 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 06:23:46,125 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 12:02:40,830 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 12:02:40,910 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 12:02:40,920 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 12:02:40,920 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 12:02:41,000 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 12:02:41,010 - SF: - INFO:
+Numbers of py and txt files get from disk: 192
+
+2017-03-12 12:02:41,150 - SF: - INFO:
+fnum_sql: 192
+
+2017-03-12 12:02:41,150 - SF: - INFO:
+fnum_disk: 192
+
+2017-03-12 12:02:41,150 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 12:02:41,150 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 12:02:41,150 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 12:02:41,150 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 12:02:41,150 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 12:02:41,150 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 14:04:20,510 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:05:02,840 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:05:02,910 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:05:02,920 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 14:05:02,920 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 14:05:03,000 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 14:05:03,000 - SF: - INFO:
+Numbers of py and txt files get from disk: 193
+
+2017-03-12 14:05:03,160 - SF: - INFO:
+Add ---> 'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-12 14:06:52,580 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 122, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+NameError: name 'lhs' is not defined
+2017-03-12 14:07:08,040 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 122, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+NameError: name 'lhs' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 133, in fidAdd_sql
+    logger.info('fidAdd_sql--->Failed to write to Sql:\n%r',fname)
+  File "codetsql.py", line 133, in fidAdd_sql
+    logger.info('fidAdd_sql--->Failed to write to Sql:\n%r',fname)
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 295, in <module>
+    fidAdd_sql( *fsh )
+  File "codetsql.py", line 137, in fidAdd_sql
+    if ftt:
+NameError: name 'ftt' is not defined
+2017-03-12 14:09:19,842 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:09:19,912 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:09:19,922 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 14:09:19,922 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 14:09:20,012 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 14:09:20,012 - SF: - INFO:
+Numbers of py and txt files get from disk: 193
+
+2017-03-12 14:09:20,172 - SF: - INFO:
+Add ---> 'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-12 14:09:24,822 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 126, in fidAdd_sql
+    values( %s, @lshs, %s, %s );''',fmate)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+                            values( 'D:\\python_learn\\codein\\fc\\FileFunc.py' at line 1
+2017-03-12 14:09:36,682 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-12 14:10:54,372 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 126, in fidAdd_sql
+    values( %s, @lshs, %s, %s );''',fmate)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+                            values( 'D:\\python_learn\\codein\\fc\\FileFunc.py' at line 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 135, in fidAdd_sql
+    MailCount = FailCount + 1
+  File "codetsql.py", line 135, in fidAdd_sql
+    MailCount = FailCount + 1
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 296, in <module>
+    fidAdd_sql( *fsh )
+  File "codetsql.py", line 138, in fidAdd_sql
+    if ftt:
+NameError: name 'ftt' is not defined
+2017-03-12 14:12:28,843 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:12:28,923 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:12:28,923 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 14:12:28,933 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 14:12:29,023 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 14:12:29,023 - SF: - INFO:
+Numbers of py and txt files get from disk: 193
+
+2017-03-12 14:12:29,173 - SF: - INFO:
+Add ---> 'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-12 14:12:32,133 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 126, in fidAdd_sql
+    values( %s, @lshs, %s, %s );''',fmate)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+                            values( 'D:\\python_learn\\codein\\fc\\FileFunc.py' at line 1
+2017-03-12 14:15:29,133 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 126, in fidAdd_sql
+    values( %s, @lshs, %s, %s );''',fmate)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+                            values( 'D:\\python_learn\\codein\\fc\\FileFunc.py' at line 1
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 134, in fidAdd_sql
+    logger.info('fidAdd_sql--->Failed to write to Sql:\n%r',fname)
+  File "codetsql.py", line 134, in fidAdd_sql
+    logger.info('fidAdd_sql--->Failed to write to Sql:\n%r',fname)
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 296, in <module>
+    fidAdd_sql( *fsh )
+  File "codetsql.py", line 138, in fidAdd_sql
+    if ftt:
+NameError: name 'ftt' is not defined
+2017-03-12 14:16:30,273 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:16:30,343 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:16:30,353 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 14:16:30,353 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 14:16:30,433 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 14:16:30,433 - SF: - INFO:
+Numbers of py and txt files get from disk: 193
+
+2017-03-12 14:16:30,593 - SF: - INFO:
+Add ---> 'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-12 14:16:32,983 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 126, in fidAdd_sql
+    values( %s, @lshs, %s, %s );''',fmate)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+                            values( 'D:\\python_learn\\codein\\fc\\FileFunc.py' at line 1
+2017-03-12 14:16:32,983 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-12 14:16:32,993 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 296, in <module>
+    fidAdd_sql( *fsh )
+  File "codetsql.py", line 133, in fidAdd_sql
+    logger.exception('Error msg')
+NameError: name 'ftt' is not defined
+2017-03-12 14:20:48,231 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:20:48,301 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:20:48,301 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 14:20:48,301 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 14:20:48,391 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 14:20:48,391 - SF: - INFO:
+Numbers of py and txt files get from disk: 193
+
+2017-03-12 14:20:52,621 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 126, in fidAdd_sql
+    values( @lshs, %s, %s )''', flineargs)
+NameError: name 'flineargs' is not defined
+2017-03-12 14:20:57,321 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-12 14:20:58,971 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 126, in fidAdd_sql
+    values( @lshs, %s, %s )''', flineargs)
+NameError: name 'flineargs' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 133, in fidAdd_sql
+    MailCount = FailCount + 1
+  File "codetsql.py", line 133, in fidAdd_sql
+    MailCount = FailCount + 1
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 294, in <module>
+    fidAdd_sql( *fsh )
+  File "codetsql.py", line 136, in fidAdd_sql
+    if ftt:
+NameError: name 'ftt' is not defined
+2017-03-12 14:21:44,921 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:21:44,991 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:21:44,991 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 14:21:44,991 - SF: - INFO:
+Numbers of file records get from Sql: 192
+
+2017-03-12 14:21:45,081 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 14:21:45,081 - SF: - INFO:
+Numbers of py and txt files get from disk: 193
+
+2017-03-12 14:21:45,431 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 295, in <module>
+    fidAdd_sql( *fsh )
+  File "codetsql.py", line 137, in fidAdd_sql
+    if ftt:
+NameError: name 'ftt' is not defined
+2017-03-12 14:27:26,220 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:27:26,290 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:27:26,300 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 14:27:26,300 - SF: - INFO:
+Numbers of file records get from Sql: 193
+
+2017-03-12 14:27:26,380 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 14:27:26,380 - SF: - INFO:
+Numbers of py and txt files get from disk: 193
+
+2017-03-12 14:27:26,530 - SF: - INFO:
+fnum_sql: 193
+
+2017-03-12 14:27:26,530 - SF: - INFO:
+fnum_disk: 193
+
+2017-03-12 14:27:26,540 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 14:27:26,540 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 14:27:26,540 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 14:27:26,540 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 14:27:26,540 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 14:27:26,540 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 14:31:45,376 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 14:31:45,436 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 14:31:45,446 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 14:31:45,446 - SF: - INFO:
+Numbers of file records get from Sql: 193
+
+2017-03-12 14:31:45,536 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 14:31:45,536 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 14:31:45,826 - SF: - INFO:
+fnum_sql: 193
+
+2017-03-12 14:31:45,826 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 14:31:45,836 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 14:31:45,836 - SF: - INFO:
+AddOkCount: 1
+
+2017-03-12 14:31:45,836 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 14:31:45,836 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 14:31:45,836 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 14:31:45,836 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 20:39:32,755 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 20:39:32,945 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 20:39:32,965 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 20:39:32,965 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 20:39:35,545 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 20:39:35,545 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 20:45:35,956 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 20:45:35,956 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 20:45:35,956 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 20:45:35,956 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 20:45:35,956 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 20:45:36,256 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 20:45:36,256 - SF: - INFO:
+HSdel: 5
+
+2017-03-12 20:45:36,256 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 20:48:13,596 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 20:48:13,656 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 20:48:13,666 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 20:48:13,666 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 20:48:13,756 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 20:48:13,756 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 20:53:56,748 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 20:53:56,748 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 20:53:56,748 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 20:53:56,748 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 20:53:56,748 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 20:53:56,888 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 20:53:56,898 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 20:53:56,898 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 21:04:32,423 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 21:04:32,493 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 21:04:32,493 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 21:04:32,493 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 21:04:32,613 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 21:04:32,613 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 21:04:36,183 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 21:04:36,183 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 21:04:36,183 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 21:04:36,183 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 21:04:36,193 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 21:04:36,443 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 21:04:36,443 - SF: - INFO:
+HSdel: 1
+
+2017-03-12 21:04:36,443 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 21:07:45,584 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 21:07:45,674 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 21:07:45,684 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 21:07:45,684 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 21:07:45,774 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 21:07:45,774 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 21:07:45,944 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 97, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 21:07:45,944 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 21:10:44,494 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 21:10:44,504 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 21:10:44,504 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 21:10:44,504 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 21:10:44,504 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 21:10:44,664 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 21:10:44,664 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 21:10:44,664 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 21:20:02,955 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 21:20:03,025 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 21:20:03,025 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 21:20:03,025 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 21:20:03,115 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 21:20:03,115 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 21:20:03,305 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 100, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 21:20:03,315 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 21:20:03,315 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 100, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 326, in <module>
+    fRefresh_sql( fCheck(preRefresh) )
+  File "codetsql.py", line 160, in fRefresh_sql
+    FailCount += 1
+UnboundLocalError: local variable 'FailCount' referenced before assignment
+2017-03-12 21:21:01,195 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 21:21:01,255 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 21:21:01,265 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 21:21:01,265 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 21:21:01,345 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 21:21:01,345 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 21:21:01,525 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 100, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 21:21:01,525 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 21:21:28,985 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 112, in fRefresh_sql
+    cursor.execute('''update fline_code
+AttributeError: 'tuple' object has no attribute 'append'
+2017-03-12 21:21:28,995 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-12 21:21:28,995 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 21:21:28,995 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 21:21:28,995 - SF: - INFO:
+FailCount: 2
+
+2017-03-12 21:21:28,995 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 21:21:28,995 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 21:21:29,155 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 21:21:29,155 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 21:21:29,155 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 21:28:04,021 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 21:28:04,081 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 21:28:04,091 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 21:28:04,091 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 21:28:04,181 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 21:28:04,181 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 21:31:31,092 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 139, in fRefresh_sql
+    cursor.executemany('''insert into fline_code( hashid, line, flid )
+TypeError: 'builtin_function_or_method' object is not subscriptable
+2017-03-12 21:31:31,092 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-12 21:31:31,112 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 139, in fRefresh_sql
+    cursor.executemany('''insert into fline_code( hashid, line, flid )
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 21:31:31,112 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 21:31:31,112 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 21:31:31,112 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 21:31:31,112 - SF: - INFO:
+FailCount: 2
+
+2017-03-12 21:31:31,112 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 21:31:31,112 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 21:31:31,152 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 21:31:31,152 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 21:31:31,162 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 21:52:30,251 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 21:52:30,321 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 21:52:30,331 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 21:52:30,331 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 21:52:30,421 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 21:52:30,421 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 21:52:30,611 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 100, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 21:52:30,611 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 21:59:56,802 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 153, in fRefresh_sql
+    FileRefresh.append[nfi[0]]
+  File "c:\python34\lib\bdb.py", line 54, in trace_dispatch
+    return self.dispatch_exception(frame, arg)
+  File "c:\python34\lib\bdb.py", line 110, in dispatch_exception
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-12 21:59:56,802 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-12 21:59:56,802 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 21:59:56,802 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 21:59:56,802 - SF: - INFO:
+FailCount: 2
+
+2017-03-12 21:59:56,802 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 21:59:56,802 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 21:59:56,812 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 21:59:56,812 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 21:59:56,812 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 22:00:50,182 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 22:00:50,252 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 22:00:50,262 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 22:00:50,262 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 22:00:50,342 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 22:00:50,342 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 22:02:41,262 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-12 22:02:41,272 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 140, in fRefresh_sql
+    cursor.executemany('''insert into fline_code( hashid, line, flid ) values( @lshs, %s, %s )''', flNew)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 22:02:41,282 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 22:02:41,282 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 22:02:41,282 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 22:02:41,282 - SF: - INFO:
+FailCount: 1
+
+2017-03-12 22:02:41,282 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 22:02:41,282 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 22:02:41,332 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 22:02:41,332 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 22:02:41,332 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 22:17:01,137 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 22:17:01,207 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 22:17:01,217 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 22:17:01,217 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 22:17:01,307 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 22:17:01,307 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 22:17:01,807 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 100, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'c8bf1cd23d68f1057658e0201ca7c3ac063afa32' for key 'strhash'
+2017-03-12 22:17:01,817 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-12 22:17:01,817 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 100, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 22:17:01,827 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 22:17:01,827 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 22:17:01,827 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 22:17:01,827 - SF: - INFO:
+FailCount: 2
+
+2017-03-12 22:17:01,827 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 22:17:01,827 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 22:17:02,017 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 22:17:02,017 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 22:17:02,017 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 22:20:08,588 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 22:20:08,658 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 22:20:08,668 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 22:20:08,668 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 22:20:08,748 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 22:20:08,748 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 22:20:09,208 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 100, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 22:20:09,208 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 22:20:09,218 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 100, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'c8bf1cd23d68f1057658e0201ca7c3ac063afa32' for key 'strhash'
+2017-03-12 22:20:09,218 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-12 22:20:09,218 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 22:20:09,218 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 22:20:09,218 - SF: - INFO:
+FailCount: 2
+
+2017-03-12 22:20:09,218 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 22:20:09,218 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 22:20:09,288 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 22:20:09,288 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 22:20:09,288 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 22:31:19,629 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 22:31:19,689 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 22:31:19,699 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 22:31:19,699 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 22:31:19,789 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 22:31:19,789 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 22:32:04,489 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-12 22:32:04,519 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 144, in fRefresh_sql
+    cursor.executemany('''insert into fline_code( hashid, line, flid ) values( @lshs, %s, %s )''', flNew)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 22:32:04,519 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 22:32:04,519 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 22:32:04,519 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 22:32:04,519 - SF: - INFO:
+FailCount: 1
+
+2017-03-12 22:32:04,519 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 22:32:04,519 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 22:32:04,619 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 22:32:04,629 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 22:32:04,629 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 22:36:06,159 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 22:36:06,229 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 22:36:06,239 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 22:36:06,239 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 22:36:06,319 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 22:36:06,319 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 22:36:06,469 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 22:36:06,479 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 22:36:06,479 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 22:36:06,479 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 22:36:06,479 - SF: - INFO:
+FailCount: 1
+
+2017-03-12 22:36:06,479 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 22:36:06,479 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 22:36:06,529 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 22:36:06,529 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 22:36:06,529 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 22:39:00,209 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 22:39:00,269 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 22:39:00,279 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 22:39:00,279 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 22:39:00,369 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 22:39:00,369 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-12 22:39:00,549 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 22:39:00,559 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 22:39:17,149 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-12 22:39:17,249 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\ttnewcodetsql.py'
+
+2017-03-12 22:39:17,249 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 22:39:17,249 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-12 22:39:17,249 - SF: - INFO:
+FailCount: 1
+
+2017-03-12 22:39:17,249 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 22:39:17,249 - SF: - INFO:
+McrOkCount: 1
+
+2017-03-12 22:39:17,259 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 22:39:17,259 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 22:39:17,259 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 22:41:27,164 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 22:41:27,234 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 22:41:27,234 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 22:41:27,234 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-12 22:41:27,324 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 22:41:27,324 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-12 22:41:27,504 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 22:41:27,514 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 22:41:27,634 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-12 22:41:27,634 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-12 22:41:27,634 - SF: - INFO:
+FailCount: 1
+
+2017-03-12 22:41:27,634 - SF: - INFO:
+AddOkCount: 1
+
+2017-03-12 22:41:27,634 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 22:41:27,764 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 22:41:27,764 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 22:41:27,764 - SF: - INFO:
+DelCount: 1
+
+2017-03-12 22:56:24,267 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 22:56:24,327 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 22:56:24,337 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 22:56:24,337 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-12 22:56:24,417 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 22:56:24,417 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-12 22:56:24,607 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 22:56:24,607 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 22:57:10,447 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-12 22:57:10,447 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-12 22:57:10,447 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-12 22:57:10,447 - SF: - INFO:
+FailCount: 1
+
+2017-03-12 22:57:10,447 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 22:57:10,447 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 22:57:10,447 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 22:57:10,447 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 22:57:10,447 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 23:04:04,189 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:04:04,259 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:04:04,259 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:04:04,259 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-12 23:04:04,349 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:04:04,349 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-12 23:04:04,529 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'fd267a242eec09adf8c14d6ec6f30bf81a0ec478' for key 'strhash'
+2017-03-12 23:04:04,529 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-12 23:04:04,539 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 23:04:04,539 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 23:04:11,469 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetest.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 117, in fRefresh_sql
+    cursor.execute('''update fline_code
+  File "codetsql.py", line 117, in fRefresh_sql
+    cursor.execute('''update fline_code
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-12 23:04:11,489 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetest.py
+
+2017-03-12 23:04:11,489 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-12 23:04:11,489 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-12 23:04:11,489 - SF: - INFO:
+FailCount: 3
+
+2017-03-12 23:04:11,489 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 23:04:11,489 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 23:04:11,669 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 23:04:11,669 - SF: - INFO:
+HSdel: 1
+
+2017-03-12 23:04:11,669 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 23:10:42,350 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:10:42,410 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:10:42,420 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:10:42,420 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-12 23:10:42,500 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:10:42,500 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 23:10:42,640 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'fd267a242eec09adf8c14d6ec6f30bf81a0ec478' for key 'strhash'
+2017-03-12 23:10:42,640 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-12 23:10:42,650 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 23:10:42,650 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 23:10:42,800 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\tmmcodetest.py'
+
+2017-03-12 23:10:42,800 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-12 23:10:42,800 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 23:10:42,800 - SF: - INFO:
+FailCount: 2
+
+2017-03-12 23:10:42,800 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 23:10:42,800 - SF: - INFO:
+McrOkCount: 1
+
+2017-03-12 23:10:43,070 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 23:10:43,080 - SF: - INFO:
+HSdel: 1
+
+2017-03-12 23:10:43,080 - SF: - INFO:
+DelCount: 2
+
+2017-03-12 23:12:24,990 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:12:25,050 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:12:25,060 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:12:25,060 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 23:12:25,150 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:12:25,150 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 23:12:25,290 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 23:12:25,290 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 23:12:25,300 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'fd267a242eec09adf8c14d6ec6f30bf81a0ec478' for key 'strhash'
+2017-03-12 23:12:25,300 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-12 23:12:25,300 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 23:12:25,300 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 23:12:25,300 - SF: - INFO:
+FailCount: 2
+
+2017-03-12 23:12:25,300 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 23:12:25,300 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 23:12:25,390 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 23:12:25,390 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 23:12:25,390 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 23:16:32,081 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:16:32,151 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:16:32,161 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:16:32,161 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 23:16:32,261 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:16:32,261 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 23:16:32,411 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'b27234a90c13d7f62a1a34318c0e5b31d50a0f1b' for key 'strhash'
+2017-03-12 23:16:32,421 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\fc\GetFileHash.py
+
+2017-03-12 23:16:32,421 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 104, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'fd267a242eec09adf8c14d6ec6f30bf81a0ec478' for key 'strhash'
+2017-03-12 23:16:32,421 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-12 23:16:32,421 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 23:16:32,431 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 23:16:32,431 - SF: - INFO:
+FailCount: 2
+
+2017-03-12 23:16:32,431 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 23:16:32,431 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 23:16:32,781 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 23:16:32,781 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 23:16:32,781 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 23:35:22,502 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:35:22,562 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:35:22,572 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:35:22,572 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 23:35:22,652 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:35:22,662 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 23:35:22,662 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 334, in <module>
+    fRefresh_sql( fCheck(preRefresh) )
+  File "codetsql.py", line 35, in fCheck
+    cursor.execute('''select strhash from hash_code where hashid = %s ''', oldhashid)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s' at line 1
+2017-03-12 23:37:58,052 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:37:58,122 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:37:58,132 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:37:58,132 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 23:37:58,212 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:37:58,212 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 23:39:44,222 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-12 23:39:44,222 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 23:39:44,222 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 23:39:44,232 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 23:39:44,232 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 23:39:44,242 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 23:39:44,252 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 23:39:44,252 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 23:39:44,252 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 23:44:59,085 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:44:59,155 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:44:59,165 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:44:59,165 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 23:44:59,255 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:44:59,255 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 23:45:16,595 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-12 23:45:16,595 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-12 23:45:16,605 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-12 23:45:16,605 - SF: - INFO:
+FailCount: 0
+
+2017-03-12 23:45:16,605 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-12 23:45:16,605 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-12 23:45:16,605 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-12 23:45:16,605 - SF: - INFO:
+HSdel: 0
+
+2017-03-12 23:45:16,605 - SF: - INFO:
+DelCount: 0
+
+2017-03-12 23:49:03,835 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:49:03,905 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:49:03,915 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:49:03,915 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 23:49:03,995 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:49:03,995 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 23:49:04,075 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 334, in <module>
+    fRefresh_sql( fCheck(preRefresh) )
+  File "codetsql.py", line 36, in fCheck
+    ( ohash, ) = cursor.fetchall()[0]
+IndexError: list index out of range
+2017-03-12 23:54:01,446 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:54:01,506 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:54:01,516 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:54:01,516 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 23:54:01,606 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:54:01,606 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 23:54:01,606 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 335, in <module>
+    fRefresh_sql( fCheck(preRefresh) )
+  File "codetsql.py", line 33, in fCheck
+    pdb.ser_trace()
+AttributeError: 'module' object has no attribute 'ser_trace'
+2017-03-12 23:54:21,676 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:54:21,746 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:54:21,746 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:54:21,746 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 23:54:21,836 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:54:21,836 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-12 23:55:22,446 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 335, in <module>
+    fRefresh_sql( fCheck(preRefresh) )
+  File "codetsql.py", line 33, in fCheck
+    pdb.set_trace()
+IndexError: list index out of range
+2017-03-12 23:57:18,766 - SF: - INFO:
+ttn = 0 
+
+2017-03-12 23:57:18,826 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-12 23:57:18,836 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-12 23:57:18,836 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-12 23:57:18,926 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-12 23:57:18,926 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-13 00:00:06,806 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 338, in <module>
+    fRefresh_sql( fCheck(preRefresh) )
+  File "codetsql.py", line 41, in fCheck
+    Fmt = time.strftime( '%Y-%m-%d %H:%M:%S', time.localtime(os.path.getmtime(fni)) )
+  File "c:\python34\lib\genericpath.py", line 53, in getmtime
+    def getmtime(filename):
+  File "c:\python34\lib\bdb.py", line 50, in trace_dispatch
+    return self.dispatch_call(frame, arg)
+  File "c:\python34\lib\bdb.py", line 83, in dispatch_call
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-13 00:13:38,723 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 00:13:38,793 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 00:13:38,793 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 00:13:38,793 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-13 00:13:38,883 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 00:13:38,883 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-13 00:15:46,683 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 00:15:46,683 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-13 00:15:46,683 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-13 00:15:46,683 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 00:15:46,683 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 00:15:46,683 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 00:15:46,683 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 00:15:46,683 - SF: - INFO:
+HSdel: 0
+
+2017-03-13 00:15:46,683 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 00:17:45,514 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 00:17:45,584 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 00:17:45,584 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 00:17:45,594 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-13 00:17:45,674 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 00:17:45,674 - SF: - INFO:
+Numbers of py and txt files get from disk: 194
+
+2017-03-13 00:17:55,664 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 00:17:55,664 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-13 00:17:55,664 - SF: - INFO:
+fnum_disk: 194
+
+2017-03-13 00:17:55,664 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 00:17:55,664 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 00:17:55,664 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 00:17:55,664 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 00:17:55,664 - SF: - INFO:
+HSdel: 0
+
+2017-03-13 00:17:55,664 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 00:20:15,418 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 00:20:15,478 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 00:20:15,488 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 00:20:15,488 - SF: - INFO:
+Numbers of file records get from Sql: 194
+
+2017-03-13 00:20:15,578 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 00:20:15,578 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 00:20:15,918 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\codetest.py'
+
+2017-03-13 00:20:15,928 - SF: - INFO:
+fnum_sql: 194
+
+2017-03-13 00:20:15,928 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 00:20:15,928 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 00:20:15,928 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 00:20:15,928 - SF: - INFO:
+McrOkCount: 1
+
+2017-03-13 00:20:15,928 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 00:20:15,928 - SF: - INFO:
+HSdel: 0
+
+2017-03-13 00:20:15,928 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 00:21:41,030 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 00:21:41,090 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 00:21:41,100 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 00:21:41,100 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-13 00:21:41,190 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 00:21:41,190 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 00:21:41,570 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-13 00:21:41,570 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 00:21:41,570 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 00:21:41,570 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 00:21:41,570 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 00:21:41,570 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 00:21:41,570 - SF: - INFO:
+HSdel: 0
+
+2017-03-13 00:21:41,570 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 00:23:17,488 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 00:23:17,558 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 00:23:17,558 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 00:23:17,558 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-13 00:23:17,648 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 00:23:17,648 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 00:23:17,998 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\ttcodetest.py'
+
+2017-03-13 00:23:18,008 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-13 00:23:18,008 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 00:23:18,008 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 00:23:18,008 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 00:23:18,008 - SF: - INFO:
+McrOkCount: 1
+
+2017-03-13 00:23:18,138 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 00:23:18,138 - SF: - INFO:
+HSdel: 0
+
+2017-03-13 00:23:18,138 - SF: - INFO:
+DelCount: 1
+
+2017-03-13 00:24:05,944 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 00:24:06,044 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 00:24:06,054 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 00:24:06,054 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-13 00:24:06,164 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 00:24:06,164 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 00:24:06,374 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-13 00:24:06,374 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 00:24:06,374 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 00:24:06,374 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 00:24:06,374 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 00:24:06,374 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 00:24:06,374 - SF: - INFO:
+HSdel: 0
+
+2017-03-13 00:24:06,374 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 00:24:37,264 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 00:24:37,334 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 00:24:37,344 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 00:24:37,344 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-13 00:24:37,424 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 00:24:37,424 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 00:25:20,004 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\ttcodetest.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 146, in fRefresh_sql
+    flNew.append(fline)
+  File "codetsql.py", line 146, in fRefresh_sql
+    flNew.append(fline)
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-13 00:25:20,004 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\ttcodetest.py
+
+2017-03-13 00:25:20,014 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-13 00:25:20,014 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 00:25:20,014 - SF: - INFO:
+FailCount: 1
+
+2017-03-13 00:25:20,014 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 00:25:20,014 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 00:25:20,014 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 00:25:20,014 - SF: - INFO:
+HSdel: 0
+
+2017-03-13 00:25:20,014 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 00:27:59,215 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 00:27:59,275 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 00:27:59,285 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 00:27:59,285 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-13 00:27:59,385 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 00:27:59,385 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 00:28:29,425 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 00:28:29,425 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-13 00:28:29,425 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 00:28:29,425 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 00:28:29,425 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 00:28:29,425 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 00:28:29,425 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 00:28:29,425 - SF: - INFO:
+HSdel: 0
+
+2017-03-13 00:28:29,425 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 00:41:25,206 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 00:41:25,276 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 00:41:25,276 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 00:41:25,276 - SF: - INFO:
+Numbers of file records get from Sql: 184
+
+2017-03-13 00:41:25,366 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 00:41:25,366 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 00:41:25,826 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-13 00:41:26,046 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\__init__.py'
+
+2017-03-13 00:41:26,196 - SF: - INFO:
+MCRing --->'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 00:41:26,326 - SF: - INFO:
+MCRing --->'D:\\python_learn\\Tips.sf@.txt'
+
+2017-03-13 00:41:26,426 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\entry_points\\__init__.py'
+
+2017-03-13 00:41:26,546 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\tmmcodetest.py'
+
+2017-03-13 00:41:26,646 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\contrib\\__init__.py'
+
+2017-03-13 00:41:26,746 - SF: - INFO:
+MCRing --->'D:\\python_learn\\jiankongchengxu\\yd516p.py'
+
+2017-03-13 00:41:26,866 - SF: - INFO:
+MCRing --->'D:\\python_learn\\comm\\__init__.py'
+
+2017-03-13 00:41:26,976 - SF: - INFO:
+MCRing --->'D:\\python_learn\\import_study\\subpackage2\\__init__.py'
+
+2017-03-13 00:41:27,086 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\ttcodetest.py'
+
+2017-03-13 00:41:27,086 - SF: - INFO:
+fnum_sql: 184
+
+2017-03-13 00:41:27,086 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 00:41:27,086 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 00:41:27,086 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 00:41:27,086 - SF: - INFO:
+McrOkCount: 11
+
+2017-03-13 00:41:27,096 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 00:41:27,096 - SF: - INFO:
+HSdel: 0
+
+2017-03-13 00:41:27,096 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 06:20:09,309 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 06:20:09,519 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 06:20:09,529 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 06:20:09,529 - SF: - INFO:
+Numbers of file records get from Sql: 184
+
+2017-03-13 06:20:12,779 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 06:20:12,779 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 06:20:44,709 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 06:20:45,149 - SF: - INFO:
+MCRing --->'D:\\python_learn\\jiankongchengxu\\yd516p.py'
+
+2017-03-13 06:20:45,269 - SF: - INFO:
+MCRing --->'D:\\python_learn\\import_study\\subpackage2\\__init__.py'
+
+2017-03-13 06:20:45,379 - SF: - INFO:
+MCRing --->'D:\\python_learn\\Tips.sf@.txt'
+
+2017-03-13 06:20:45,489 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\entry_points\\__init__.py'
+
+2017-03-13 06:20:45,639 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\__init__.py'
+
+2017-03-13 06:20:45,759 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\tmmcodetest.py'
+
+2017-03-13 06:20:45,869 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\contrib\\__init__.py'
+
+2017-03-13 06:20:45,979 - SF: - INFO:
+MCRing --->'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-13 06:20:46,079 - SF: - INFO:
+MCRing --->'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 06:20:46,189 - SF: - INFO:
+MCRing --->'D:\\python_learn\\comm\\__init__.py'
+
+2017-03-13 06:20:46,189 - SF: - INFO:
+fnum_sql: 184
+
+2017-03-13 06:20:46,189 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 06:20:46,189 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 06:20:46,189 - SF: - INFO:
+AddOkCount: 1
+
+2017-03-13 06:20:46,189 - SF: - INFO:
+McrOkCount: 10
+
+2017-03-13 06:20:46,329 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 06:20:46,329 - SF: - INFO:
+HSdel: 1
+
+2017-03-13 06:20:46,329 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 06:22:22,489 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 06:22:22,549 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 06:22:22,559 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 06:22:22,559 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-13 06:22:22,649 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 06:22:22,649 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 06:23:48,549 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 06:24:07,249 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\ttcodetest.py'
+
+2017-03-13 06:24:07,249 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-13 06:24:07,249 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 06:24:07,249 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 06:24:07,249 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 06:24:07,259 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 06:24:07,419 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 06:24:07,419 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 06:24:07,419 - SF: - INFO:
+HSdell: 5
+
+2017-03-13 06:24:07,419 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 06:25:33,876 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 06:25:33,936 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 06:25:33,946 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 06:25:33,946 - SF: - INFO:
+Numbers of file records get from Sql: 185
+
+2017-03-13 06:25:34,036 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 06:25:34,036 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 06:26:07,086 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:26:15,266 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\entry_points\\__init__.py'
+
+2017-03-13 06:26:16,296 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:26:16,296 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\contrib\\__init__.py'
+
+2017-03-13 06:26:17,006 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:26:17,006 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\import_study\\subpackage2\\__init__.py'
+
+2017-03-13 06:26:17,686 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:26:17,686 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\comm\\__init__.py'
+
+2017-03-13 06:26:18,676 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:26:18,686 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\__init__.py'
+
+2017-03-13 06:26:18,976 - SF: - INFO:
+fnum_sql: 185
+
+2017-03-13 06:26:18,976 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 06:26:18,976 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 06:26:18,976 - SF: - INFO:
+AddOkCount: 5
+
+2017-03-13 06:26:18,976 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 06:26:19,106 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 06:26:19,106 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 06:26:19,106 - SF: - INFO:
+HSdell: 2
+
+2017-03-13 06:26:19,106 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 06:27:40,146 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 06:27:40,216 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 06:27:40,226 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 06:27:40,226 - SF: - INFO:
+Numbers of file records get from Sql: 188
+
+2017-03-13 06:27:40,316 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 06:27:40,316 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 06:27:42,106 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:27:42,116 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 06:27:42,636 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:27:42,636 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\comm\\__init__.py'
+
+2017-03-13 06:27:44,836 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:27:44,846 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\entry_points\\__init__.py'
+
+2017-03-13 06:27:45,696 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:27:45,726 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\contrib\\__init__.py'
+
+2017-03-13 06:27:46,296 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 06:27:46,296 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\import_study\\subpackage2\\__init__.py'
+
+2017-03-13 06:27:46,306 - SF: - INFO:
+fnum_sql: 188
+
+2017-03-13 06:27:46,306 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 06:27:46,306 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 06:27:46,306 - SF: - INFO:
+AddOkCount: 2
+
+2017-03-13 06:27:46,306 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 06:27:46,426 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 06:27:46,426 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 06:27:46,436 - SF: - INFO:
+HSdell: 2
+
+2017-03-13 06:27:46,436 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 11:31:28,834 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 11:31:29,044 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 11:31:29,074 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 11:31:29,074 - SF: - INFO:
+Numbers of file records get from Sql: 188
+
+2017-03-13 11:31:30,534 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 11:31:30,544 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 12:34:53,901 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 12:34:53,971 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 12:34:53,971 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 12:34:53,971 - SF: - INFO:
+Numbers of file records get from Sql: 188
+
+2017-03-13 12:34:54,061 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 12:34:54,061 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 12:36:59,671 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\tmmcodetest.py'
+
+2017-03-13 12:38:42,191 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 12:40:13,057 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 12:40:28,718 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 373, in <module>
+    fidAdd_sql( *fsh )
+  File "codetsql.py", line 203, in fidAdd_sql
+    MailCount = FailCount + 1
+  File "codetsql.py", line 203, in fidAdd_sql
+    MailCount = FailCount + 1
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-13 14:29:19,624 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 14:29:19,694 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 14:29:19,704 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 14:29:19,704 - SF: - INFO:
+Numbers of file records get from Sql: 189
+
+2017-03-13 14:29:19,814 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 14:29:19,814 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 14:31:41,835 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 14:31:41,975 - SF: - INFO:
+MCRing --->'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 14:31:42,115 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\entry_points\\__init__.py'
+
+2017-03-13 14:31:42,205 - SF: - INFO:
+MCRing --->'D:\\python_learn\\import_study\\subpackage2\\__init__.py'
+
+2017-03-13 14:31:42,685 - SF: - INFO:
+MCRing --->'D:\\python_learn\\comm\\__init__.py'
+
+2017-03-13 14:31:42,925 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\__init__.py'
+
+2017-03-13 14:31:42,925 - SF: - INFO:
+fnum_sql: 189
+
+2017-03-13 14:31:42,925 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 14:31:42,925 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 14:31:42,925 - SF: - INFO:
+AddOkCount: 1
+
+2017-03-13 14:31:42,925 - SF: - INFO:
+McrOkCount: 5
+
+2017-03-13 14:31:43,045 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 14:31:43,045 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 14:31:43,045 - SF: - INFO:
+HSdell: 2
+
+2017-03-13 14:31:43,045 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 14:35:51,497 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 14:35:51,587 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 14:35:51,597 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 14:35:51,597 - SF: - INFO:
+Numbers of file records get from Sql: 188
+
+2017-03-13 14:35:51,677 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 14:35:51,677 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 14:35:55,437 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+Traceback (most recent call last):
+  File "D:\python_learn\codein\codetsql.py", line 124, in fRefresh_sql
+    cursor.execute('''update fline_code
+  File "D:\python_learn\codein\codetsql.py", line 124, in fRefresh_sql
+    cursor.execute('''update fline_code
+  File "C:\Python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\Python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-13 14:35:55,437 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\codein\codetsql.py
+
+2017-03-13 14:35:56,647 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "D:\python_learn\codein\codetsql.py", line 361, in <module>
+    HsIsql = FIsql.gethash()
+  File "D:\python_learn\codein\codetsql.py", line 361, in <module>
+    HsIsql = FIsql.gethash()
+  File "C:\Python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "C:\Python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-13 14:36:06,327 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 14:36:06,397 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 14:36:06,397 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 14:36:06,397 - SF: - INFO:
+Numbers of file records get from Sql: 188
+
+2017-03-13 14:36:06,487 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 14:36:06,487 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 14:41:56,928 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 14:49:04,818 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 373, in <module>
+    fidAdd_sql( *fsh )
+  File "codetsql.py", line 202, in fidAdd_sql
+    logger.info('fidAdd_sql--->Failed to write to Sql:\n%r',fname)
+  File "codetsql.py", line 202, in fidAdd_sql
+    logger.info('fidAdd_sql--->Failed to write to Sql:\n%r',fname)
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-13 14:52:51,868 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 14:52:51,938 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 14:52:51,938 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 14:52:51,948 - SF: - INFO:
+Numbers of file records get from Sql: 189
+
+2017-03-13 14:52:52,028 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 14:52:52,038 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 14:53:03,708 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 14:56:24,659 - SF: - INFO:
+MCRing --->'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 14:57:48,719 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\__init__.py'
+
+2017-03-13 14:58:28,029 - SF: - INFO:
+MCRing --->'D:\\python_learn\\import_study\\subpackage2\\__init__.py'
+
+2017-03-13 14:58:31,799 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\contrib\\__init__.py'
+
+2017-03-13 14:58:35,339 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\entry_points\\__init__.py'
+
+2017-03-13 14:58:37,709 - SF: - INFO:
+fnum_sql: 189
+
+2017-03-13 14:59:23,449 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 14:59:24,139 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 14:59:25,059 - SF: - INFO:
+AddOkCount: 1
+
+2017-03-13 14:59:26,489 - SF: - INFO:
+McrOkCount: 5
+
+2017-03-13 14:59:32,579 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 14:59:42,919 - SF: - INFO:
+HSdelm: 1
+
+2017-03-13 14:59:45,479 - SF: - INFO:
+HSdell: 2
+
+2017-03-13 14:59:48,009 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 15:17:22,180 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 15:17:22,250 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 15:17:22,260 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 15:17:22,260 - SF: - INFO:
+Numbers of file records get from Sql: 188
+
+2017-03-13 15:17:22,350 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 15:17:22,350 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 15:20:35,711 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 15:21:14,651 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\__init__.py'
+
+2017-03-13 15:21:21,091 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 15:21:21,091 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 15:21:22,041 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 15:21:22,041 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\entry_points\\__init__.py'
+
+2017-03-13 15:21:22,991 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 15:21:22,991 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\comm\\__init__.py'
+
+2017-03-13 15:21:23,761 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 15:21:23,761 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\contrib\\__init__.py'
+
+2017-03-13 15:21:23,761 - SF: - INFO:
+fnum_sql: 188
+
+2017-03-13 15:21:23,761 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 15:21:23,761 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 15:21:23,761 - SF: - INFO:
+AddOkCount: 2
+
+2017-03-13 15:21:23,761 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 15:21:23,941 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 15:21:23,941 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 15:21:23,941 - SF: - INFO:
+HSdell: 2
+
+2017-03-13 15:21:23,941 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 15:31:19,470 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 15:31:19,540 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 15:31:19,550 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 15:31:19,550 - SF: - INFO:
+Numbers of file records get from Sql: 188
+
+2017-03-13 15:31:19,650 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 15:31:19,650 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 15:31:36,360 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 15:36:01,182 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''use fortest;''')
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''use fortest;''')
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 362, in <module>
+    HsIsql = FIsql.gethash()
+  File "codetsql.py", line 202, in fidAdd_sql
+    logger.exception('Error msg')
+  File "codetsql.py", line 202, in fidAdd_sql
+    logger.exception('Error msg')
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-13 15:37:16,652 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 15:37:16,722 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 15:37:16,722 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 15:37:16,722 - SF: - INFO:
+Numbers of file records get from Sql: 188
+
+2017-03-13 15:37:17,102 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 15:37:17,102 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 15:37:43,352 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-13 15:44:29,983 - SF: - ERROR:
+Fail to run codetsql!
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''use fortest;''')
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''use fortest;''')
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 374, in <module>
+    fidAdd_sql( *fsh )
+  File "codetsql.py", line 202, in fidAdd_sql
+    logger.exception('Error msg')
+  File "codetsql.py", line 202, in fidAdd_sql
+    logger.exception('Error msg')
+  File "c:\python34\lib\bdb.py", line 48, in trace_dispatch
+    return self.dispatch_line(frame)
+  File "c:\python34\lib\bdb.py", line 67, in dispatch_line
+    if self.quitting: raise BdbQuit
+bdb.BdbQuit
+2017-03-13 15:51:30,469 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 15:51:30,539 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 15:51:30,549 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 15:51:30,549 - SF: - INFO:
+Numbers of file records get from Sql: 190
+
+2017-03-13 15:51:30,629 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 15:51:30,629 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 15:51:40,279 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 15:51:41,469 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\contrib\\__init__.py'
+
+2017-03-13 15:51:41,569 - SF: - INFO:
+MCRing --->'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 15:51:41,669 - SF: - INFO:
+MCRing --->'D:\\python_learn\\import_study\\subpackage2\\__init__.py'
+
+2017-03-13 15:51:41,769 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\__init__.py'
+
+2017-03-13 15:51:41,889 - SF: - INFO:
+MCRing --->'D:\\python_learn\\comm\\__init__.py'
+
+2017-03-13 15:51:41,889 - SF: - INFO:
+fnum_sql: 190
+
+2017-03-13 15:51:41,889 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 15:51:41,889 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 15:51:41,889 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 15:51:41,899 - SF: - INFO:
+McrOkCount: 5
+
+2017-03-13 15:51:42,029 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 15:51:42,029 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 15:51:42,029 - SF: - INFO:
+HSdell: 1
+
+2017-03-13 15:51:42,029 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 16:06:12,619 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 16:06:12,689 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 16:06:12,689 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 16:06:12,689 - SF: - INFO:
+Numbers of file records get from Sql: 189
+
+2017-03-13 16:06:12,789 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 16:06:12,789 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 16:06:24,439 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-03-13 16:06:38,199 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-13 16:09:25,775 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''use fortest;''')
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 16:09:37,177 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\contrib\\__init__.py'
+
+2017-03-13 16:09:45,861 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''use fortest;''')
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 16:09:45,863 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\import_study\\subpackage2\\__init__.py'
+
+2017-03-13 16:09:46,974 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''use fortest;''')
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 16:09:46,976 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\ptpython-master\\ptpython\\entry_points\\__init__.py'
+
+2017-03-13 16:09:47,823 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''use fortest;''')
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 16:09:47,826 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\comm\\__init__.py'
+
+2017-03-13 16:09:48,768 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 201: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 191, in fidAdd_sql
+    cursor.execute('''use fortest;''')
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'da39a3ee5e6b4b0d3255bfef95601890afd80709' for key 'strhash'
+2017-03-13 16:09:48,772 - SF: - INFO:
+fidAdd_sql--->Failed to write to Sql:
+'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 16:09:48,774 - SF: - INFO:
+fnum_sql: 189
+
+2017-03-13 16:09:48,774 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 16:09:48,775 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 16:09:48,776 - SF: - INFO:
+AddOkCount: 1
+
+2017-03-13 16:09:48,776 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 16:09:48,848 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 16:09:48,848 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 16:09:48,849 - SF: - INFO:
+HSdell: 0
+
+2017-03-13 16:09:48,849 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 16:10:09,033 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 16:10:09,100 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 16:10:09,106 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 16:10:09,107 - SF: - INFO:
+Numbers of file records get from Sql: 190
+
+2017-03-13 16:10:09,195 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 16:10:09,195 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 16:10:10,963 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\contrib\\__init__.py'
+
+2017-03-13 16:10:11,129 - SF: - INFO:
+MCRing --->'D:\\python_learn\\comm\\__init__.py'
+
+2017-03-13 16:10:11,239 - SF: - INFO:
+MCRing --->'D:\\python_learn\\ptpython-master\\ptpython\\entry_points\\__init__.py'
+
+2017-03-13 16:10:11,338 - SF: - INFO:
+MCRing --->'D:\\python_learn\\course\\fishc\\yuc.3.py'
+
+2017-03-13 16:10:11,439 - SF: - INFO:
+MCRing --->'D:\\python_learn\\import_study\\subpackage2\\__init__.py'
+
+2017-03-13 16:10:11,439 - SF: - INFO:
+fnum_sql: 190
+
+2017-03-13 16:10:11,440 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 16:10:11,440 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 16:10:11,441 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 16:10:11,441 - SF: - INFO:
+McrOkCount: 5
+
+2017-03-13 16:10:11,454 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 16:10:11,454 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 16:10:11,455 - SF: - INFO:
+HSdell: 0
+
+2017-03-13 16:10:11,455 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 16:10:27,993 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 16:10:28,060 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 16:10:28,065 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 16:10:28,065 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-13 16:10:28,155 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 16:10:28,156 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 16:10:28,364 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-13 16:10:28,365 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 16:10:28,366 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 16:10:28,366 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 16:10:28,367 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 16:10:28,378 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 16:10:28,378 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 16:10:28,379 - SF: - INFO:
+HSdell: 0
+
+2017-03-13 16:10:28,379 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 19:00:38,865 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 19:00:39,065 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 19:00:39,095 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 19:00:39,095 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-13 19:00:41,705 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 19:00:41,705 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 19:02:07,835 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\fc\\FileFunc.py'
+
+2017-03-13 19:02:07,835 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-13 19:02:07,835 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 19:02:07,835 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 19:02:07,835 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 19:02:07,835 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 19:02:07,885 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 19:02:07,885 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 19:02:07,885 - SF: - INFO:
+HSdell: 0
+
+2017-03-13 19:02:07,885 - SF: - INFO:
+DelCount: 0
+
+2017-03-13 20:27:02,377 - SF: - INFO:
+ttn = 0 
+
+2017-03-13 20:27:02,487 - SF: - INFO:
+Building connection to Mysql...
+
+2017-03-13 20:27:02,497 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-03-13 20:27:02,497 - SF: - INFO:
+Numbers of file records get from Sql: 195
+
+2017-03-13 20:27:02,587 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-03-13 20:27:02,587 - SF: - INFO:
+Numbers of py and txt files get from disk: 195
+
+2017-03-13 20:27:12,307 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\code_in.sql.bk.py'
+
+2017-03-13 20:27:12,307 - SF: - INFO:
+fnum_sql: 195
+
+2017-03-13 20:27:12,307 - SF: - INFO:
+fnum_disk: 195
+
+2017-03-13 20:27:12,307 - SF: - INFO:
+FailCount: 0
+
+2017-03-13 20:27:12,307 - SF: - INFO:
+AddOkCount: 0
+
+2017-03-13 20:27:12,317 - SF: - INFO:
+McrOkCount: 0
+
+2017-03-13 20:27:12,327 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-03-13 20:27:12,327 - SF: - INFO:
+HSdelm: 0
+
+2017-03-13 20:27:12,327 - SF: - INFO:
+HSdell: 0
+
+2017-03-13 20:27:12,327 - SF: - INFO:
+DelCount: 0
+

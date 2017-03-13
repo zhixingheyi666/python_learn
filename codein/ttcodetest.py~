@@ -20,8 +20,7 @@ class fh_insql:
 print('Good Luck!')
 cursor, mconn = mkcon()
 FailCount = 0
-HSdelm = 0
-HSdell = 0
+HSdel = 0
 AddOkCount = 0
 McrOkCount = 0
 FailList = []
@@ -143,7 +142,7 @@ def fRefresh_sql( nfmate , cursor = cursor, mconn = mconn ):
                                             and line = %s limit 1''', [fline[0]])
                     fli_sql = cursor.fetchall()
                     if not fli_sql:
-                        #pdb.set_trace()
+                        pdb.set_trace()
                         flNew.append(fline)
                     elif fli_sql[0][2] == fline[1]:
                         cursor.execute('''update fline_code
@@ -187,20 +186,13 @@ def fidAdd_sql( fname, hs, cursor = cursor, mconn = mconn):
     try:
         lhs = [hs]
         flineargs = GetContent(fname)
-        pdb.set_trace()    
         cursor.execute('''use fortest;''')
         cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
         cursor.execute('''select last_insert_id() into @lshs;''')
         cursor.execute('''insert into fmate_code( namepath, hashid, fmtime, fctime )
                             values( %s, @lshs, %s, %s );''',fmate)
-        if flineargs:
-            cursor.executemany('''insert into fline_code( hashid, line, flid )
-                            values( @lshs, %s, %s )''', flineargs)
-        #内容为空的文件，写入一个 line = ''，同时 flid = 0 的虚拟行 
-        elif flineargs == []:
-            cursor.execute('''insert into fline_code( hashid, line, flid )
-                            values( @lshs, %s, %s )''', ['', 0])
-            
+        cursor.executemany('''insert into fline_code( hashid, line, flid )
+                        values( @lshs, %s, %s )''', flineargs)
         mconn.commit()
         AddOkCount = AddOkCount + 1
     except:
@@ -241,8 +233,7 @@ def fidMCR_sql( fname, hs, cursor = cursor, mconn = mconn):
         FailList.append(fname)
 def Del_sql( fname, cursor = cursor, mconn = mconn ):
     global FileDEL
-    global HSdelm
-    global HSdell
+    global HSdel
     ttDel = []
     try:
         cursor.execute('''use fortest;''')
@@ -252,28 +243,17 @@ def Del_sql( fname, cursor = cursor, mconn = mconn ):
             cursor.execute('''delete from fmate_code where namepath = %s''', [fi])
             ttDel.append(fi)
         #pdb.set_trace()
-        #执行数据库清查，删除无效数据（特殊错误产生的）
         cursor.execute('''select hashid from hash_code where hashid not in (select hashid from fmate_code)''')
         #predel = [ pi[0] for pi in cursor.fetchall() ]
-        predelm = cursor.fetchall()
-        if predelm:
+        predel = cursor.fetchall()
+        if predel:
             cursor.executemany('''delete from fline_code 
-                                    where hashid = %s''', predelm)
+                                    where hashid = %s''', predel)
             cursor.executemany('''delete from hash_code 
-                                    where hashid = %s''', predelm)
-        #执行数据库清查，删除无效数据（特殊错误产生的）
-        cursor.execute('''select hashid from hash_code 
-						where hashid not in ( select hashid from fline_code )''')
-        predell = cursor.fetchall()
-        if predell:
-            cursor.executemany('''delete from fmate_code 
-                                    where hashid = %s''', predell)
-            cursor.executemany('''delete from hash_code 
-                                    where hashid = %s''', predell)
+                                    where hashid = %s''', predel)
         cursor.execute('''set sql_safe_updates = 1''')
         mconn.commit()
-        HSdelm = len(predelm)
-        HSdell = len(predell)
+        HSdel = len(predel)
         FileDEL = FileDEL + ttDel
         logger.info('Execute  Del_sql() Success!')
     except:
@@ -364,7 +344,7 @@ try:
             preadd = Fname_Hash[1]
         else:
             logger.warn('Failed to get hash of preAdd!') 
-        pdb.set_trace()    
+            
         HsIsql = FIsql.gethash()
         for fsh in preadd.items():
             """这里要考虑两种情形:1、文件内容已经存在，只是添加fid指向，就是所谓移动复制重命名
@@ -387,9 +367,18 @@ try:
         print(Fli)
     preDel = f_sql - f_disk
     Del_sql( preDel )
-    logger.info( 'HSdelm: %d', HSdelm)
-    logger.info( 'HSdell: %d', HSdell)
+    logger.info( 'HSdel: %d', HSdel)
     logger.info( 'DelCount: %d', len(FileDEL))
 except:
     logger.exception('Fail to run codetsql!')
 
+"""
+fh_insql:在数据库中记录的文件名-hash值组合的集合，简称库文件
+文件名-hash值组合:是判断独立文件的标志具有唯一性，文件名指的是包含路径的完整文件名
+f_infolder:磁盘上实际存在的包含路径的完整文件名的集合
+class fh_insql:
+    connect():建立与数据库的链接
+    getfname():获取数据库中文件名，返回一个集合
+数据库文件记录的删除：
+    先删除fid对文件内容标志hash值的指向，此时如果没有其他fid指向这个hash，则删除这个hash值指向的文件内容
+"""

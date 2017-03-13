@@ -4,7 +4,7 @@ import hashlib, chardet
 
 from fc.LOG_sf import logger
 from fc.conn_SQL import mkcon
-from fc.GetFileHash import GetFileHash
+from fc.FileFunc import GetFileHash, GetContent
 
 
 """
@@ -20,11 +20,158 @@ class fh_insql:
 print('Good Luck!')
 cursor, mconn = mkcon()
 FailCount = 0
-HSdel = 0
+HSdelm = 0
+HSdell = 0
 AddOkCount = 0
 McrOkCount = 0
 FailList = []
 FileDEL = []
+FileRefresh = []
+
+def fCheck( fname,cursor = cursor, mconn = mconn ):
+    ftt = []
+    for fni in fname:
+        cursor.execute('''select * from fmate_code where namepath = %s''',[fni])
+        ( *_, oldhashid, fmt, fct, _) = cursor.fetchall()[0]
+        cursor.execute('''select strhash from hash_code where hashid = %s ''', [oldhashid])
+        try:
+            ( ohash, ) = cursor.fetchall()[0]
+        except:
+            ohash = ''
+        Fmt = time.strftime( '%Y-%m-%d %H:%M:%S', time.localtime(os.path.getmtime(fni)) )
+        Fct = time.strftime( '%Y-%m-%d %H:%M:%S', time.localtime(os.path.getmtime(fni)) )
+        if str(fmt) != Fmt or str(fct) != Fct:
+            t = []
+            t.append(fni)
+            t.append(Fmt)
+            t.append(Fct)
+            nhash = GetFileHash(fni)[1]
+            t.append(nhash)
+            t.append(ohash)
+            ftt.append(t)
+    return ftt
+
+#def fRefresh_sql( nfmate , cursor = cursor, mconn = mconn ):
+    """
+    更新算法：
+    1、此文件名对应的hash同时有其他文件名对应，先解除旧的文件名的关联，然后直接执行全新文件的写入操作
+    2、此文件名对应的hash没有其他文件名对应，先向hash_code添加新hash，再把旧hash对应的fline更新为新hash
+    3、fstatus可以用于版本控制（还得配合一个历史行号和lid,历史hash的对照表，但这里先不去实现了）
+            每次更新文件前，将库中hash相关的fstatus为1的全部置位为7，然后将原来所有fstatus全部减去1：
+                例如：置fstatus是7的全部置为6（表示行处于等待选中的状态）
+                        是0的，全部置为-1
+                        是-1的，全部置为-2
+            fstatus设定一个版本控制的阈值，比如-6，大于-6的行将被永久删除
+            接下来执行更新新文件
+                保留的行，fstatus重置为1
+                新加入的行，fstatus也置为1
+                删除的行（选行完毕后fstatus仍然为6），fstatus置位为0
+                真正删除大于阈值的行
+    4、这里先实现一个简单的：        
+        update fstatus values(7,)  where hashid = fhashid and fstatus = 1 
+        update fstatus values(-1,)  where hashid = fhashid and fstatus = 0 
+        for li_disk in 待更新:
+            li_sql = select * from fline_code where hashid = fhashid and line = li_disk.line and fstatus in (7,-1) limit1
+            if li_sql == NULL:
+                #全文未搜索到li_disk，视为全新的行，应当执行插入新行操作(fstatus = 1)
+            elif li_sql.flid == li_disk.flid:
+                #同样的行号，同样的内容，视为未更改的行，ctimestamp应当设法保持不变
+                #排除sql中对照过的行 
+                update fstatus values(1,) where lid = li_sql.lid
+            else:
+                #li_sql.flid != li_disk.flid
+                #行号不一致，更新行号
+                #可能的情况包括旧行删除，新行插入，旧行移动，复制插入新行等
+                update flid where lid = li_sql.lid 
+                #排除sql中对照过的行 
+                update fstatus values(1,) where lid = li_sql.lid
+        #未被选中的行，设置fstatus未上一个版本 
+        update fstatus values(0,)  where hashid = fhashid and fstatus = 7 
+        #仅保留上一个版本，上上个版本的行，执行删除操作
+        delete fstatus   where hashid = fhashid and fstatus = -1 
+        
+    """
+def fRefresh_sql( nfmate , cursor = cursor, mconn = mconn ):
+    global FailCount
+    global FileRefresh
+    for nfi in nfmate:
+        #print(nfi)
+        cursor.execute('''use fortest;''')
+        cursor.execute('''select hashid from fmate_code where namepath = %s into @oldhashid''', nfi[0:1])
+        cursor.execute('''select count(namepath) from fmate_code where hashid = @oldhashid''')
+        c_nfi = cursor.fetchall()[0][0]
+        logger.debug('c_nfi = %r',c_nfi)
+        try:
+            flineargs = GetContent(nfi[0])
+            #暂时：这里以文件时间判断为准，即使hash值一样，也会运行更新程序
+            if nfi[3] == nfi[4]:
+                cursor.execute('''select @oldhashid into @lshs''')
+            else:
+                cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+                cursor.execute('''select last_insert_id() into @lshs''')
+            #更新文件信息
+            cursor.execute('''update fmate_code
+                                set hashid = @lshs,
+                                    fctime = %s,
+                                    fmtime = %s
+                                where namepath = %s''',nfi[-3:-6:-1])
+            mconn.commit()
+            if c_nfi > 1 and 0:
+                cursor.executemany('''insert into fline_code( hashid, line, flid )
+                                    values( @lshs, %s, %s )''', flineargs[0])
+            elif c_nfi == 1:
+                pdb.set_trace()
+                cursor.execute('''update fline_code 
+                                    set hashid = @lshs
+                                    where hashid = @oldhashid ''')
+                if nfi[3] != nfi[4]:
+                    cursor.execute('''delete from hash_code where hashid = @oldhashid''') 
+                cursor.execute('''update fline_code 
+                                    set fstatus = 7 
+                                    where hashid = @lshs and fstatus = 1''')
+                cursor.execute('''update fline_code 
+                                    set fstatus = -1 
+                                    where hashid = @lshs and fstatus = 0''')
+                mconn.commit()
+                flNew = []
+                flidChange = []
+                for fline in flineargs:
+                    cursor.execute('''select lid, line, flid 
+                                        from fline_code
+                                        where hashid = @lshs
+                                            and fstatus in ( 7,-1 )
+                                            and line = %s limit 1''', [fline[0]])
+                    fli_sql = cursor.fetchall()
+                    if not fli_sql:
+                        #pdb.set_trace()
+                        flNew.append(fline)
+                    elif fli_sql[0][2] == fline[1]:
+                        cursor.execute('''update fline_code
+                                            set fstatus = 1
+                                            where lid = %s''', fli_sql[0][:1])
+                    else:
+                        flidChange.append( fline[1:] + (fli_sql[0][0],) )
+                        cursor.execute('''update fline_code
+                                                set fstatus = 1
+                                                where lid = %s''', fli_sql[0][:1])
+                pdb.set_trace()
+                cursor.executemany('''insert into fline_code( hashid, line, flid ) values( @lshs, %s, %s )''', flNew)
+                cursor.executemany('''update fline_code
+                                        set flid = %s,
+                                            fstatus = 1
+                                        where lid = %s''', flidChange)
+                cursor.execute('''update fline_code
+                                        set fstatus = 0
+                                        where hashid = @lshs and fstatus = 7''')
+                cursor.execute('''delete from fline_code
+                                        where hashid = @lshs and fstatus = -1''')
+                mconn.commit()
+                FileRefresh.append(nfi[0])
+                logger.info('Refresh:\t%r',nfi[0])
+        except:
+            logger.exception('Refresh Failed:\t%s', nfi[0]) 
+            logger.warn('Refresh Failed:\t%s', nfi[0]) 
+            FailCount += 1
 def fidAdd_sql( fname, hs, cursor = cursor, mconn = mconn):
     global FailCount 
     global AddOkCount 
@@ -38,39 +185,22 @@ def fidAdd_sql( fname, hs, cursor = cursor, mconn = mconn):
     fmate.append(fmt)
     fmate.append(fct)
     try:
-        #print("Go: ftt = open( fname, 'r', encoding = 'utf-8' )")
-        logger.debug("Go: ftt = open( fname, 'r', encoding = 'utf-8' )")
-        logger.info("Add ---> %r", fname)
-        try:
-            #pdb.set_trace()
-            logger.debug('%r',fname)
-            ftt = open( fname, 'r', encoding = 'utf-8' )
-            fcontent = ftt.readlines()
-        except:
-            #logger.exception('error msg:    Loading file with sysdefault codepage again')
-            print('error msg:    Loading file with sysdefault codepage again')
-            encodett = chardet.detect( open(fname,'rb').read() )['encoding']
-            try:
-                #pdb.set_trace()
-                ftt = open( fname, 'r', encoding = encodett )
-                fcontent = ftt.readlines()
-            except Exception as e:
-                print('error msg: Fail to load file--->%s' % fname)
-                #logger.exception('error msg')
-                #logger.info( 'Fail to load file--->%s',fname )
-        flineargs = []
-        ftti = 1
-        for fci in fcontent:
-            flineargs.append(( fci, ftti ))
-            ftti = ftti + 1
         lhs = [hs]
+        flineargs = GetContent(fname)
+        pdb.set_trace()    
         cursor.execute('''use fortest;''')
         cursor.execute('''insert into hash_code( strhash ) values( %s );''',lhs)
         cursor.execute('''select last_insert_id() into @lshs;''')
         cursor.execute('''insert into fmate_code( namepath, hashid, fmtime, fctime )
                             values( %s, @lshs, %s, %s );''',fmate)
-        cursor.executemany('''insert into fline_code( hashid, line, flid )
-                        values( @lshs, %s, %s )''', flineargs)
+        if flineargs:
+            cursor.executemany('''insert into fline_code( hashid, line, flid )
+                            values( @lshs, %s, %s )''', flineargs)
+        #内容为空的文件，写入一个 line = ''，同时 flid = 0 的虚拟行 
+        elif flineargs == []:
+            cursor.execute('''insert into fline_code( hashid, line, flid )
+                            values( @lshs, %s, %s )''', ['', 0])
+            
         mconn.commit()
         AddOkCount = AddOkCount + 1
     except:
@@ -79,9 +209,6 @@ def fidAdd_sql( fname, hs, cursor = cursor, mconn = mconn):
         logger.info('fidAdd_sql--->Failed to write to Sql:\n%r',fname)
         MailCount = FailCount + 1
         FailList.append(fname)
-    finally:
-        if ftt:
-            ftt.close()
 
 def fidMCR_sql( fname, hs, cursor = cursor, mconn = mconn):
     logger.debug('fidMCR_sql:本函数执行移动复制重命名文件的写入')
@@ -114,7 +241,8 @@ def fidMCR_sql( fname, hs, cursor = cursor, mconn = mconn):
         FailList.append(fname)
 def Del_sql( fname, cursor = cursor, mconn = mconn ):
     global FileDEL
-    global HSdel
+    global HSdelm
+    global HSdell
     ttDel = []
     try:
         cursor.execute('''use fortest;''')
@@ -124,17 +252,28 @@ def Del_sql( fname, cursor = cursor, mconn = mconn ):
             cursor.execute('''delete from fmate_code where namepath = %s''', [fi])
             ttDel.append(fi)
         #pdb.set_trace()
+        #执行数据库清查，删除无效数据（特殊错误产生的）
         cursor.execute('''select hashid from hash_code where hashid not in (select hashid from fmate_code)''')
         #predel = [ pi[0] for pi in cursor.fetchall() ]
-        predel = cursor.fetchall()
-        if predel:
+        predelm = cursor.fetchall()
+        if predelm:
             cursor.executemany('''delete from fline_code 
-                                    where hashid = %s''', predel)
+                                    where hashid = %s''', predelm)
             cursor.executemany('''delete from hash_code 
-                                    where hashid = %s''', predel)
+                                    where hashid = %s''', predelm)
+        #执行数据库清查，删除无效数据（特殊错误产生的）
+        cursor.execute('''select hashid from hash_code 
+						where hashid not in ( select hashid from fline_code )''')
+        predell = cursor.fetchall()
+        if predell:
+            cursor.executemany('''delete from fmate_code 
+                                    where hashid = %s''', predell)
+            cursor.executemany('''delete from hash_code 
+                                    where hashid = %s''', predell)
         cursor.execute('''set sql_safe_updates = 1''')
         mconn.commit()
-        HSdel = len(predel)
+        HSdelm = len(predelm)
+        HSdell = len(predell)
         FileDEL = FileDEL + ttDel
         logger.info('Execute  Del_sql() Success!')
     except:
@@ -209,8 +348,6 @@ class fh_Infolder(object):
     def getftime(self):
         pass
 
-
-
 FIdisk = fh_Infolder('D:\\python_learn')
 FIsql = fhInsql( cursor, mconn )
 f_sql, fnum_sql = FIsql.getfname()
@@ -218,6 +355,8 @@ f_disk, fnum_disk = FIdisk.getfname()
 
 try:
     preAdd = f_disk - f_sql
+    preRefresh = f_disk & f_sql
+    fRefresh_sql( fCheck(preRefresh) )    
     if preAdd:
         logger.debug('FIisk.fname_hash( preAdd )')
         Fname_Hash = FIdisk.fname_hash( preAdd )
@@ -225,7 +364,7 @@ try:
             preadd = Fname_Hash[1]
         else:
             logger.warn('Failed to get hash of preAdd!') 
-            
+        pdb.set_trace()    
         HsIsql = FIsql.gethash()
         for fsh in preadd.items():
             """这里要考虑两种情形:1、文件内容已经存在，只是添加fid指向，就是所谓移动复制重命名
@@ -248,7 +387,8 @@ try:
         print(Fli)
     preDel = f_sql - f_disk
     Del_sql( preDel )
-    logger.info( 'HSdel: %d', HSdel)
+    logger.info( 'HSdelm: %d', HSdelm)
+    logger.info( 'HSdell: %d', HSdell)
     logger.info( 'DelCount: %d', len(FileDEL))
 except:
     logger.exception('Fail to run codetsql!')
