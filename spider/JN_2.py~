@@ -25,7 +25,7 @@ urlst = [ "https://www.yandex.com/",
             'http://k1.youxi.com/360meiti.html'
             ]
 
-Sq.append( urlst[6] )
+Sq.append( urlst[8] )
 cnt = 0
 count_Sq = 1
 #Rurl = open( 'Result_JN_2.txt', '+w' )
