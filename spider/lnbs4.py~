@@ -10,6 +10,18 @@ from bs4 import BeautifulSoup
 
 cursor, mconn = mkcon()
 cursor.execute('''use fortest''')
+tturl = 'http://www.pythonscraping.com/pages/page3.html'
+tthtml = urlopen(tturl)
+ttbsObj = BeautifulSoup(tthtml,'html.parser')
+zzurl = 'http://www.pythonscraping.com/pages/warandpeace.html'
+zzhtml = urlopen(zzurl)
+zzbsObj = BeautifulSoup(zzhtml,'html.parser')
+
+driver1t=webdriver.Firefox()
+driver1t.get(tturl)
+driver2z=webdriver.Firefox()
+driver2z.get(zzurl)
+
 def startFox(url = 'http://www.baidu.com', keY = 'wd'):
     driver=webdriver.Firefox()
     driver.get(url)
@@ -19,6 +31,6 @@ def startFox(url = 'http://www.baidu.com', keY = 'wd'):
         elem.send_keys(Keys.RETURN)
     except:
         logger.exception('Info:\n')
-    finally:
-        driver.close()
-        driver.quit()
+#    finally:
+#        driver.close()
+#        driver.quit()

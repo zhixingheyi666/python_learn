@@ -16,6 +16,10 @@ CREATE TABLE `bookclass` (
 rename table bookclass to bkbookclass;
 select count(*)
 from bookclass;
+select * from booklist where	 Title regexp '水仙花·石蒜' and PublishDate > '2009';
+select * from bookclass;
+select * from booklist;
+select * from catbooklist;
 rename table booklist to bkbooklist;
 CREATE TABLE `catbooklist` (
   `ISBN` varchar(30) DEFAULT NULL,
@@ -44,5 +48,3 @@ CREATE TABLE `catbooklist` (
   KEY `PubID` (`PubID`),
   KEY `PublishDate` (`PublishDate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-select count(*) 
-from catbooklist;

@@ -1,38 +1,18 @@
-﻿;===========================================================================
-;======================================实用命令=========================================================
-
-!p::Run, D:\python_learn\powershell.exe.lnk ptpython
-!f::Run,d:\python_learn
-CapsLock & a::Run, d:\python_learn\spider
-#a::Run, firefox.exe,  
-;=============================Alt+Space -> Wox (Run/Activate)======================================================
-!Space::
-{
-        DetectHiddenWindows, on
-        ifWinNotExist ahk_class HwndWrapper
-                Run C:\Users\lenovo\AppData\Local\Wox\Update.exe --processStart Wox.exe
-        else
-            ifWinNotActive ahk_class HwndWrapper
-                    WinActivate
-        Return  
-}
-;=====================改掉大写键（CapsLk）为Enter====================================
-;replace CapsLock to LeftEnter; CapsLock = Alt CapsLock
-$CapsLock::Enter
-LAlt & Capslock::SetCapsLockState, % GetKeyState("CapsLock", "T") ? "Off" : "On"
-;=====================使用Alt+JKLI实现上下左右=====================
-;!l::Send, {Left}
-;!h::Send, {Right}
-!j::Send, {Down}
-!k::Send, {Up}
-;=====================虚拟桌面 - Ahk  ======================================================
+﻿;=====================虚拟桌面 - Ahk  ======================================================
 ;Autohotkey的脚本，实现虚拟桌面的功能，快捷键Alt+1，2，3，4  
-SetBatchLines, -1 ; maximize script speed!  
+SetBatchLines, -1       ; maximize script speed!  
 SetWinDelay, -1  
-OnExit, CleanUp ; clean up in case of error (otherwise some windows will get lost)  
-numDesktops := 4 ; maximum number of desktops  
-curDesktop := 1 ; index number of current desktop  
-WinGet, windows1, List ; get list of all currently visible windows  
+OnExit, CleanUp         ; clean up in case of error (otherwise some windows will get lost)  
+numDesktops := 4        ; maximum number of desktops  
+curDesktop := 1         ; index number of current desktop  
+WinGet, windows1, List  ; get list of all currently visible windows  
+
+;=====================向导创建文件自带环境设定 - Ahk  ====================================================
+#NoEnv                  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn                 ; Enable warnings to assist with detecting common errors.
+SendMode Input          ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%     ; Ensures a consistent starting directory.
+
 ; ***** hotkeys *****  
 !1::SwitchToDesktop(1)  
 !2::SwitchToDesktop(2)  
@@ -43,126 +23,150 @@ WinGet, windows1, List ; get list of all currently visible windows
 ^!3::SendActiveToDesktop(3)  
 ^!4::SendActiveToDesktop(4)  
 !0::ExitApp  
+
+; *********** 使用Alt+JKLI实现上下左右 ***********
+; !l::Send, {Left}
+; !h::Send, {Right}
+; !j::Send, {Down}
+; !k::Send, {Up}
+CapsLock & h::Send, {Left}
+CapsLock & l::Send, {Right}
+CapsLock & j::Send, {Down}
+CapsLock & k::Send, {Up}
+
+; *********** 实用命令 ***********
+!p::Run, D:\python_learn\powershell.exe.lnk ptpython
+CapsLock & a::Run, d:\python_learn\spider
+!f::Run,d:\python_learn
+#a::Run, firefox.exe,  
+
+; *********** Wox (Run/Activate) ***********
+!Space::
+{
+    DetectHiddenWindows, on
+    ifWinNotExist ahk_class HwndWrapper
+        Run C:\Users\lenovo\AppData\Local\Wox\Update.exe --processStart Wox.exe
+    else
+        ifWinNotActive ahk_class HwndWrapper
+            WinActivate
+    Return  
+}
+
+; *********** 改掉大写键（CapsLk）为Enter ***********
+$CapsLock::Enter    ; replace CapsLock to LeftEnter     
+; 原本系统中Alt + CapsLock 或者 Ctrl + CapsLock 就有切换大小写功能
+; 像下面就或许是一个《漏洞》,连续按几次，会进入一个按键失灵的混乱状态，哈哈
+; <!CapsLock::SetCapsLockState, % GetKeyState("CapsLock", "T") ? "Off" : "On"    ; CapsLock = Alt CapsLock
+
+
 ; ***** functions *****  
 ; switch to the desktop with the given index number  
 SwitchToDesktop(newDesktop)  
 {  
-global  
-if (curDesktop <> newDesktop)  
-{  
-GetCurrentWindows(curDesktop)  
-;WinGet, windows%curDesktop%, List,,, Program Manager ; get list of all visible windows  
-ShowHideWindows(curDesktop, false)  
-ShowHideWindows(newDesktop, true)  
-curDesktop := newDesktop  
-Send, {ALT DOWN}{TAB}{ALT UP} ; activate the right window  
-}  
-return  
+    global  
+    if (curDesktop <> newDesktop)  
+    {  
+        GetCurrentWindows(curDesktop)  
+        ;WinGet, windows%curDesktop%, List,,, Program Manager ; get list of all visible windows  
+        ShowHideWindows(curDesktop, false)  
+        ShowHideWindows(newDesktop, true)  
+        curDesktop := newDesktop  
+        Send, {ALT DOWN}{TAB}{ALT UP} ; activate the right window  
+    }  
+    return  
 }  
 ; sends the given window from the current desktop to the given desktop  
 SendToDesktop(windowID, newDesktop)  
 {  
-global  
-RemoveWindowID(curDesktop, windowID)  
-; add window to destination desktop  
-windows%newDesktop% += 1  
-i := windows%newDesktop%  
-windows%newDesktop%%i% := windowID  
-WinHide, ahk_id %windowID%  
-Send, {ALT DOWN}{TAB}{ALT UP} ; activate the right window  
+    global  
+    RemoveWindowID(curDesktop, windowID)  
+    ; add window to destination desktop  
+    windows%newDesktop% += 1  
+    i := windows%newDesktop%  
+    windows%newDesktop%%i% := windowID  
+    WinHide, ahk_id %windowID%  
+    Send, {ALT DOWN}{TAB}{ALT UP} ; activate the right window  
 }  
 ; sends the currently active window to the given desktop  
 SendActiveToDesktop(newDesktop)  
 {  
-WinGet, id, ID, A  
-SendToDesktop(id, newDesktop)  
+    WinGet, id, ID, A  
+    SendToDesktop(id, newDesktop)  
 }  
 ; removes the given window id from the desktop  
 RemoveWindowID(desktopIdx, ID)  
 {  
-global  
-Loop, % windows%desktopIdx%  
-{  
-if (windows%desktopIdx%%A_Index% = ID)  
-{  
-RemoveWindowID_byIndex(desktopIdx, A_Index)  
-Break  
-}  
-}  
+    global  
+    Loop, % windows%desktopIdx%  
+    {  
+        if (windows%desktopIdx%%A_Index% = ID)  
+        {  
+            RemoveWindowID_byIndex(desktopIdx, A_Index)  
+            Break  
+        }  
+    }  
 }  
 ; this removes the window id at index from desktop number  
 RemoveWindowID_byIndex(desktopIdx, ID_idx)  
 {  
-global  
-Loop, % windows%desktopIdx% - ID_idx  
-{  
-idx1 := % A_Index + ID_idx - 1  
-idx2 := % A_Index + ID_idx  
-windows%desktopIdx%%idx1% := windows%desktopIdx%%idx2%  
-}  
-windows%desktopIdx% -= 1  
+    global  
+    Loop, % windows%desktopIdx% - ID_idx  
+    {  
+        idx1 := % A_Index + ID_idx - 1  
+        idx2 := % A_Index + ID_idx  
+        windows%desktopIdx%%idx1% := windows%desktopIdx%%idx2%  
+    }  
+    windows%desktopIdx% -= 1  
 }  
 ; this builds a list of all currently visible windows in stores it in desktop  
 GetCurrentWindows(index)  
 {  
-global  
-WinGet, windows%index%, List,,, Program Manager ; get list of all visible windows  
-; now remove task bar “window” (is there a simpler way?)  
-Loop, % windows%index%  
-{  
-id := % windows%index%%A_Index%  
-WinGetClass, windowClass, ahk_id %id%  
-if windowClass = Shell_TrayWnd ; remove task bar window id  
-{  
-RemoveWindowID_byIndex(index, A_Index)  
-Break  
-}  
-}  
+    global  
+    WinGet, windows%index%, List,,, Program Manager ; get list of all visible windows  
+    ; now remove task bar “window” (is there a simpler way?)  
+    Loop, % windows%index%  
+    {  
+        id := % windows%index%%A_Index%  
+        WinGetClass, windowClass, ahk_id %id%  
+        if windowClass = Shell_TrayWnd ; remove task bar window id  
+        {  
+            RemoveWindowID_byIndex(index, A_Index)  
+            Break  
+        }  
+    }  
 }  
 ; if show=true then shows windows of desktop %index%, otherwise hides them  
 ShowHideWindows(index, show)  
 {  
-global  
-Loop, % windows%index%  
-{  
-id := % windows%index%%A_Index%  
-if show  
-WinShow, ahk_id %id%  
-else  
-WinHide, ahk_id %id%  
-}  
+    global  
+    Loop, % windows%index%  
+    {  
+        id := % windows%index%%A_Index%  
+        if show  
+            WinShow, ahk_id %id%  
+        else  
+            WinHide, ahk_id %id%  
+    }  
 }  
 ; show all windows from all desktops on exit  
 CleanUp:  
 Loop, %numDesktops%  
 ShowHideWindows(A_Index, true)  
-ExitApp  
+ExitApp
 ;===========================================================================
 ;=============================>>>>>>>>>>>>>>>>>>>>=======================================================
 
 
-
-#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
-; #Warn  ; Enable warnings to assist with detecting common errors.
-SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
-SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
-
-
-
-
-;Run, Notepad.exe, ,Max
-;Run, cmd.exe, ,Max
-
-;Run, firefox.exe, ,WinMinmize
-;Run, C:\Users\lenovo\AppData\Roaming\360se6\Application\360se.exe, ,Max
-;Run, C:\Users\lenovo\AppData\Roaming\360se6\Application\360se.exe, ,Min
-
-
-;Run, cmd.exe, ,Hide
-;Run, %ComSpec% /k dir c:\windows\system32 
-;Run, %ComSpec% /k dir c:\windows\system32
-;Run, %ComSpec% /k d: &&cd python_learn &&ptpython
-;Run, PowerShell  (d:) -and (cd .\python_learn) -and (ptpython)
-;!u::Send ^c !{tab} ^v 
+; Run, Notepad.exe, ,Max
+; Run, cmd.exe, ,Max
+; Run, firefox.exe, ,WinMinmize
+; Run, C:\Users\lenovo\AppData\Roaming\360se6\Application\360se.exe, ,Max
+; Run, C:\Users\lenovo\AppData\Roaming\360se6\Application\360se.exe, ,Min
+; Run, cmd.exe, ,Hide
+; Run, %ComSpec% /k dir c:\windows\system32 
+; Run, %ComSpec% /k dir c:\windows\system32
+; Run, %ComSpec% /k d: &&cd python_learn &&ptpython
+; Run, PowerShell  (d:) -and (cd .\python_learn) -and (ptpython)
+; !u::Send ^c !{tab} ^v 
  
 

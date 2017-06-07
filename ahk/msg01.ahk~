@@ -1,0 +1,11 @@
+iAdd(x,y)
+{
+    return x + y    ;加法
+}
+
+MsgBox % "The answer is: " . iAdd(3,2)
+
+ivar := "My variables!"
+
+MsgBox 1:The value in  the variable named Var is %ivar%.
+MsgBox % "2:The value in  the variable named Var is" .    ivar . "."
