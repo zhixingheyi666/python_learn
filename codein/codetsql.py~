@@ -39,7 +39,8 @@ def fCheck( fname,cursor = cursor, mconn = mconn ):
         except:
             ohash = ''
         Fmt = time.strftime( '%Y-%m-%d %H:%M:%S', time.localtime(os.path.getmtime(fni)) )
-        Fct = time.strftime( '%Y-%m-%d %H:%M:%S', time.localtime(os.path.getmtime(fni)) )
+        Fct = time.strftime( '%Y-%m-%d %H:%M:%S', time.localtime(os.path.getctime(fni)) )
+        #Fct = time.strftime( '%Y-%m-%d %H:%M:%S', time.localtime(os.path.getmtime(fni)) )
         if str(fmt) != Fmt or str(fct) != Fct:
             t = []
             t.append(fni)
@@ -120,7 +121,7 @@ def fRefresh_sql( nfmate , cursor = cursor, mconn = mconn ):
                 cursor.executemany('''insert into fline_code( hashid, line, flid )
                                     values( @lshs, %s, %s )''', flineargs[0])
             elif c_nfi == 1:
-                pdb.set_trace()
+                #pdb.set_trace()
                 cursor.execute('''update fline_code 
                                     set hashid = @lshs
                                     where hashid = @oldhashid ''')
@@ -154,7 +155,7 @@ def fRefresh_sql( nfmate , cursor = cursor, mconn = mconn ):
                         cursor.execute('''update fline_code
                                                 set fstatus = 1
                                                 where lid = %s''', fli_sql[0][:1])
-                pdb.set_trace()
+                #pdb.set_trace()
                 cursor.executemany('''insert into fline_code( hashid, line, flid ) values( @lshs, %s, %s )''', flNew)
                 cursor.executemany('''update fline_code
                                         set flid = %s,
@@ -364,7 +365,7 @@ try:
             preadd = Fname_Hash[1]
         else:
             logger.warn('Failed to get hash of preAdd!') 
-        pdb.set_trace()    
+        #pdb.set_trace()    
         HsIsql = FIsql.gethash()
         for fsh in preadd.items():
             """这里要考虑两种情形:1、文件内容已经存在，只是添加fid指向，就是所谓移动复制重命名
