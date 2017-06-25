@@ -1,0 +1,12 @@
+重要说明：
+	如果要使用本目录下的自定义的功能模块，请将本目录添加至默 认模块搜索路径
+
+import sys
+sysSf = 'D:\\python_learn\\sysFc'
+sys.path.append(sysSf)
+
+try:
+	logger.info('sys.path ---> ' + str(sys.path))
+except:
+	print('sys.path ---> ' + str(sys.path))
+

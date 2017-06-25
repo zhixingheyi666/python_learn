@@ -36,6 +36,7 @@ select count(namepath) as num,hashid from fmate_code group by hashid order by nu
 select namepath from fmate_code where hashid=66 limit 1 into @ttdel;
 select namepath,hashid from fmate_code where namepath regexp 'codetest';
 select line from fline_code where line regexp '__name__';
+select l.line, m.namepath from fline_code l, fmate_code m where line regexp 'executemany' and l.hashid = m.hashid;
 select hashid, strhash from hash_code where strhash regexp'fd267a';
 select * from fline_code where line regexp 'FileDel';
 select line, count(line) from fline_code where hashid = 274 group by line order by count(line) desc;
