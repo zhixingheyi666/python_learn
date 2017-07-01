@@ -1,0 +1,108 @@
+2017-06-25 21:41:50,117 - SF: - INFO:
+ttn = 0 
+
+2017-06-25 21:41:50,309 - SF: - INFO:
+Building connection to Mysql...
+
+2017-06-25 21:41:50,335 - SF: - INFO:
+返回数据库记录的完整文件名的集合
+
+2017-06-25 21:41:50,337 - SF: - INFO:
+Numbers of file records get from Sql: 208
+
+2017-06-25 21:41:50,815 - SF: - INFO:
+返回磁盘上需要追踪的完整文件名的集合
+
+2017-06-25 21:41:50,816 - SF: - INFO:
+Numbers of py and txt files get from disk: 212
+
+2017-06-25 21:41:52,648 - SF: - INFO:
+Refresh:	'D:\\python_learn\\spider\\lnbs4.py'
+
+2017-06-25 21:41:54,486 - SF: - INFO:
+Refresh:	'D:\\python_learn\\sql\\inReader15ji.py'
+
+2017-06-25 21:42:01,234 - SF: - INFO:
+Refresh:	'D:\\python_learn\\codein\\codetsql.py'
+
+2017-06-25 21:42:05,354 - SF: - INFO:
+Refresh:	'D:\\python_learn\\Tips.sf@.txt'
+
+2017-06-25 21:42:05,379 - SF: - ERROR:
+Refresh Failed:	D:\python_learn\sql\gener_LendWork.py
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 211: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 111, in fRefresh_sql
+    cursor.execute('''insert into hash_code( strhash ) values( %s )''', nfi[3:4])
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry '30ea5ff03c756604de3e24ad71c6984f00194496' for key 'strhash'
+2017-06-25 21:42:05,385 - SF: - WARNING:
+Refresh Failed:	D:\python_learn\sql\gener_LendWork.py
+
+2017-06-25 21:43:12,366 - SF: - ERROR:
+Error msg
+Traceback (most recent call last):
+  File "c:\python34\lib\site-packages\ptpython\repl.py", line 62, in _on_start
+    code = compile(f.read(), path, 'exec')
+UnicodeDecodeError: 'gbk' codec can't decode byte 0xae in position 211: illegal multibyte sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "codetsql.py", line 233, in fidMCR_sql
+    values( %s, @filehs, %s, %s );''',fmate)
+  File "c:\python34\lib\site-packages\mysql\connector\cursor.py", line 552, in execute
+    self._handle_result(self._connection.cmd_query(stmt))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 490, in cmd_query
+    result = self._handle_result(self._send_cmd(ServerCmd.QUERY, query))
+  File "c:\python34\lib\site-packages\mysql\connector\connection.py", line 395, in _handle_result
+    raise errors.get_exception(packet)
+mysql.connector.errors.IntegrityError: 1062 (23000): Duplicate entry 'D:\python_learn\sysFc\sUrl.py' for key 'namepath'
+2017-06-25 21:43:12,369 - SF: - INFO:
+fidMCR_sql--->Failed to write to Sql:
+'D:\\python_learn\\sysFc\\sUrl.py'
+
+2017-06-25 21:43:12,748 - SF: - INFO:
+MCRing --->'D:\\python_learn\\bookmark\\Im.py'
+
+2017-06-25 21:43:13,280 - SF: - INFO:
+MCRing --->'D:\\python_learn\\sysFc\\__init__.py'
+
+2017-06-25 21:43:13,410 - SF: - INFO:
+fnum_sql: 208
+
+2017-06-25 21:43:13,411 - SF: - INFO:
+fnum_disk: 212
+
+2017-06-25 21:43:13,411 - SF: - INFO:
+FailCount: 1
+
+2017-06-25 21:43:13,412 - SF: - INFO:
+AddOkCount: 4
+
+2017-06-25 21:43:13,412 - SF: - INFO:
+McrOkCount: 2
+
+2017-06-25 21:43:13,612 - SF: - INFO:
+Execute  Del_sql() Success!
+
+2017-06-25 21:43:13,613 - SF: - INFO:
+HSdelm: 2
+
+2017-06-25 21:43:13,613 - SF: - INFO:
+HSdell: 4
+
+2017-06-25 21:43:13,614 - SF: - INFO:
+DelCount: 3
+

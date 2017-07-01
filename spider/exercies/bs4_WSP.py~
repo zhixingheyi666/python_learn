@@ -13,6 +13,8 @@ from logSf10 import crLog
 logger = crLog()
 logger.info('Succeed!!') 
 from fRcd import fRecord
+os.chdir('d:\\python_learn\\spider')
+from fc.urlfc import getHtml,getLinks,Rule 
 
 fgx = '\n======================================分割线======================================\n'
 
@@ -28,41 +30,21 @@ urlst = [ "https://www.yandex.com",
             'http://www.zhihu.com'
             ]
 
-def getHtml( url ):
-    #pdb.set_trace()
-    html = urlopen( url )
-    bsObj = BeautifulSoup(html,'html.parser')
-    #bsObj = BeautifulSoup(html)
-    return bsObj
 
-def getLinks( html,rule = re.compile('.*'),norepeat = True ):
-    links = [] 
-    for link in html.findAll('a',href = rule):
-        if 'href' in link.attrs:
-            tlink = link.attrs['href']
-            tsplit = tlink.split('/')
-            #logger.info(len(tsplit))
-            if len(tsplit) != 3:
-                #logger.info(tsplit)
-                continue
-            if tlink not in links:
-                links.append(link.attrs['href'])
-                #logger.info(tlink)
-                #print(links[-1])
-    #pdb.set_trace()
-    return links
 
 def papa( urlHead,urlTail ):
     #rule = re.compile('^\/people\/.*\/following')
     #设置是否清空记录文件，fRcord 成功执行返回 1 ，not 返回值，表示下次不清空
     mcls = 1
     url = urlHead + urlTail
-    rule = re.compile('^/people/[^/]*')
+    #tRe = re.compile('^/people/[^/]*')
+    tRe = '^/people/[^/]*'
     html = getHtml(url)
+    rule = Rule([0,],tRe)
     people = getLinks(html,rule)
-    #pdb.set_trace()
     count = 0
     while len(people):
+        #pdb.set_trace()
         while 1: 
             try:
                 index = random.randint(0,len(people) - 1 )
@@ -78,6 +60,7 @@ def papa( urlHead,urlTail ):
                     logger.warning('Failed to people.pop(%r)' % index)
                     pdb.set_trace()
         new = getLinks(html,rule)
+        #pdb.set_trace()
         tnew = []
         for ni in new:
             if ni not in people:
@@ -102,7 +85,6 @@ if __name__ == '__main__':
     #bsObj = getHtml(urlst[-1] + questionUrl[-1])
     papa(urlst[-1], questionUrl[-1])
 
-
     
 """
     rule = re.compile('^(\/people\/).*')
@@ -115,11 +97,11 @@ if __name__ == '__main__':
         for il in links:
             tff.write(il+'\n')
         tff.write(fgx)
-
+============================================================
 string = re.compile('\.\.\/img\/gifts/img.*\.jpg')
 ^\/people\/.*
 ^\/people\/((?!:).)*$
-    """
+"""
 
 
 
