@@ -1,0 +1,38 @@
+#本脚本只涉及建立关系表的语句，其他测试语句请另写的测试脚本中
+use tipnet;
+CREATE TABLE `mate` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `attr` varchar(256) NOT NULL,
+  `attrlong` text NOT NULL,
+  `qz` int(11) DEFAULT NULL,
+  `gzd` int(11) DEFAULT NULL,
+  `uni` tinyint(8) DEFAULT NULL,
+  `vchar` varchar(256) DEFAULT NULL,
+  `vtext` datetime DEFAULT NULL,
+  `vblob` blob,
+  `vjson` json DEFAULT NULL,
+  `vdatetime` datetime DEFAULT NULL,
+  `vtimestamp0` timestamp NULL DEFAULT NULL,
+  `vtimestamp1` timestamp NULL DEFAULT NULL,
+  `vdecimal` decimal(10,6) DEFAULT NULL,
+  `vlongtext` longtext,
+  `vlongblob` longblob,
+  `vtimestamp2` timestamp NULL DEFAULT NULL,
+  `vtimestamp3` timestamp NULL DEFAULT NULL,
+  `bk0` varchar(256) DEFAULT NULL,
+  `bbk0` varchar(256) DEFAULT NULL,
+  `bk1` varchar(256) DEFAULT NULL,
+  `bbk1` int(11) DEFAULT NULL,
+  `bk2` varchar(256) DEFAULT NULL,
+  `bbk2` datetime DEFAULT NULL,
+  `bk3` varchar(256) DEFAULT NULL,
+  `bbk3` datetime DEFAULT NULL,
+  `bk4` varchar(256) DEFAULT NULL,
+  `bbk4` decimal(10,6) DEFAULT NULL,
+  `bk5` varchar(256) DEFAULT NULL,
+  `bbk5` json DEFAULT NULL,
+  `bk6` varchar(256) DEFAULT NULL,
+  `bbk6` mediumtext,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
