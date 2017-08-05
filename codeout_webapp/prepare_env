@@ -1,0 +1,26 @@
+
+# coding: utf-8
+
+# In[1]:
+
+
+get_ipython().system('python -V')
+
+
+# In[2]:
+
+
+get_ipython().system('pip install aiohttp')
+
+
+# In[3]:
+
+
+get_ipython().system('pip install jinja2')
+
+
+# In[4]:
+
+
+get_ipython().system('pip install aiomysql')
+
