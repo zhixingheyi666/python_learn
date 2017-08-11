@@ -31,6 +31,7 @@ def setLevel(level, obj):
     return info 
 
   
+logger.addHandler(ch)
 
 def crLog(level = ('DEBUG','DEBUG','INFO'), fname = defaultFname , head = 'SF', ifile = True, cls = False):
 #get a Logger instance
