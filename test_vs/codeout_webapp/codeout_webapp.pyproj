@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14c106a2-7291-4e91-98c8-f7aa7519584c}</ProjectGuid>
+    <ProjectHome>..\..\codeout_webapp\</ProjectHome>
+    <StartupFile />
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="exercise_lxf\metaClass.py" />
+    <Compile Include="exercise_lxf\metaclass0.py" />
+    <Compile Include="REFERENCE_SELF\fabfile.py" />
+    <Compile Include="REFERENCE_SELF\www\apis.py" />
+    <Compile Include="REFERENCE_SELF\www\app.py" />
+    <Compile Include="REFERENCE_SELF\www\config.py" />
+    <Compile Include="REFERENCE_SELF\www\config_default.py" />
+    <Compile Include="REFERENCE_SELF\www\config_override.py" />
+    <Compile Include="REFERENCE_SELF\www\coroweb.py" />
+    <Compile Include="REFERENCE_SELF\www\handlers.py" />
+    <Compile Include="REFERENCE_SELF\www\markdown2.py" />
+    <Compile Include="REFERENCE_SELF\www\models.py" />
+    <Compile Include="REFERENCE_SELF\www\orm.py" />
+    <Compile Include="REFERENCE_SELF\www\pymonitor.py" />
+    <Compile Include="www\apis.py" />
+    <Compile Include="www\app.py" />
+    <Compile Include="www\config.py" />
+    <Compile Include="www\config_default.py" />
+    <Compile Include="www\config_override.py" />
+    <Compile Include="www\coroweb.py" />
+    <Compile Include="www\handlers.py" />
+    <Compile Include="www\models.py" />
+    <Compile Include="www\orm.py" />
+    <Compile Include="www\test.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="REFERENCE_SELF\ios\AwsomeApp\htmlFooter.txt" />
+    <Content Include="REFERENCE_SELF\ios\AwsomeApp\htmlHeader.txt" />
+    <Content Include="REFERENCE_SELF\www\favicon.ico" />
+    <Content Include="REFERENCE_SELF\www\static\css\addons\uikit.addons.min.css" />
+    <Content Include="REFERENCE_SELF\www\static\css\addons\uikit.almost-flat.addons.min.css" />
+    <Content Include="REFERENCE_SELF\www\static\css\addons\uikit.gradient.addons.min.css" />
+    <Content Include="REFERENCE_SELF\www\static\css\awesome.css" />
+    <Content Include="REFERENCE_SELF\www\static\css\uikit.almost-flat.min.css" />
+    <Content Include="REFERENCE_SELF\www\static\css\uikit.gradient.min.css" />
+    <Content Include="REFERENCE_SELF\www\static\css\uikit.min.css" />
+    <Content Include="REFERENCE_SELF\www\static\img\user.png" />
+    <Content Include="REFERENCE_SELF\www\static\js\awesome.js" />
+    <Content Include="REFERENCE_SELF\www\static\js\jquery.min.js" />
+    <Content Include="REFERENCE_SELF\www\static\js\sha1.min.js" />
+    <Content Include="REFERENCE_SELF\www\static\js\sticky.min.js" />
+    <Content Include="REFERENCE_SELF\www\static\js\uikit.min.js" />
+    <Content Include="REFERENCE_SELF\www\static\js\vue.min.js" />
+    <Content Include="REFERENCE_SELF\www\templates\blog.html" />
+    <Content Include="REFERENCE_SELF\www\templates\blogs.html" />
+    <Content Include="REFERENCE_SELF\www\templates\manage_blogs.html" />
+    <Content Include="REFERENCE_SELF\www\templates\manage_blog_edit.html" />
+    <Content Include="REFERENCE_SELF\www\templates\manage_comments.html" />
+    <Content Include="REFERENCE_SELF\www\templates\manage_users.html" />
+    <Content Include="REFERENCE_SELF\www\templates\register.html" />
+    <Content Include="REFERENCE_SELF\www\templates\signin.html" />
+    <Content Include="REFERENCE_SELF\www\templates\__base__.html" />
+    <Content Include="www\static\css\addons\uikit.addons.min.css" />
+    <Content Include="www\static\css\addons\uikit.almost-flat.addons.min.css" />
+    <Content Include="www\static\css\addons\uikit.gradient.addons.min.css" />
+    <Content Include="www\static\css\excodout.css" />
+    <Content Include="www\static\css\uikit.almost-flat.min.css" />
+    <Content Include="www\static\css\uikit.gradient.min.css" />
+    <Content Include="www\static\css\uikit.min.css" />
+    <Content Include="www\static\img\user.png" />
+    <Content Include="www\static\js\excodout.js" />
+    <Content Include="www\static\js\jquery.min.js" />
+    <Content Include="www\static\js\sha1.min.js" />
+    <Content Include="www\static\js\sticky.min.js" />
+    <Content Include="www\static\js\uikit.min.js" />
+    <Content Include="www\static\js\vue.min.js" />
+    <Content Include="www\templates\blog.html" />
+    <Content Include="www\templates\blogs.html" />
+    <Content Include="www\templates\manage_blogs.html" />
+    <Content Include="www\templates\manage_blog_edit.html" />
+    <Content Include="www\templates\manage_comments.html" />
+    <Content Include="www\templates\manage_users.html" />
+    <Content Include="www\templates\register.html" />
+    <Content Include="www\templates\signin.html" />
+    <Content Include="www\templates\test.html" />
+    <Content Include="www\templates\test.html~" />
+    <Content Include="www\templates\__base__.html" />
+    <Content Include="www\templates\__base__.html~" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="exercise_lxf" />
+    <Folder Include="REFERENCE_SELF" />
+    <Folder Include="REFERENCE_SELF\ios\" />
+    <Folder Include="REFERENCE_SELF\ios\AwsomeApp" />
+    <Folder Include="REFERENCE_SELF\www" />
+    <Folder Include="REFERENCE_SELF\www\static\" />
+    <Folder Include="REFERENCE_SELF\www\static\css" />
+    <Folder Include="REFERENCE_SELF\www\static\css\addons" />
+    <Folder Include="REFERENCE_SELF\www\static\img" />
+    <Folder Include="REFERENCE_SELF\www\static\js" />
+    <Folder Include="REFERENCE_SELF\www\templates" />
+    <Folder Include="www" />
+    <Folder Include="www\static\" />
+    <Folder Include="www\static\css" />
+    <Folder Include="www\static\css\addons" />
+    <Folder Include="www\static\img" />
+    <Folder Include="www\static\js" />
+    <Folder Include="www\templates" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>

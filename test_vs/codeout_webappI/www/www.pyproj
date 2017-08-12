@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{463144b1-6077-4144-acfb-e2e55bd96d87}</ProjectGuid>
+    <ProjectHome>..\..\..\codeout_webapp\www\</ProjectHome>
+    <StartupFile>app.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="apis.py" />
+    <Compile Include="app.py" />
+    <Compile Include="config.py" />
+    <Compile Include="config_default.py" />
+    <Compile Include="config_override.py" />
+    <Compile Include="coroweb.py" />
+    <Compile Include="handlers.py" />
+    <Compile Include="models.py" />
+    <Compile Include="orm.py" />
+    <Compile Include="test.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="static\css\addons\uikit.addons.min.css" />
+    <Content Include="static\css\addons\uikit.almost-flat.addons.min.css" />
+    <Content Include="static\css\addons\uikit.gradient.addons.min.css" />
+    <Content Include="static\css\excodout.css" />
+    <Content Include="static\css\uikit.almost-flat.min.css" />
+    <Content Include="static\css\uikit.gradient.min.css" />
+    <Content Include="static\css\uikit.min.css" />
+    <Content Include="static\img\user.png" />
+    <Content Include="static\js\excodout.js" />
+    <Content Include="static\js\jquery.min.js" />
+    <Content Include="static\js\sha1.min.js" />
+    <Content Include="static\js\sticky.min.js" />
+    <Content Include="static\js\uikit.min.js" />
+    <Content Include="static\js\vue.min.js" />
+    <Content Include="templates\blog.html" />
+    <Content Include="templates\blogs.html" />
+    <Content Include="templates\manage_blogs.html" />
+    <Content Include="templates\manage_blog_edit.html" />
+    <Content Include="templates\manage_comments.html" />
+    <Content Include="templates\manage_users.html" />
+    <Content Include="templates\register.html" />
+    <Content Include="templates\signin.html" />
+    <Content Include="templates\test.html" />
+    <Content Include="templates\test.html~" />
+    <Content Include="templates\__base__.html" />
+    <Content Include="templates\__base__.html~" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="static\" />
+    <Folder Include="static\css" />
+    <Folder Include="static\css\addons" />
+    <Folder Include="static\img" />
+    <Folder Include="static\js" />
+    <Folder Include="templates" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>
