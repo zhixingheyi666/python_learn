@@ -29,7 +29,7 @@ sys.path.append(sysFc)
 
 from logSf10 import crLog
 logger = crLog(fname = 'D:\桌面\exCodOut.log')
-logger.info('Succeed')
+logger.info('Succeed defination logger')
 
 def init_jinjia2(app, **kw):
     logger.info('init jinjia2...')
