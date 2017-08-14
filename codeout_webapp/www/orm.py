@@ -201,7 +201,7 @@ class Model(dict,metaclass = ModelMetaclass):
                 sql.append('?')
                 args.append(limit)
             elif isinstance(limit, tuple) and len(limit) == 2:
-                sql.append('?','?')
+                sql.append('?, ?')
                 args.extend(limit)
             else:
                 raise ValueError('Invalid limit value: %s' % str(limit))
@@ -219,7 +219,7 @@ class Model(dict,metaclass = ModelMetaclass):
             sql.append('where')
             sql.append(where)
         rs = yield from select(' '.join(sql), args, 1)
-        if len(rs) == 1:
+        if len(rs) == 0:
             return None
         return rs[0]['_num_']
     

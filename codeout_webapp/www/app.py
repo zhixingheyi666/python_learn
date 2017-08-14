@@ -41,7 +41,7 @@ def init_jinjia2(app, **kw):
         variable_end_string=kw.get('variable_end_string', '}}'), auto_reload=kw.get('auto_reload', True))
     path = kw.get('path', None)
     # self#测试用临时添加语句
-    ipdb.set_trace()
+    # ipdb.set_trace()
     if path is None:
         __file__ = 'D:\python_learn\codeout_webapp\www\static'
         path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
@@ -178,7 +178,7 @@ def datetime_filter(t):
 @get('/')
 def index(request):
     users = yield from User.findAll()
-    ipdb.set_trace()
+    # ipdb.set_trace()
     return{
             '__template__':'test.html',
             'users':users

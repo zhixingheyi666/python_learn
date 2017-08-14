@@ -86,7 +86,7 @@ def has_request_arg(fn):
         return found
 
 class RequestHandler(object):
-    #ipdb.set_trace()
+    # ipdb.set_trace()
     def __init__(self, app, fn):
         self._app = app
         self._func = fn
@@ -97,8 +97,8 @@ class RequestHandler(object):
         self._required_kw_args = get_required_kw_args(fn) 
         
     @asyncio.coroutine
-    def __call__(self,request):
-        ipdb.set_trace()
+    def __call__(self, request):
+        # ipdb.set_trace()
         kw = None
         if self._has_var_kw_arg or self._has_named_kw_args or self._required_kw_args:
             if request.method == 'POST':
@@ -138,7 +138,7 @@ class RequestHandler(object):
                     kw[k] = v
         if self._has_request_arg:
             kw['request'] = request
-        # check requried kw:
+        # check required kw:
         if self._required_kw_args:
             for name in self._required_kw_args:
                 if not name in kw:
@@ -152,7 +152,7 @@ class RequestHandler(object):
 
 def add_static(app):
     path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'static')
-    #ipdb.set_trace()
+    # ipdb.set_trace()
     app.router.add_static('/static/',path)
     logger.info('Add static %s => %s' % ('/static/',path))
 
@@ -167,7 +167,7 @@ def add_route(app,fn):
     app.router.add_route(method,path,RequestHandler(app,fn))
 
 def add_routes(app, module_name):
-    #ipdb.set_trace()
+    # ipdb.set_trace()
     n = module_name.rfind('.')
     if n == (-1):
         mod = __import__(module_name, globals(), locals())

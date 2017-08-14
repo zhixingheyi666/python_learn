@@ -27,15 +27,12 @@ sysFc = 'D:\\python_learn\\sysFc'
 sys.path.append(sysFc)
 
 from logSf10 import crLog
-logger = crLog(fname = 'D:\桌面\exCodOut.log')
-logger.info('Succeed defination logger')
+loggerII = crLog(fname ='D:\桌面\exCodOut.log')
+loggerII.info('Succeed defination logger')
 
 def init_jinjia2(app, **kw):
-
-
-
-    logger.info('init jinjia2...')
- options = dict(
+    loggerII.info('init jinjia2...')
+    options = dict(
             autoescape = kw.get('autoescape', True),
             block_start_string = kw.get('block_start_string', '{%'),
             block_end_string = kw.get('block_end_string', '%}'),
@@ -72,7 +69,7 @@ def logging_factory(app, handler):
     """
     @asyncio.coroutine
     def loggerI(request):
-        logger.info('Request: %s %s' % (request.method, request.path))
+        loggerII.info('Request: %s %s' % (request.method, request.path))
         #yield from asyncio.sleep(0.3)
         return (yield from handler(request))
     return loggerI
@@ -82,13 +79,13 @@ def logging_factory(app, handler):
 def auth_factory(app, handler):
     @asyncio.coroutine
     def auth(request):
-        logger.info('Check user: %s %s' % (request.method, request.path))
+        loggerII.info('Check user: %s %s' % (request.method, request.path))
         request.__user__ = None
         cookie_str = request.cookies.get(COOKIE_NAME)
         if cookie_str:
             user = yield from cookie2user(cookie_str)
             if user:
-                logger.info('Set current user: %s' % user.email)
+                loggerII.info('Set current user: %s' % user.email)
                 request.__user__ = user
         if request.path.startswith('/manage') and (request.__user__ is None or not request.__user__.admin):
             return web.HTTPFound('sigin')
@@ -102,10 +99,10 @@ def data_factory(app, handler):
         if request.method == 'POST':
             if request.content_type.startswith('application/json'):
                 request.__data__ = yield from request.json()
-                logger.info('request json:{}'.format(str(request.__data__)))
+                loggerII.info('request json:{}'.format(str(request.__data__)))
             elif request.content_type.startswith('application/x-www-form-urlencoded'):
                 request.__data__ = yield from request.post()
-                logger.info('request json:{}'.format(str(request.__data__)))
+                loggerII.info('request json:{}'.format(str(request.__data__)))
         return (yield from handler(request))
     return parse_data
 def data(a,b,l):
@@ -116,7 +113,7 @@ def data(a,b,l):
 def response_factory(app, handler):
     @asyncio.coroutine
     def response(request):
-        logger.info('Respone handler...')
+        loggerII.info('Respone handler...')
         rr = yield from handler(request)
         if isinstance(rr, web.StreamResponse):
             return rr
@@ -127,7 +124,7 @@ def response_factory(app, handler):
         if isinstance(rr, str):
             if rr.startwith('redirect:'):
                 return web.HTTPFound(rr[9:])
-            resp = web.Response(body = rr.encode('utf-8'))
+            resp = web.Response(body = rr.encode']utf-8'))
             resp.content_type = 'text/html;charset=utf-8'
             return resp
         if isinstance(rr, dict):
@@ -171,7 +168,31 @@ def datetime_filter(t):
 	return u'%s年%s月%s日' % (dt.year,dt.month,dt.day)	
             
 
-#self#测试用临时添加语句
+@asyncio.coroutine
+def init(loop):
+    yield from orm.create_pool(loop = loop, host = '127.0.0.1', port = 3306, user = 'www-data', password = 'www-data', database = 'excodout')
+    #梗#了解下 middlewares
+    app = web.Application(loop = loop,middlewares = [logger_factory, auth_factory, response_factory])
+    init_jinjia2(app, filters = dict(datetime = datetime_filter))
+    #add_routes第二个参数是模块名，把模块中所有函数处理后添加给app
+    #ipdb.set_trace()
+
+
+
+    add_routes(app, 'handlers')
+    add_static(app)
+    #app.router.add_route('GET', '/', index)
+    srv = yield from loop.create_server(app.make_handler(), '127.0.0.1', 9999)
+    loggerII.info('Server started at http://127.0.0.1:9999...')
+    return srv
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(init(loop))
+loop.run_forever()
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+#self#测试用临x
+
 '''
 @get('/')
 def index(request):
@@ -181,25 +202,4 @@ def index(request):
             '__template__':'test.html',
             'users':users
             }
-'''
-
-@asyncio.coroutine
-def init(loop):
-    yield from orm.create_pool(loop = loop, host = '127.0.0.1', port = 3306, user = 'www-data', password = 'www-data', database = 'excodout')
-    #梗#了解下 middlewares
-    app = web.Application(loop = loop,middlewares = [logger_factory, auth_factory, response_factory])
-    init_jinjia2(app, filters = dict(datetime = datetime_filter))
-    #add_routes第二个参数是模块名，把模块中所有函数处理后添加给app
-    #ipdb.set_trace()
-    add_routes(app, 'handlers')
-    add_static(app)
-    #app.router.add_route('GET', '/', index)
-    srv = yield from loop.create_server(app.make_handler(), '127.0.0.1', 9999)
-    logger.info('Server started at http://127.0.0.1:9999...')
-    return srv
-
-loop = asyncio.get_event_loop()
-loop.run_until_complete(init(loop))
-loop.run_forever()
-
-
+'''\\

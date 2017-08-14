@@ -93,7 +93,7 @@ def cookie2user(cookie_str):
 #<test>
 @get('/')
 def indexI(*, page = '1'):
-    #ipdb.set_trace()
+    # ipdb.set_trace()
     summary = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     blogs = [
         Blog(id='1', name='Test Blog', summary=summary, created_at=time.time()-120),
@@ -226,7 +226,7 @@ def manage_users(*, page = '1'):
     
 @get('/api/comments')
 def api_comments(*, page = '1'):
-    page_index = get_apge_index(page)
+    page_index = get_page_index(page)
     num = yield from Comment.findNumber('conunt(id)')
     p = Page(num, page_index)
     if num == 0:
@@ -256,6 +256,7 @@ def api_delete_comment(id, request):
         raise APIResourceNotFoundError('comment')
     yield from c.remove()
     return dict(id = id)
+
 
 @get('/api/users')
 def api_get_users(*, page = '1'):
