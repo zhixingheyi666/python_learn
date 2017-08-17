@@ -119,7 +119,9 @@ def index(*, page = '1'):
     if num == 0:
         blogs = []
     else:
-        blogs = yield from Blog.findAll(orderBy = 'created_at desc', limit = (page.offset, page.limit)) 
+        # 测试代码临时添加
+        # blogs = yield from Blog.findAll(orderBy = 'created_at desc', limit = (page.offset, page.limit))
+        blogs = yield from Blog.findAll(orderBy = 'created_at', limit = (page.offset, page.limit))
     return {
             '__template__':'blogs.html',
             'page':page,
@@ -139,6 +141,12 @@ def get_blog(id):
             'comments': comments
             }
 
+
+@get('/image/cover')
+def get_cover_image():
+    return {
+        '__template__': 'cover(1).jpg'
+    }
 
 @get('/register')
 def register():
