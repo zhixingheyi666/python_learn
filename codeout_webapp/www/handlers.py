@@ -90,15 +90,16 @@ def cookie2user(cookie_str):
         logger.exception(e)
         return None
 
+"""
 #<test>
 @get('/')
 def indexI(*, page = '1'):
     # ipdb.set_trace()
-    summary = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    # summary = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
     blogs = [
-        Blog(id='1', name='Test Blog', summary=summary, created_at=time.time()-120),
-        Blog(id='2', name='Something New', summary=summary, created_at=time.time()-3600),
-        Blog(id='3', name='Learn Swift', summary=summary, created_at=time.time()-7200),
+        Blog(id='1', name='静静工作了', summary=summary, created_at=time.time()-120),
+        Blog(id='2', name='老弟陪我打羽毛球', summary=summary, created_at=time.time()-3600),
+        Blog(id='3', name='我的第一个WEB程序', summary=summary, created_at=time.time()-7200),
         Blog(id='9', name='Master Wang', summary=summary, created_at=time.time()-8200)
     ]
     return {
@@ -108,6 +109,8 @@ def indexI(*, page = '1'):
             }
 #</test>
 """
+
+
 @get('/')
 def index(*, page = '1'):
     page_index = get_page_index(page)
@@ -122,8 +125,6 @@ def index(*, page = '1'):
             'page':page,
             'blogs':blogs
             }
-"""
-#</test>
 
 @get('/blog/{id}')
 def get_blog(id):
@@ -142,8 +143,15 @@ def get_blog(id):
 @get('/register')
 def register():
     return {
-            '__template__':'register.html'
+            '__template__': 'register.html'
             }
+
+# 测试临时添加代码
+@get('/manage/blogs/signin')
+def manage_blogs_signinI():
+    return {
+        '__template__':'signin.html'
+    }
 
 @get('/signin')
 def signin():
@@ -193,6 +201,7 @@ def manage_comments(*, page = '1'):
             '__template__':'manage_comments.html',
             'page_index':get_page_index(page)
             }
+
 
 @get('/manage/blogs')
 def manage_blogs(*, page = '1'):
@@ -311,7 +320,8 @@ def api_get_blog(*, id):
     blog = yield from Blog.find(id)
     return blog
 
-@post('/api/blogs/{id}')
+
+@post('/api/blogs')
 def api_create_blog(request, *, name, summary, content):
     check_admin(request)
     if not name and not name.strip():
@@ -325,7 +335,7 @@ def api_create_blog(request, *, name, summary, content):
     return blog 
 
 @post('/api/blogs/{id}')
-def api_update_blog(request, *, name, summary, content):
+def api_update_blog(id, request, *, name, summary, content):
     check_admin(request)
     blog = yield from Blog.find(id)
     if not name and not name.strip():

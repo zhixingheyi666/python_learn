@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="vue.js"></script>
+    <script >
+        function show() {
+            //在这里面写Vue.js的代码
+            new Vue({
+                el: '#demo',
+                data: {
+                    message: 'Hello Master!'
+                }
+            })
+            alert('Func already runned.')
+        }
+    </script>
+</head>
+<body>
+<div id = "runfunc">
+    <p>
+        <a href="http://localhost:9999/", onclick="show();return false">Hit and ran some script!</a>
+    </p>
+</div>
+<div id="demo">
+    {{ message }}
+</div>
+</body>
+</html>

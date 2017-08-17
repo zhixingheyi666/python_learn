@@ -58,7 +58,7 @@ def get_named_kw_args(fn):
     for name, param in params.items():
         if param.kind == inspect.Parameter.KEYWORD_ONLY:
             args.append(name)
-            return tuple(args)
+    return tuple(args)
 
 def has_named_kw_args(fn):
     params = inspect.signature(fn).parameters
@@ -83,7 +83,7 @@ def has_request_arg(fn):
             continue
         if found and (param.kind != inspect.Parameter.VAR_POSITIONAL and param.kind != inspect.Parameter.KEYWORD_ONLY and param.kind != inspect.Parameter.VAR_KEYWORD):
             raise ValueError('request parameter must be the last named parameter in function: %s%s' % (fn.__name__, str(sig)))
-        return found
+    return found
 
 class RequestHandler(object):
     # ipdb.set_trace()
@@ -130,7 +130,7 @@ class RequestHandler(object):
                 for name in self._named_kw_args:
                     if name in kw:
                         copy[name] = kw[name]
-                    kw = copy
+                kw = copy
                 #check named arg:
                 for k,v in request.match_info.items():
                     if k in kw:

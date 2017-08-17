@@ -43,7 +43,7 @@ def init_jinjia2(app, **kw):
     # self#测试用临时添加语句
     # ipdb.set_trace()
     if path is None:
-        __file__ = 'D:\python_learn\codeout_webapp\www\static'
+        #__file__ = 'D:\python_learn\codeout_webapp\www\static'
         path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'templates')
         # path = os.path.join(os.path.dirname(os.path.abspath(__file__)),'templates')
     logger.info('Set jinjia2 template path: %s' % path)
@@ -89,7 +89,7 @@ def auth_factory(app, handler):
                 logger.info('Set current user: %s' % user.email)
                 request.__user__ = user
         if request.path.startswith('/manage') and (request.__user__ is None or not request.__user__.admin):
-            return web.HTTPFound('sigin')
+            return web.HTTPFound('signin')
         return (yield from handler(request))
 
     return auth
@@ -198,7 +198,10 @@ def init(loop):
     add_routes(app, 'handlers')
     add_static(app)
     # app.router.add_route('GET', '/', index)
-    srv = yield from loop.create_server(app.make_handler(), '127.0.0.1', 9999)
+    hostI = ['192.168.0.106', '127.0.0.1']
+    # srv = yield from loop.create_server(app.make_handler(), '127.0.0.1', 9999)
+    srv = yield from loop.create_server(app.make_handler(), hostI, 9999)
+    # srv = yield from loop.create_server(app.make_handler(), '192.168.0.106', 9999)
     logger.info('Server started at http://127.0.0.1:9999...')
     return srv
 

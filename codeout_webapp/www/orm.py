@@ -247,6 +247,14 @@ class Model(dict,metaclass = ModelMetaclass):
         rows = yield from execute(self.__update__,args)
         if rows != 1:
             logger.warn('Failed to update by primary key: affected rows: %s' % rows)
+
+    @asyncio.coroutine
+    def remove(self):
+        args = [self.getValue(self.__primary_key__)]
+        rows = yield from execute(self.__delete__, args)
+        if rows != 1:
+            logger.warn('Failed to remove by primary_key: affected rows: %s' % rows)
+
     
     
 #self#此处用作测试用
