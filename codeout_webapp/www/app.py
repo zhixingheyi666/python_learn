@@ -89,7 +89,7 @@ def auth_factory(app, handler):
                 logger.info('Set current user: %s' % user.email)
                 request.__user__ = user
         if request.path.startswith('/manage') and (request.__user__ is None or not request.__user__.admin):
-            return web.HTTPFound('signin')
+            return web.HTTPFound('/signin')
         return (yield from handler(request))
 
     return auth
@@ -125,7 +125,7 @@ def response_factory(app, handler):
             resp.content_type = 'application/octet-stream'
             return resp
         if isinstance(rr, str):
-            if rr.startwith('redirect:'):
+            if rr.startswith('redirect:'):
                 return web.HTTPFound(rr[9:])
             resp = web.Response(body=rr.encode('utf-8'))
             resp.content_type = 'text/html;charset=utf-8'
@@ -198,7 +198,8 @@ def init(loop):
     add_routes(app, 'handlers')
     add_static(app)
     # app.router.add_route('GET', '/', index)
-    hostI = ['192.168.0.106', '127.0.0.1']
+    hostI = ['192.168.0.104', '127.0.0.1']
+    hostII = ['192.168.0.106', '127.0.0.1']
     # srv = yield from loop.create_server(app.make_handler(), '127.0.0.1', 9999)
     srv = yield from loop.create_server(app.make_handler(), hostI, 9999)
     # srv = yield from loop.create_server(app.make_handler(), '192.168.0.106', 9999)

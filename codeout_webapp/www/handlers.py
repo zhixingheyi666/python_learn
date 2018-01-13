@@ -115,7 +115,7 @@ def indexI(*, page = '1'):
 def index(*, page = '1'):
     page_index = get_page_index(page)
     num = yield from Blog.findNumber('count(id)')
-    page = Page(num)
+    page = Page(num, page_index)
     if num == 0:
         blogs = []
     else:
@@ -206,8 +206,8 @@ def manage():
 @get('/manage/comments')
 def manage_comments(*, page = '1'):
     return {
-            '__template__':'manage_comments.html',
-            'page_index':get_page_index(page)
+            '__template__': 'manage_comments.html',
+            'page_index': get_page_index(page)
             }
 
 
@@ -244,7 +244,7 @@ def manage_users(*, page = '1'):
 @get('/api/comments')
 def api_comments(*, page = '1'):
     page_index = get_page_index(page)
-    num = yield from Comment.findNumber('conunt(id)')
+    num = yield from Comment.findNumber('count(id)')
     p = Page(num, page_index)
     if num == 0:
         return dict(page = p, comment = ())
@@ -264,8 +264,7 @@ def api_create_comment(id, request, *, content):
     comment = Comment(blog_id = blog.id, user_id = user.id, user_name = user.name, user_image = user.image, content = content.strip())
     yield from comment.save()
     return comment
-    
-@post('/api/blogs/{id}/delete')
+@post('/api/comments/{id}/delete')
 def api_delete_comment(id, request):
     check_admin(request)
     c = yield from Comment.find(id)

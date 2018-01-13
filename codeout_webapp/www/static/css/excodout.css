@@ -15,3 +15,16 @@ a:hover, a:active {
     display: none;
     margin-bottom: 15px;
 }
+.uk-navbar {
+    background: blue;
+    background-image:url(/static/img/code_i.gif);
+    /*background-image: -webkit-linear-gradient(bottom,#ccff55, #13ff15) ;
+    background: #0593D3 !important;
+    color: #444;
+    border: 1px solid rgba(0,0,0,.1);
+    border-bottom-color: rgba(0,0,0,.3);
+    border-radius: 4px;
+    background-origin: border-box;
+    /* background-image: -webkit-linear-gradient(top,#fff,#eee); */
+	/*background-image: linear-gradient(to bottom,#fff,#eee);*/
+}
